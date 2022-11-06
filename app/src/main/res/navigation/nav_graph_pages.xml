@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph_pages"
+    app:startDestination="@id/Page1Fragment">
+
+    <fragment
+        android:id="@+id/Page1Fragment"
+        android:name="com.example.sutk.Page1Fragment"
+        android:label="@string/pages_label"
+        tools:layout="@layout/fragment_page_1">
+
+        <action
+            android:id="@+id/action_Pages_1_to_2"
+            app:destination="@id/Page2Fragment" />
+
+        <action
+            android:id="@+id/action_Pages_1_to_3"
+            app:destination="@id/Page3Fragment" />
+
+        <action
+            android:id="@+id/action_Pages_1_to_4"
+            app:destination="@id/Page4Fragment" />
+
+        <action
+            android:id="@+id/action_Pages_1_to_5"
+            app:destination="@id/Page5Fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/Page2Fragment"
+        android:name="com.example.sutk.Page2Fragment"
+        android:label="@string/pages_label"
+        tools:layout="@layout/fragment_page_2">
+
+        <action
+            android:id="@+id/action_Pages_2_to_1"
+            app:destination="@id/Page1Fragment" />
+
+        <action
+            android:id="@+id/action_Pages_2_to_3"
+            app:destination="@id/Page3Fragment" />
+
+        <action
+            android:id="@+id/action_Pages_2_to_4"
+            app:destination="@id/Page4Fragment" />
+
+        <action
+            android:id="@+id/action_Pages_2_to_5"
+            app:destination="@id/Page5Fragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/Page3Fragment"
+        android:name="com.example.sutk.Page3Fragment"
+        android:label="@string/pages_label"
+        tools:layout="@layout/fragment_page_3">
+
+        <action
+            android:id="@+id/action_Pages_3_to_2"
+            app:destination="@id/Page2Fragment" />
+
+        <action
+            android:id="@+id/action_Pages_3_to_1"
+            app:destination="@id/Page1Fragment" />
+
+        <action
+            android:id="@+id/action_Pages_3_to_4"
+            app:destination="@id/Page4Fragment" />
+
+        <action
+            android:id="@+id/action_Pages_3_to_5"
+            app:destination="@id/Page5Fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/Page4Fragment"
+        android:name="com.example.sutk.Page4Fragment"
+        android:label="@string/pages_label"
+        tools:layout="@layout/fragment_page_4">
+
+        <action
+            android:id="@+id/action_Pages_4_to_2"
+            app:destination="@id/Page2Fragment" />
+
+        <action
+            android:id="@+id/action_Pages_4_to_3"
+            app:destination="@id/Page3Fragment" />
+
+        <action
+            android:id="@+id/action_Pages_4_to_1"
+            app:destination="@id/Page1Fragment" />
+
+        <action
+            android:id="@+id/action_Pages_4_to_5"
+            app:destination="@id/Page5Fragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/Page5Fragment"
+        android:name="com.example.sutk.Page5Fragment"
+        android:label="@string/pages_label"
+        tools:layout="@layout/fragment_page_5">
+
+        <action
+            android:id="@+id/action_Pages_5_to_2"
+            app:destination="@id/Page2Fragment" />
+
+        <action
+            android:id="@+id/action_Pages_5_to_3"
+            app:destination="@id/Page3Fragment" />
+
+        <action
+            android:id="@+id/action_Pages_5_to_4"
+            app:destination="@id/Page4Fragment" />
+
+        <action
+            android:id="@+id/action_Pages_5_to_1"
+            app:destination="@id/Page1Fragment" />
+    </fragment>
+</navigation>
