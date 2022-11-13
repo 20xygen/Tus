@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Page3Fragment">
+    tools:context=".Global.NotificationsFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -12,11 +12,11 @@
         android:padding="16dp">
 
         <TextView
-            android:id="@+id/page_3_text"
+            android:id="@+id/page_4_text"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="16dp"
-            android:text="@string/test_part_3"
+            android:text="@string/test_part_4"
             app:layout_constraintTop_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent" />

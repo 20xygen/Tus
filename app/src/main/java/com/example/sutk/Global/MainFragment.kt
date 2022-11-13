@@ -1,27 +1,26 @@
-package com.example.sutk
+package com.example.sutk.Global
 
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import androidx.navigation.NavController
-import com.example.sutk.databinding.FragmentSecondBinding
+import com.example.sutk.databinding.FragmentMainBinding
 import androidx.navigation.fragment.findNavController
 import androidx.navigation.ui.NavigationUI
-import androidx.navigation.ui.NavigationUI.setupWithNavController
 import androidx.navigation.ui.setupWithNavController
+import com.example.sutk.R
 import com.google.android.material.navigation.NavigationBarView
 
 
 /**
  * A simple [Fragment] subclass as the second destination in the navigation.
  */
-class SecondFragment : Fragment() {
+class MainFragment : Fragment() {
     private var currentFragment: Int? = 1
 
-    private var _binding: FragmentSecondBinding? = null
+    private var _binding: FragmentMainBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -32,7 +31,7 @@ class SecondFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        _binding = FragmentSecondBinding.inflate(inflater, container, false)
+        _binding = FragmentMainBinding.inflate(inflater, container, false)
 
         return binding.root
     }

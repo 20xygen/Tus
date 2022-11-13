@@ -1,19 +1,18 @@
-package com.example.sutk
+package com.example.sutk.Global
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.navigation.fragment.findNavController
-import com.example.sutk.databinding.FragmentPage4Binding
+import com.example.sutk.databinding.FragmentPostBinding
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
  */
-class Page4Fragment : Fragment() {
+class PostFragment : Fragment() {
 
-    private var _binding: FragmentPage4Binding? = null
+    private var _binding: FragmentPostBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -24,7 +23,7 @@ class Page4Fragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        _binding = FragmentPage4Binding.inflate(inflater, container, false)
+        _binding = FragmentPostBinding.inflate(inflater, container, false)
         return binding.root
 
     }

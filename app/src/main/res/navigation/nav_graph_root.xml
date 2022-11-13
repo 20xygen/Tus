@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/TermsFragment">
+
+    <fragment
+        android:id="@+id/TermsFragment"
+        android:name="com.example.sutk.Entering.TermsFragment"
+        tools:layout="@layout/fragment_terms">
+
+        <action
+            android:id="@+id/action_TermsFragment_to_RegistrationFragment"
+            app:destination="@id/RegistrationFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/RegistrationFragment"
+        android:name="com.example.sutk.Entering.RegistrationFragment"
+        tools:layout="@layout/fragment_registration">
+
+        <action
+            android:id="@+id/action_RegistrationFragment_to_LoginFragment"
+            app:destination="@id/LoginFragment" />
+
+        <action
+            android:id="@+id/action_RegistrationFragment_to_MainFragment"
+            app:destination="@id/MainFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/LoginFragment"
+        android:name="com.example.sutk.Entering.LoginFragment"
+        tools:layout="@layout/fragment_login">
+
+        <action
+            android:id="@+id/action_LoginFragment_to_RegistrationFragment"
+            app:destination="@id/RegistrationFragment" />
+
+        <action
+            android:id="@+id/action_LoginFragment_to_MainFragment"
+            app:destination="@id/MainFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/MainFragment"
+        android:name="com.example.sutk.Global.MainFragment"
+        tools:layout="@layout/fragment_main"/>
+</navigation>
+    <!--        android:label="@string/second_fragment_label"-->

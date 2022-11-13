@@ -3,121 +3,116 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph_pages"
-    app:startDestination="@id/Page1Fragment">
+    app:startDestination="@id/FeedFragment">
 
     <fragment
-        android:id="@+id/Page1Fragment"
-        android:name="com.example.sutk.Page1Fragment"
-        android:label="@string/pages_label"
-        tools:layout="@layout/fragment_page_1">
+        android:id="@+id/FeedFragment"
+        android:name="com.example.sutk.Global.FeedFragment"
+        tools:layout="@layout/fragment_feed">
 
         <action
             android:id="@+id/action_Pages_1_to_2"
-            app:destination="@id/Page2Fragment" />
+            app:destination="@id/ManageFragment" />
 
         <action
             android:id="@+id/action_Pages_1_to_3"
-            app:destination="@id/Page3Fragment" />
+            app:destination="@id/CreateFragment" />
 
         <action
             android:id="@+id/action_Pages_1_to_4"
-            app:destination="@id/Page4Fragment" />
+            app:destination="@id/NotificationsFragment" />
 
         <action
             android:id="@+id/action_Pages_1_to_5"
-            app:destination="@id/Page5Fragment" />
+            app:destination="@id/ProfileFragment" />
     </fragment>
 
     <fragment
-        android:id="@+id/Page2Fragment"
-        android:name="com.example.sutk.Page2Fragment"
-        android:label="@string/pages_label"
-        tools:layout="@layout/fragment_page_2">
+        android:id="@+id/ManageFragment"
+        android:name="com.example.sutk.Global.ManageFragment"
+        tools:layout="@layout/fragment_manage">
 
         <action
             android:id="@+id/action_Pages_2_to_1"
-            app:destination="@id/Page1Fragment" />
+            app:destination="@id/FeedFragment" />
 
         <action
             android:id="@+id/action_Pages_2_to_3"
-            app:destination="@id/Page3Fragment" />
+            app:destination="@id/CreateFragment" />
 
         <action
             android:id="@+id/action_Pages_2_to_4"
-            app:destination="@id/Page4Fragment" />
+            app:destination="@id/NotificationsFragment" />
 
         <action
             android:id="@+id/action_Pages_2_to_5"
-            app:destination="@id/Page5Fragment" />
+            app:destination="@id/ProfileFragment" />
 
     </fragment>
 
     <fragment
-        android:id="@+id/Page3Fragment"
-        android:name="com.example.sutk.Page3Fragment"
-        android:label="@string/pages_label"
-        tools:layout="@layout/fragment_page_3">
+        android:id="@+id/CreateFragment"
+        android:name="com.example.sutk.Global.PostFragment"
+        tools:layout="@layout/fragment_post">
 
         <action
             android:id="@+id/action_Pages_3_to_2"
-            app:destination="@id/Page2Fragment" />
+            app:destination="@id/ManageFragment" />
 
         <action
             android:id="@+id/action_Pages_3_to_1"
-            app:destination="@id/Page1Fragment" />
+            app:destination="@id/FeedFragment" />
 
         <action
             android:id="@+id/action_Pages_3_to_4"
-            app:destination="@id/Page4Fragment" />
+            app:destination="@id/NotificationsFragment" />
 
         <action
             android:id="@+id/action_Pages_3_to_5"
-            app:destination="@id/Page5Fragment" />
+            app:destination="@id/ProfileFragment" />
     </fragment>
 
     <fragment
-        android:id="@+id/Page4Fragment"
-        android:name="com.example.sutk.Page4Fragment"
-        android:label="@string/pages_label"
-        tools:layout="@layout/fragment_page_4">
+        android:id="@+id/NotificationsFragment"
+        android:name="com.example.sutk.Global.NotificationsFragment"
+        tools:layout="@layout/fragment_notifications">
 
         <action
             android:id="@+id/action_Pages_4_to_2"
-            app:destination="@id/Page2Fragment" />
+            app:destination="@id/ManageFragment" />
 
         <action
             android:id="@+id/action_Pages_4_to_3"
-            app:destination="@id/Page3Fragment" />
+            app:destination="@id/CreateFragment" />
 
         <action
             android:id="@+id/action_Pages_4_to_1"
-            app:destination="@id/Page1Fragment" />
+            app:destination="@id/FeedFragment" />
 
         <action
             android:id="@+id/action_Pages_4_to_5"
-            app:destination="@id/Page5Fragment" />
+            app:destination="@id/ProfileFragment" />
     </fragment>
 
     <fragment
-        android:id="@+id/Page5Fragment"
-        android:name="com.example.sutk.Page5Fragment"
-        android:label="@string/pages_label"
-        tools:layout="@layout/fragment_page_5">
+        android:id="@+id/ProfileFragment"
+        android:name="com.example.sutk.Global.ProfileFragment"
+        tools:layout="@layout/fragment_profile">
 
         <action
             android:id="@+id/action_Pages_5_to_2"
-            app:destination="@id/Page2Fragment" />
+            app:destination="@id/ManageFragment" />
 
         <action
             android:id="@+id/action_Pages_5_to_3"
-            app:destination="@id/Page3Fragment" />
+            app:destination="@id/CreateFragment" />
 
         <action
             android:id="@+id/action_Pages_5_to_4"
-            app:destination="@id/Page4Fragment" />
+            app:destination="@id/NotificationsFragment" />
 
         <action
             android:id="@+id/action_Pages_5_to_1"
-            app:destination="@id/Page1Fragment" />
+            app:destination="@id/FeedFragment" />
     </fragment>
 </navigation>
