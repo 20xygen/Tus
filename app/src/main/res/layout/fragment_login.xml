@@ -73,7 +73,6 @@
                 android:layout_marginBottom="10dp"
                 android:clickable="true"
                 android:gravity="left"
-                android:onClick="onClick"
                 android:text="@string/forgot_password"
                 android:textColor="@color/design_default_color_secondary_variant"
                 android:textSize="16sp" />

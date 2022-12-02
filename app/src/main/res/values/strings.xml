@@ -16,6 +16,7 @@
     <string name="confirm_passwd">Confirm your password:</string>
     <string name="registration">Registration</string>
     <string name="login">Authentication</string>
+    <string name="chose_icon">Choose profile icon</string>
     <string name="forgot_password">Forgot your password?</string>
     <string name="ok">OK</string>
     <string name="view_more">View more</string>

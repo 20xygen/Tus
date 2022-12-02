@@ -34,7 +34,7 @@ class LoginFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.buttonOk.setOnClickListener {
-            findNavController().navigate(R.id.action_LoginFragment_to_MainFragment)
+            findNavController().navigate(R.id.action_LoginFragment_to_SelectingProfileIconFragment)
         }
 
         binding.buttonRegister.setOnClickListener {
@@ -42,7 +42,7 @@ class LoginFragment : Fragment() {
         }
 
         binding.buttonSkip.setOnClickListener {
-            findNavController().navigate(R.id.action_LoginFragment_to_MainFragment)
+            findNavController().navigate(R.id.action_LoginFragment_to_SelectingProfileIconFragment)
         }
     }
 

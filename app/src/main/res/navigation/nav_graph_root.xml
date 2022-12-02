@@ -25,8 +25,8 @@
             app:destination="@id/LoginFragment" />
 
         <action
-            android:id="@+id/action_RegistrationFragment_to_MainFragment"
-            app:destination="@id/MainFragment" />
+            android:id="@+id/action_RegistrationFragment_to_SelectingProfileIconFragment"
+            app:destination="@id/SelectingProfileIconFragment" />
     </fragment>
 
     <fragment
@@ -39,13 +39,22 @@
             app:destination="@id/RegistrationFragment" />
 
         <action
-            android:id="@+id/action_LoginFragment_to_MainFragment"
-            app:destination="@id/MainFragment" />
+            android:id="@+id/action_LoginFragment_to_SelectingProfileIconFragment"
+            app:destination="@id/SelectingProfileIconFragment" />
     </fragment>
 
     <fragment
         android:id="@+id/MainFragment"
         android:name="com.example.sutk.Global.MainFragment"
         tools:layout="@layout/fragment_main"/>
+    <fragment
+        android:id="@+id/SelectingProfileIconFragment"
+        android:name="com.example.sutk.Entering.SelectingProfileIconFragment"
+        tools:layout="@layout/fragment_selecting_profile_icon" >
+
+        <action
+            android:id="@+id/action_SelectingProfileIconFragment_to_MainFragment"
+            app:destination="@id/MainFragment" />
+    </fragment>
 </navigation>
     <!--        android:label="@string/second_fragment_label"-->
