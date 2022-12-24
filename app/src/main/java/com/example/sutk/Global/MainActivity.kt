@@ -13,6 +13,7 @@ import android.view.MenuItem
 import androidx.annotation.RequiresApi
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
+import com.example.sutk.NavigationController
 import com.example.sutk.R
 import com.example.sutk.databinding.ActivityMainBinding
 
@@ -20,11 +21,13 @@ class MainActivity : AppCompatActivity() {
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
+    public var navController: NavigationController? = NavigationController()
 
     @RequiresApi(Build.VERSION_CODES.R)
     override fun onCreate(savedInstanceState: Bundle?) {
         WindowCompat.setDecorFitsSystemWindows(window, false)
         super.onCreate(savedInstanceState)
+        navController?.setContext(applicationContext)
 
         hideSystemUI()
 

@@ -2,4 +2,13 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <color name="default_inactive_shape_color">#e5e5e5</color>
+    <color name="default_inactive_color">#212121</color>
+    <color name="default_shape_inactive_color">#888888</color>
+    <color name="default_badge_background_color">#018786</color>
+    <color name="default_badge_text_color">#ffffff</color>
+    <color name="dark_green">#018786</color>
+    <color name="light_green">#03DAC6</color>
+    <color name="mid_green">#45B0A5</color>
 </resources>

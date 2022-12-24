@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
+import com.example.sutk.NavigationController
 import com.example.sutk.databinding.FragmentFeedBinding
 
 /**
@@ -13,6 +15,7 @@ import com.example.sutk.databinding.FragmentFeedBinding
 class FeedFragment : Fragment() {
 
     private var _binding: FragmentFeedBinding? = null
+    public var navController: NavigationController? = NavigationController()
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -30,6 +33,8 @@ class FeedFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        navController?.setController(findNavController())
 //        binding.buttonFirst.setOnClickListener {
 //            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
 //        }

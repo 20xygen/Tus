@@ -6,30 +6,107 @@
     android:layout_height="match_parent"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-    <LinearLayout
+
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/nav_host_fragment_content_pages"
+        android:name="androidx.navigation.fragment.NavHostFragment"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:orientation="vertical"
-        app:layout_constraintBottom_toTopOf="parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        app:defaultNavHost="true"
+        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toTopOf="parent"
 
-        <androidx.fragment.app.FragmentContainerView
-            android:layout_weight="1"
-            android:id="@+id/nav_host_fragment_content_pages"
-            android:name="androidx.navigation.fragment.NavHostFragment"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            app:defaultNavHost="true"
-            app:navGraph="@navigation/nav_graph_pages" />
+        app:navGraph="@navigation/nav_graph_pages" />
 
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bottom_navigation"
+    <com.example.sutk.BubbleNavigationConstraintView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white"
+        android:elevation="4dp"
+        android:padding="12dp"
+        app:bnc_mode="spread"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <com.example.sutk.BubbleToggleView
+            android:onClick="feedClick"
+            android:id="@+id/feed_item"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            app:menu="@menu/bottom_navigation_menu" />
-    </LinearLayout>
+            app:bt_active="true"
+            app:bt_colorActive="@color/design_default_color_secondary"
+            app:bt_colorInactive="@color/design_default_color_secondary_variant"
+            app:bt_icon="@drawable/ic_home"
+            app:bt_padding="15dp"
+            app:bt_shape="@drawable/transition_background_drawable_home"
+            app:bt_title="Home"
+            app:bt_titlePadding="10dp"/>
+
+        <com.example.sutk.BubbleToggleView
+            android:onClick="manageClick"
+            android:id="@+id/manage_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:bt_active="true"
+            app:bt_colorActive="@color/design_default_color_secondary"
+            app:bt_colorInactive="@color/design_default_color_secondary_variant"
+            app:bt_icon="@drawable/ic_manage"
+            app:bt_padding="15dp"
+            app:bt_shape="@drawable/transition_background_drawable_home"
+            app:bt_title="Home"
+            app:bt_titlePadding="10dp"/>
+
+        <com.example.sutk.BubbleToggleView
+            android:onClick="postClick"
+            android:id="@+id/post_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:bt_active="true"
+            app:bt_colorActive="@color/design_default_color_secondary"
+            app:bt_colorInactive="@color/design_default_color_secondary_variant"
+            app:bt_icon="@drawable/ic_post"
+            app:bt_padding="15dp"
+            app:bt_shape="@drawable/transition_background_drawable_home"
+            app:bt_title="Home"
+            app:bt_titlePadding="10dp"/>
+
+        <com.example.sutk.BubbleToggleView
+            android:onClick="notificationClick"
+            android:id="@+id/notification_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:bt_active="true"
+            app:bt_colorActive="@color/design_default_color_secondary"
+            app:bt_colorInactive="@color/design_default_color_secondary_variant"
+            app:bt_icon="@drawable/ic_notification"
+            app:bt_padding="15dp"
+            app:bt_shape="@drawable/transition_background_drawable_home"
+            app:bt_title="Home"
+            app:bt_titlePadding="10dp"/>
+
+        <com.example.sutk.BubbleToggleView
+            android:onClick="profileClick"
+            android:id="@+id/profile_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:bt_active="true"
+            app:bt_colorActive="@color/design_default_color_secondary"
+            app:bt_colorInactive="@color/design_default_color_secondary_variant"
+            app:bt_icon="@drawable/ic_profile"
+            app:bt_padding="15dp"
+            app:bt_shape="@drawable/transition_background_drawable_home"
+            app:bt_title="Home"
+            app:bt_titlePadding="10dp"/>
+
+        <!-- Add more child items here - max upto 5 -->
+
+    </com.example.sutk.BubbleNavigationConstraintView>
+
 <!--    <TextView-->
 <!--        android:id="@+id/textView"-->
 <!--        android:layout_width="wrap_content"-->
