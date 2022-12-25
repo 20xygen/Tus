@@ -11,4 +11,13 @@
     <color name="dark_green">#018786</color>
     <color name="light_green">#03DAC6</color>
     <color name="mid_green">#45B0A5</color>
+
+    <color name="tag_math">#F44336</color>
+    <color name="tag_physics">#3F51B5</color>
+    <color name="tag_info">#4CAF50</color>
+    <color name="tag_is">#009688</color>
+    <color name="tag_lang">#FFC107</color>
+    <color name="tag_medicine">#9C27B0</color>
+    <color name="tag_economy">#2196F3</color>
+    <color name="tag_other">#707070</color>
 </resources>

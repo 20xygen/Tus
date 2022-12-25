@@ -42,11 +42,11 @@ class SelectingProfileIconFragment : Fragment() {
         listIconListOperator.setUnique()
 
         binding.buttonOk.setOnClickListener {
-            findNavController().navigate(R.id.action_SelectingProfileIconFragment_to_MainFragment)
+            findNavController().navigate(R.id.action_SelectingProfileIconFragment_to_TagFragment)
         }
 
         binding.buttonSkip.setOnClickListener {
-            findNavController().navigate(R.id.action_SelectingProfileIconFragment_to_MainFragment)
+            findNavController().navigate(R.id.action_SelectingProfileIconFragment_to_TagFragment)
         }
 
         //view_array[0] = binding.button9.

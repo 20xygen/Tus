@@ -47,13 +47,24 @@
         android:id="@+id/MainFragment"
         android:name="com.example.sutk.Global.MainFragment"
         tools:layout="@layout/fragment_main"/>
+
     <fragment
         android:id="@+id/SelectingProfileIconFragment"
         android:name="com.example.sutk.Entering.SelectingProfileIconFragment"
         tools:layout="@layout/fragment_selecting_profile_icon" >
 
         <action
-            android:id="@+id/action_SelectingProfileIconFragment_to_MainFragment"
+            android:id="@+id/action_SelectingProfileIconFragment_to_TagFragment"
+            app:destination="@id/TagFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/TagFragment"
+        android:name="com.example.sutk.Entering.TagFragment"
+        tools:layout="@layout/fragment_tag" >
+
+        <action
+            android:id="@+id/action_TagFragment_to_MainFragment"
             app:destination="@id/MainFragment" />
     </fragment>
 </navigation>

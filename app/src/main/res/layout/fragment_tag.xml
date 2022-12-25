@@ -23,8 +23,9 @@
             android:orientation="vertical">
 
             <TextView
+                android:layout_marginTop="300dp"
                 android:textStyle="bold"
-                android:id="@+id/registration_label"
+                android:id="@+id/tag_label"
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="25dp"
@@ -36,31 +37,456 @@
 
             <TextView
                 android:layout_marginBottom="20dp"
-                android:id="@+id/terms_text"
+                android:id="@+id/tag_text"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="@string/tags_choosing_description"
                 android:textSize="16sp" />
 
+<!--            <me.saket.inboxrecyclerview.InboxRecyclerView-->
+<!--                android:id="@+id/recycle"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent" />-->
+
+<!--            <me.saket.inboxrecyclerview.page.ExpandablePageLayout-->
+<!--                android:id="@+id/expand"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:background="@color/white">-->
+
+<!--                &lt;!&ndash;-->
+<!--                  Your expandable content will live here. Make sure that-->
+<!--                  your page has a higher z-index than the list by giving-->
+<!--                  it a higher view position or a higher elevation.-->
+<!--                &ndash;&gt;-->
+
+<!--            </me.saket.inboxrecyclerview.page.ExpandablePageLayout>-->
+
             <LinearLayout
-                android:layout_marginBottom="10dp"
+                android:id="@+id/math_list"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:gravity="center"
-                android:orientation="horizontal">
+                android:orientation="vertical">
 
-                <com.github.okdroid.checkablechipview.CheckableChipView
-                    android:layout_marginLeft="5dp"
-                    android:layout_marginRight="5dp"
-                    android:layout_width="wrap_content"
+                <TextView
+                    android:textStyle="bold"
+                    android:id="@+id/tag_math"
+                    android:layout_width="250dp"
                     android:layout_height="wrap_content"
-                    android:text="Pie Cake" />
+                    android:layout_marginBottom="15dp"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:text="Математика"
+                    android:textAlignment="center"
+                    android:textColor="@color/tag_math"
+                    android:textSize="25sp" />
 
-                <com.github.okdroid.checkablechipview.CheckableChipView
-                    android:layout_width="wrap_content"
+                <LinearLayout
+                    android:layout_width="370dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/math_1"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:color="@color/tag_math"
+                        android:text="@string/tag_math_1" />
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/math_2"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:color="@color/tag_math"
+                        android:text="@string/tag_math_2" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="370dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/math_3"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:color="@color/tag_math"
+                        android:text="@string/tag_math_3" />
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/math_4"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:color="@color/tag_math"
+                        android:text="@string/tag_math_4" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="370dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/math_5"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:color="@color/tag_math"
+                        android:text="@string/tag_math_5" />
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/math_6"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:color="@color/tag_math"
+                        android:text="@string/tag_math_6" />
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="370dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/math_d1"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:color="@color/tag_math"
+                        android:text="@string/tag_global_1" />
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/math_d2"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:color="@color/tag_math"
+                        android:text="@string/tag_global_2" />
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="370dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/math_d3"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:color="@color/tag_math"
+                        android:text="@string/tag_global_3" />
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/math_d4"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:color="@color/tag_math"
+                        android:text="@string/tag_global_4" />
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="370dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/math_d5"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:color="@color/tag_math"
+                        android:text="@string/tag_global_5" />
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/math_d6"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:color="@color/tag_math"
+                        android:text="@string/tag_global_6" />
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="370dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/math_d7"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:color="@color/tag_math"
+                        android:text="@string/tag_global_7" />
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/math_d8"
+                        android:layout_weight="1"
+                        android:layout_margin="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:color="@color/tag_math"
+                        android:text="@string/tag_global_8" />
+                </LinearLayout>
+
+                <TextView
+                    android:layout_marginTop="10dp"
+                    android:textStyle="bold"
+                    android:id="@+id/tag_physics"
+                    android:layout_width="250dp"
                     android:layout_height="wrap_content"
-                    android:text="Pie Cake" />
+                    android:layout_marginBottom="15dp"
+                    android:gravity="center"
+                    android:layout_gravity="center"
+                    android:text="Физика"
+                    android:textAlignment="center"
+                    android:textColor="@color/tag_physics"
+                    android:textSize="25sp" />
+
+                <LinearLayout
+                    android:layout_width="370dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/physics_1"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:color="@color/tag_physics"
+                        android:text="@string/tag_physics_1" />
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/physics_2"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:color="@color/tag_physics"
+                        android:text="@string/tag_physics_2" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="370dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/physics_3"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:color="@color/tag_physics"
+                        android:text="@string/tag_physics_3" />
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/physics_4"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:color="@color/tag_physics"
+                        android:text="@string/tag_physics_4" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="370dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/physics_5"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:color="@color/tag_physics"
+                        android:text="@string/tag_physics_5" />
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/physics_6"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:color="@color/tag_physics"
+                        android:text="@string/tag_physics_6" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="370dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/physics_7"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:color="@color/tag_physics"
+                        android:text="@string/tag_physics_7" />
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/physics_8"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:color="@color/tag_physics"
+                        android:text="@string/tag_physics_8" />
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="370dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/physics_d1"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:color="@color/tag_physics"
+                        android:text="@string/tag_global_1" />
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/physics_d2"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:color="@color/tag_physics"
+                        android:text="@string/tag_global_2" />
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="370dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/physics_d3"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:color="@color/tag_physics"
+                        android:text="@string/tag_global_3" />
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/physics_d4"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:color="@color/tag_physics"
+                        android:text="@string/tag_global_4" />
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="370dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/physics_d5"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:color="@color/tag_physics"
+                        android:text="@string/tag_global_5" />
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/physics_d6"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:color="@color/tag_physics"
+                        android:text="@string/tag_global_6" />
+                </LinearLayout>
+
+
+
+                <LinearLayout
+                    android:layout_width="370dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/physics_d7"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:color="@color/tag_physics"
+                        android:text="@string/tag_global_7" />
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/physics_d8"
+                        android:layout_weight="1"
+                        android:layout_margin="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:color="@color/tag_physics"
+                        android:text="@string/tag_global_8" />
+                </LinearLayout>
+
 
             </LinearLayout>
 
@@ -81,7 +507,7 @@
                     android:theme="@style/ShapeAppearanceOverlay.Material3.Button" />
 
                 <Button
-                    android:id="@+id/button_login"
+                    android:id="@+id/button_more"
                     android:layout_margin="10dp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"

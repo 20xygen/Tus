@@ -2,6 +2,7 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/InboxRecyclerView" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/ShapeOfView" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/checkable-chip-view" vcs="Git" />
   </component>

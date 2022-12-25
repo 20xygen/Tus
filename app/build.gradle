@@ -53,4 +53,5 @@ dependencies {
     implementation 'io.github.florent37:shapeofview:1.4.7'
     //implementation 'com.google.android.material:material:1.7.0'
     implementation 'com.github.okdroid:checkablechipview:2.0.0'
+    implementation 'me.saket:inboxrecyclerview:3.0.0'
 }

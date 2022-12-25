@@ -86,7 +86,7 @@
 
                 <Button
                     android:id="@+id/button_skip"
-                    android:layout_width="80dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
                     android:backgroundTint="@color/design_default_color_secondary_variant"
@@ -96,7 +96,7 @@
                 <Button
                     android:id="@+id/button_register"
                     android:layout_margin="10dp"
-                    android:layout_width="100dp"
+                    android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/design_default_color_secondary"
                     android:text="@string/to_registration"

@@ -70,7 +70,7 @@
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:gravity="left"
-                android:text="@string/enter_email"
+                android:text="@string/enter_telegram"
                 android:textSize="16sp" />
 
             <EditText
