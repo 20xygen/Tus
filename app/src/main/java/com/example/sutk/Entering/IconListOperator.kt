@@ -6,10 +6,12 @@ import com.example.sutk.R
 import com.example.sutk.databinding.FragmentSelectingProfileIconBinding
 
 class IconListOperator {
-    private var button_array = arrayOfNulls<ImageButton>(21)
-    private var view_array = arrayOfNulls<ImageView>(21)
-    private lateinit var binding: FragmentSelectingProfileIconBinding
-    private var chosen = -1
+    companion object {
+        private var button_array = arrayOfNulls<ImageButton>(21)
+        private var view_array = arrayOfNulls<ImageView>(21)
+        private lateinit var binding: FragmentSelectingProfileIconBinding
+        var chosen = -1
+    }
 
     public fun init(binding: FragmentSelectingProfileIconBinding) {
         button_array[0] = binding.button1.imageButton
@@ -56,7 +58,7 @@ class IconListOperator {
         view_array[19] = binding.button20.imageView
         view_array[20] = binding.button21.imageView
 
-        this.binding = binding
+        IconListOperator.binding = binding
     }
 
     public fun setUnique(){

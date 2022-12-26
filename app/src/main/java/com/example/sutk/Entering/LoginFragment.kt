@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.example.sutk.DataHolder
 import com.example.sutk.R
 import com.example.sutk.databinding.FragmentLoginBinding
 
@@ -34,6 +35,8 @@ class LoginFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.buttonOk.setOnClickListener {
+            DataHolder.nickname = binding.editTextNick.text.toString()
+            DataHolder.setPassword(binding.editTextNick.text.toString())
             findNavController().navigate(R.id.action_LoginFragment_to_SelectingProfileIconFragment)
         }
 

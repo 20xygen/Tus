@@ -66,7 +66,7 @@
 
             <TextView
                 android:layout_marginBottom="10dp"
-                android:id="@+id/email_text"
+                android:id="@+id/telegram_text"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
                 android:gravity="left"
@@ -75,10 +75,9 @@
 
             <EditText
                 android:layout_marginBottom="10dp"
-                android:id="@+id/editTextTextEmailAddress"
+                android:id="@+id/editTextTelegram"
                 android:layout_width="300dp"
-                android:layout_height="wrap_content"
-                android:inputType="textEmailAddress" />
+                android:layout_height="wrap_content" />
 
             <TextView
                 android:layout_marginBottom="10dp"

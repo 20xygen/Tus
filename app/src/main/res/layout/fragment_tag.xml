@@ -8,60 +8,62 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_gravity="center"
         android:layout_height="match_parent"
+        android:layout_gravity="center_horizontal"
         android:padding="16dp">
 
         <LinearLayout
-            android:gravity="center"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:gravity="top"
+            android:orientation="vertical"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:orientation="vertical">
+            app:layout_constraintTop_toTopOf="parent">
 
             <TextView
-                android:layout_marginTop="300dp"
-                android:textStyle="bold"
                 android:id="@+id/tag_label"
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
                 android:layout_marginBottom="25dp"
                 android:gravity="center"
+                android:layout_gravity="center"
                 android:text="@string/tags_choosing_logo"
                 android:textAlignment="center"
                 android:textColor="@color/design_default_color_secondary_variant"
-                android:textSize="35sp" />
+                android:textSize="35sp"
+                android:textStyle="bold" />
 
             <TextView
-                android:layout_marginBottom="20dp"
+                android:layout_gravity="center"
                 android:id="@+id/tag_text"
                 android:layout_width="300dp"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="20dp"
                 android:gravity="center"
                 android:text="@string/tags_choosing_description"
                 android:textSize="16sp" />
 
-<!--            <me.saket.inboxrecyclerview.InboxRecyclerView-->
-<!--                android:id="@+id/recycle"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="match_parent" />-->
+            <!--            <me.saket.inboxrecyclerview.InboxRecyclerView-->
+            <!--                android:id="@+id/recycle"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="match_parent" />-->
 
-<!--            <me.saket.inboxrecyclerview.page.ExpandablePageLayout-->
-<!--                android:id="@+id/expand"-->
-<!--                android:layout_width="match_parent"-->
-<!--                android:layout_height="match_parent"-->
-<!--                android:background="@color/white">-->
+            <!--            <me.saket.inboxrecyclerview.page.ExpandablePageLayout-->
+            <!--                android:id="@+id/expand"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="match_parent"-->
+            <!--                android:background="@color/white">-->
 
-<!--                &lt;!&ndash;-->
-<!--                  Your expandable content will live here. Make sure that-->
-<!--                  your page has a higher z-index than the list by giving-->
-<!--                  it a higher view position or a higher elevation.-->
-<!--                &ndash;&gt;-->
+            <!--                &lt;!&ndash;-->
+            <!--                  Your expandable content will live here. Make sure that-->
+            <!--                  your page has a higher z-index than the list by giving-->
+            <!--                  it a higher view position or a higher elevation.-->
+            <!--                &ndash;&gt;-->
 
-<!--            </me.saket.inboxrecyclerview.page.ExpandablePageLayout>-->
+            <!--            </me.saket.inboxrecyclerview.page.ExpandablePageLayout>-->
 
             <LinearLayout
                 android:id="@+id/math_list"
@@ -70,17 +72,17 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:textStyle="bold"
                     android:id="@+id/tag_math"
                     android:layout_width="250dp"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center"
                     android:layout_marginBottom="15dp"
                     android:gravity="center"
-                    android:layout_gravity="center"
                     android:text="Математика"
                     android:textAlignment="center"
                     android:textColor="@color/tag_math"
-                    android:textSize="25sp" />
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
 
                 <LinearLayout
                     android:layout_width="370dp"
@@ -90,19 +92,19 @@
 
                     <com.github.okdroid.checkablechipview.CheckableChipView
                         android:id="@+id/math_1"
-                        android:layout_margin="5dp"
-                        android:layout_weight="1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:color="@color/tag_math"
                         android:text="@string/tag_math_1" />
 
                     <com.github.okdroid.checkablechipview.CheckableChipView
                         android:id="@+id/math_2"
-                        android:layout_margin="5dp"
-                        android:layout_weight="1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:color="@color/tag_math"
                         android:text="@string/tag_math_2" />
                 </LinearLayout>
@@ -115,19 +117,19 @@
 
                     <com.github.okdroid.checkablechipview.CheckableChipView
                         android:id="@+id/math_3"
-                        android:layout_margin="5dp"
-                        android:layout_weight="1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:color="@color/tag_math"
                         android:text="@string/tag_math_3" />
 
                     <com.github.okdroid.checkablechipview.CheckableChipView
                         android:id="@+id/math_4"
-                        android:layout_margin="5dp"
-                        android:layout_weight="1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:color="@color/tag_math"
                         android:text="@string/tag_math_4" />
                 </LinearLayout>
@@ -140,23 +142,22 @@
 
                     <com.github.okdroid.checkablechipview.CheckableChipView
                         android:id="@+id/math_5"
-                        android:layout_margin="5dp"
-                        android:layout_weight="1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:color="@color/tag_math"
                         android:text="@string/tag_math_5" />
 
                     <com.github.okdroid.checkablechipview.CheckableChipView
                         android:id="@+id/math_6"
-                        android:layout_margin="5dp"
-                        android:layout_weight="1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:color="@color/tag_math"
                         android:text="@string/tag_math_6" />
                 </LinearLayout>
-
 
 
                 <LinearLayout
@@ -167,23 +168,22 @@
 
                     <com.github.okdroid.checkablechipview.CheckableChipView
                         android:id="@+id/math_d1"
-                        android:layout_margin="5dp"
-                        android:layout_weight="1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:color="@color/tag_math"
                         android:text="@string/tag_global_1" />
 
                     <com.github.okdroid.checkablechipview.CheckableChipView
                         android:id="@+id/math_d2"
-                        android:layout_margin="5dp"
-                        android:layout_weight="1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:color="@color/tag_math"
                         android:text="@string/tag_global_2" />
                 </LinearLayout>
-
 
 
                 <LinearLayout
@@ -194,23 +194,22 @@
 
                     <com.github.okdroid.checkablechipview.CheckableChipView
                         android:id="@+id/math_d3"
-                        android:layout_margin="5dp"
-                        android:layout_weight="1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:color="@color/tag_math"
                         android:text="@string/tag_global_3" />
 
                     <com.github.okdroid.checkablechipview.CheckableChipView
                         android:id="@+id/math_d4"
-                        android:layout_margin="5dp"
-                        android:layout_weight="1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:color="@color/tag_math"
                         android:text="@string/tag_global_4" />
                 </LinearLayout>
-
 
 
                 <LinearLayout
@@ -221,23 +220,22 @@
 
                     <com.github.okdroid.checkablechipview.CheckableChipView
                         android:id="@+id/math_d5"
-                        android:layout_margin="5dp"
-                        android:layout_weight="1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:color="@color/tag_math"
                         android:text="@string/tag_global_5" />
 
                     <com.github.okdroid.checkablechipview.CheckableChipView
                         android:id="@+id/math_d6"
-                        android:layout_margin="5dp"
-                        android:layout_weight="1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:color="@color/tag_math"
                         android:text="@string/tag_global_6" />
                 </LinearLayout>
-
 
 
                 <LinearLayout
@@ -248,36 +246,44 @@
 
                     <com.github.okdroid.checkablechipview.CheckableChipView
                         android:id="@+id/math_d7"
-                        android:layout_margin="5dp"
-                        android:layout_weight="1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:color="@color/tag_math"
                         android:text="@string/tag_global_7" />
 
                     <com.github.okdroid.checkablechipview.CheckableChipView
                         android:id="@+id/math_d8"
-                        android:layout_weight="1"
-                        android:layout_margin="5dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:color="@color/tag_math"
                         android:text="@string/tag_global_8" />
                 </LinearLayout>
 
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/physics_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
                 <TextView
-                    android:layout_marginTop="10dp"
-                    android:textStyle="bold"
                     android:id="@+id/tag_physics"
                     android:layout_width="250dp"
                     android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
                     android:layout_marginBottom="15dp"
                     android:gravity="center"
-                    android:layout_gravity="center"
                     android:text="Физика"
                     android:textAlignment="center"
                     android:textColor="@color/tag_physics"
-                    android:textSize="25sp" />
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
 
                 <LinearLayout
                     android:layout_width="370dp"
@@ -287,19 +293,19 @@
 
                     <com.github.okdroid.checkablechipview.CheckableChipView
                         android:id="@+id/physics_1"
-                        android:layout_margin="5dp"
-                        android:layout_weight="1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:color="@color/tag_physics"
                         android:text="@string/tag_physics_1" />
 
                     <com.github.okdroid.checkablechipview.CheckableChipView
                         android:id="@+id/physics_2"
-                        android:layout_margin="5dp"
-                        android:layout_weight="1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:color="@color/tag_physics"
                         android:text="@string/tag_physics_2" />
                 </LinearLayout>
@@ -312,19 +318,19 @@
 
                     <com.github.okdroid.checkablechipview.CheckableChipView
                         android:id="@+id/physics_3"
-                        android:layout_margin="5dp"
-                        android:layout_weight="1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:color="@color/tag_physics"
                         android:text="@string/tag_physics_3" />
 
                     <com.github.okdroid.checkablechipview.CheckableChipView
                         android:id="@+id/physics_4"
-                        android:layout_margin="5dp"
-                        android:layout_weight="1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:color="@color/tag_physics"
                         android:text="@string/tag_physics_4" />
                 </LinearLayout>
@@ -337,19 +343,19 @@
 
                     <com.github.okdroid.checkablechipview.CheckableChipView
                         android:id="@+id/physics_5"
-                        android:layout_margin="5dp"
-                        android:layout_weight="1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:color="@color/tag_physics"
                         android:text="@string/tag_physics_5" />
 
                     <com.github.okdroid.checkablechipview.CheckableChipView
                         android:id="@+id/physics_6"
-                        android:layout_margin="5dp"
-                        android:layout_weight="1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:color="@color/tag_physics"
                         android:text="@string/tag_physics_6" />
                 </LinearLayout>
@@ -362,23 +368,22 @@
 
                     <com.github.okdroid.checkablechipview.CheckableChipView
                         android:id="@+id/physics_7"
-                        android:layout_margin="5dp"
-                        android:layout_weight="1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:color="@color/tag_physics"
                         android:text="@string/tag_physics_7" />
 
                     <com.github.okdroid.checkablechipview.CheckableChipView
                         android:id="@+id/physics_8"
-                        android:layout_margin="5dp"
-                        android:layout_weight="1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:color="@color/tag_physics"
                         android:text="@string/tag_physics_8" />
                 </LinearLayout>
-
 
 
                 <LinearLayout
@@ -389,23 +394,22 @@
 
                     <com.github.okdroid.checkablechipview.CheckableChipView
                         android:id="@+id/physics_d1"
-                        android:layout_margin="5dp"
-                        android:layout_weight="1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:color="@color/tag_physics"
                         android:text="@string/tag_global_1" />
 
                     <com.github.okdroid.checkablechipview.CheckableChipView
                         android:id="@+id/physics_d2"
-                        android:layout_margin="5dp"
-                        android:layout_weight="1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:color="@color/tag_physics"
                         android:text="@string/tag_global_2" />
                 </LinearLayout>
-
 
 
                 <LinearLayout
@@ -416,23 +420,22 @@
 
                     <com.github.okdroid.checkablechipview.CheckableChipView
                         android:id="@+id/physics_d3"
-                        android:layout_margin="5dp"
-                        android:layout_weight="1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:color="@color/tag_physics"
                         android:text="@string/tag_global_3" />
 
                     <com.github.okdroid.checkablechipview.CheckableChipView
                         android:id="@+id/physics_d4"
-                        android:layout_margin="5dp"
-                        android:layout_weight="1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:color="@color/tag_physics"
                         android:text="@string/tag_global_4" />
                 </LinearLayout>
-
 
 
                 <LinearLayout
@@ -443,23 +446,22 @@
 
                     <com.github.okdroid.checkablechipview.CheckableChipView
                         android:id="@+id/physics_d5"
-                        android:layout_margin="5dp"
-                        android:layout_weight="1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:color="@color/tag_physics"
                         android:text="@string/tag_global_5" />
 
                     <com.github.okdroid.checkablechipview.CheckableChipView
                         android:id="@+id/physics_d6"
-                        android:layout_margin="5dp"
-                        android:layout_weight="1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:color="@color/tag_physics"
                         android:text="@string/tag_global_6" />
                 </LinearLayout>
-
 
 
                 <LinearLayout
@@ -470,30 +472,1351 @@
 
                     <com.github.okdroid.checkablechipview.CheckableChipView
                         android:id="@+id/physics_d7"
-                        android:layout_margin="5dp"
-                        android:layout_weight="1"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:color="@color/tag_physics"
                         android:text="@string/tag_global_7" />
 
                     <com.github.okdroid.checkablechipview.CheckableChipView
                         android:id="@+id/physics_d8"
-                        android:layout_weight="1"
-                        android:layout_margin="5dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
                         android:color="@color/tag_physics"
                         android:text="@string/tag_global_8" />
                 </LinearLayout>
 
+                <LinearLayout
+                    android:id="@+id/is_list"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/tag_is"
+                        android:layout_width="250dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginTop="10dp"
+                        android:layout_marginBottom="15dp"
+                        android:gravity="center"
+                        android:text="Информатика"
+                        android:textAlignment="center"
+                        android:textColor="@color/tag_is"
+                        android:textSize="25sp"
+                        android:textStyle="bold" />
+
+                    <LinearLayout
+                        android:layout_width="370dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal">
+
+                        <com.github.okdroid.checkablechipview.CheckableChipView
+                            android:id="@+id/is_1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:layout_weight="1"
+                            android:color="@color/tag_is"
+                            android:text="@string/tag_is_1" />
+
+                        <com.github.okdroid.checkablechipview.CheckableChipView
+                            android:id="@+id/is_2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:layout_weight="1"
+                            android:color="@color/tag_is"
+                            android:text="@string/tag_is_2" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="370dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal">
+
+                        <com.github.okdroid.checkablechipview.CheckableChipView
+                            android:id="@+id/is_3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:layout_weight="1"
+                            android:color="@color/tag_is"
+                            android:text="@string/tag_is_3" />
+
+                        <com.github.okdroid.checkablechipview.CheckableChipView
+                            android:id="@+id/is_4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:layout_weight="1"
+                            android:color="@color/tag_is"
+                            android:text="@string/tag_is_4" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="370dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal">
+
+                        <com.github.okdroid.checkablechipview.CheckableChipView
+                            android:id="@+id/is_5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:layout_weight="1"
+                            android:color="@color/tag_is"
+                            android:text="@string/tag_is_5" />
+
+                        <com.github.okdroid.checkablechipview.CheckableChipView
+                            android:id="@+id/is_6"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:layout_weight="1"
+                            android:color="@color/tag_is"
+                            android:text="@string/tag_is_6" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="370dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal">
+
+                        <com.github.okdroid.checkablechipview.CheckableChipView
+                            android:id="@+id/is_7"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:layout_weight="1"
+                            android:color="@color/tag_is"
+                            android:text="@string/tag_is_7" />
+
+                        <com.github.okdroid.checkablechipview.CheckableChipView
+                            android:id="@+id/is_8"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:layout_weight="1"
+                            android:color="@color/tag_is"
+                            android:text="@string/tag_is_8" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="370dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal">
+
+                        <com.github.okdroid.checkablechipview.CheckableChipView
+                            android:id="@+id/is_9"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:layout_weight="1"
+                            android:color="@color/tag_is"
+                            android:text="@string/tag_is_9" />
+
+                        <com.github.okdroid.checkablechipview.CheckableChipView
+                            android:id="@+id/is_10"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:layout_weight="1"
+                            android:color="@color/tag_is"
+                            android:text="@string/tag_is_10" />
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="370dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal">
+
+                        <com.github.okdroid.checkablechipview.CheckableChipView
+                            android:id="@+id/is_d1"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:layout_weight="1"
+                            android:color="@color/tag_is"
+                            android:text="@string/tag_global_1" />
+
+                        <com.github.okdroid.checkablechipview.CheckableChipView
+                            android:id="@+id/is_d2"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:layout_weight="1"
+                            android:color="@color/tag_is"
+                            android:text="@string/tag_global_2" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="370dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal">
+
+                        <com.github.okdroid.checkablechipview.CheckableChipView
+                            android:id="@+id/is_d3"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:layout_weight="1"
+                            android:color="@color/tag_is"
+                            android:text="@string/tag_global_3" />
+
+                        <com.github.okdroid.checkablechipview.CheckableChipView
+                            android:id="@+id/is_d4"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:layout_weight="1"
+                            android:color="@color/tag_is"
+                            android:text="@string/tag_global_4" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="370dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal">
+
+                        <com.github.okdroid.checkablechipview.CheckableChipView
+                            android:id="@+id/is_d5"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:layout_weight="1"
+                            android:color="@color/tag_is"
+                            android:text="@string/tag_global_5" />
+
+                        <com.github.okdroid.checkablechipview.CheckableChipView
+                            android:id="@+id/is_d6"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:layout_weight="1"
+                            android:color="@color/tag_is"
+                            android:text="@string/tag_global_6" />
+                    </LinearLayout>
+
+
+                    <LinearLayout
+                        android:layout_width="370dp"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:orientation="horizontal">
+
+                        <com.github.okdroid.checkablechipview.CheckableChipView
+                            android:id="@+id/is_d7"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:layout_weight="1"
+                            android:color="@color/tag_is"
+                            android:text="@string/tag_global_7" />
+
+                        <com.github.okdroid.checkablechipview.CheckableChipView
+                            android:id="@+id/is_d8"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="5dp"
+                            android:layout_weight="1"
+                            android:color="@color/tag_is"
+                            android:text="@string/tag_global_8" />
+                    </LinearLayout>
+
+                </LinearLayout>
 
             </LinearLayout>
 
             <LinearLayout
-                android:layout_marginBottom="10dp"
+                android:id="@+id/info_list"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tag_info"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="15dp"
+                    android:gravity="center"
+                    android:text="Информационная безопасность"
+                    android:textAlignment="center"
+                    android:textColor="@color/tag_info"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="370dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/info_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:color="@color/tag_info"
+                        android:text="@string/tag_info_1" />
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/info_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:color="@color/tag_info"
+                        android:text="@string/tag_info_2" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="370dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/info_3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:color="@color/tag_info"
+                        android:text="@string/tag_info_3" />
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/info_4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:color="@color/tag_info"
+                        android:text="@string/tag_info_4" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="370dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/info_5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:color="@color/tag_info"
+                        android:text="@string/tag_info_5" />
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/info_6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:color="@color/tag_info"
+                        android:text="@string/tag_info_6" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="370dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/info_7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:color="@color/tag_info"
+                        android:text="@string/tag_info_7" />
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/info_8"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:color="@color/tag_info"
+                        android:text="@string/tag_info_8" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="370dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/info_9"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:color="@color/tag_info"
+                        android:text="@string/tag_info_9" />
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/info_10"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:color="@color/tag_info"
+                        android:text="@string/tag_info_10" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="370dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/info_11"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:color="@color/tag_info"
+                        android:text="@string/tag_info_11" />
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/info_12"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:color="@color/tag_info"
+                        android:text="@string/tag_info_12" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="370dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/info_13"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:color="@color/tag_info"
+                        android:text="@string/tag_info_13" />
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/info_14"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:color="@color/tag_info"
+                        android:text="@string/tag_info_14" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="370dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/info_d1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:color="@color/tag_info"
+                        android:text="@string/tag_global_1" />
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/info_d2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:color="@color/tag_info"
+                        android:text="@string/tag_global_2" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="370dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/info_d3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:color="@color/tag_info"
+                        android:text="@string/tag_global_3" />
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/info_d4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:color="@color/tag_info"
+                        android:text="@string/tag_global_4" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="370dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/info_d5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:color="@color/tag_info"
+                        android:text="@string/tag_global_5" />
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/info_d6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:color="@color/tag_info"
+                        android:text="@string/tag_global_6" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="370dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/info_d7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:color="@color/tag_info"
+                        android:text="@string/tag_global_7" />
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/info_d8"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:color="@color/tag_info"
+                        android:text="@string/tag_global_8" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/lang_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tag_lang"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="15dp"
+                    android:gravity="center"
+                    android:text="Лингвистика"
+                    android:textAlignment="center"
+                    android:textColor="@color/tag_lang"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="370dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/lang_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:color="@color/tag_lang"
+                        android:text="@string/tag_lang_1" />
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/lang_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:color="@color/tag_lang"
+                        android:text="@string/tag_lang_2" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="370dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/lang_3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:color="@color/tag_lang"
+                        android:text="@string/tag_lang_3" />
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/lang_4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:color="@color/tag_lang"
+                        android:text="@string/tag_lang_4" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="370dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/lang_5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:color="@color/tag_lang"
+                        android:text="@string/tag_lang_5" />
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/lang_6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:color="@color/tag_lang"
+                        android:text="@string/tag_lang_6" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="370dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/lang_7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:color="@color/tag_lang"
+                        android:text="@string/tag_lang_7" />
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/lang_8"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:color="@color/tag_lang"
+                        android:text="@string/tag_lang_8" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="370dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/lang_9"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:color="@color/tag_lang"
+                        android:text="@string/tag_lang_9" />
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/lang_10"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:color="@color/tag_lang"
+                        android:text="@string/tag_lang_10" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="370dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/lang_d1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:color="@color/tag_lang"
+                        android:text="@string/tag_global_1" />
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/lang_d2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:color="@color/tag_lang"
+                        android:text="@string/tag_global_2" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="370dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/lang_d3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:color="@color/tag_lang"
+                        android:text="@string/tag_global_3" />
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/lang_d4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:color="@color/tag_lang"
+                        android:text="@string/tag_global_4" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="370dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/lang_d5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:color="@color/tag_lang"
+                        android:text="@string/tag_global_5" />
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/lang_d6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:color="@color/tag_lang"
+                        android:text="@string/tag_global_6" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="370dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/lang_d7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:color="@color/tag_lang"
+                        android:text="@string/tag_global_7" />
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/lang_d8"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:color="@color/tag_lang"
+                        android:text="@string/tag_global_8" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/medicine_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tag_medicine"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="15dp"
+                    android:gravity="center"
+                    android:text="Медицина"
+                    android:textAlignment="center"
+                    android:textColor="@color/tag_medicine"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="370dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/medicine_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:color="@color/tag_medicine"
+                        android:text="@string/tag_medicine_1" />
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/medicine_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:color="@color/tag_medicine"
+                        android:text="@string/tag_medicine_2" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="370dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/medicine_3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:color="@color/tag_medicine"
+                        android:text="@string/tag_medicine_3" />
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/medicine_4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:color="@color/tag_medicine"
+                        android:text="@string/tag_medicine_4" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="370dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/medicine_5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:color="@color/tag_medicine"
+                        android:text="@string/tag_medicine_5" />
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/medicine_6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:color="@color/tag_medicine"
+                        android:text="@string/tag_medicine_6" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="370dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/medicine_7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:color="@color/tag_medicine"
+                        android:text="@string/tag_medicine_7" />
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/medicine_8"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:color="@color/tag_medicine"
+                        android:text="@string/tag_medicine_8" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="370dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/medicine_d1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:color="@color/tag_medicine"
+                        android:text="@string/tag_global_1" />
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/medicine_d2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:color="@color/tag_medicine"
+                        android:text="@string/tag_global_2" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="370dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/medicine_d3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:color="@color/tag_medicine"
+                        android:text="@string/tag_global_3" />
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/medicine_d4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:color="@color/tag_medicine"
+                        android:text="@string/tag_global_4" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="370dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/medicine_d5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:color="@color/tag_medicine"
+                        android:text="@string/tag_global_5" />
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/medicine_d6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:color="@color/tag_medicine"
+                        android:text="@string/tag_global_6" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="370dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/medicine_d7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:color="@color/tag_medicine"
+                        android:text="@string/tag_global_7" />
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/medicine_d8"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:color="@color/tag_medicine"
+                        android:text="@string/tag_global_8" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/economy_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tag_economy"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="15dp"
+                    android:gravity="center"
+                    android:text="Экономика"
+                    android:textAlignment="center"
+                    android:textColor="@color/tag_economy"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="370dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/economy_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:color="@color/tag_economy"
+                        android:text="@string/tag_economy_1" />
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/economy_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:color="@color/tag_economy"
+                        android:text="@string/tag_economy_2" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="370dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/economy_3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:color="@color/tag_economy"
+                        android:text="@string/tag_economy_3" />
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/economy_4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:color="@color/tag_economy"
+                        android:text="@string/tag_economy_4" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="370dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/economy_d1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:color="@color/tag_economy"
+                        android:text="@string/tag_global_1" />
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/economy_d2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:color="@color/tag_economy"
+                        android:text="@string/tag_global_2" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="370dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/economy_d3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:color="@color/tag_economy"
+                        android:text="@string/tag_global_3" />
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/economy_d4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:color="@color/tag_economy"
+                        android:text="@string/tag_global_4" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="370dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/economy_d5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:color="@color/tag_economy"
+                        android:text="@string/tag_global_5" />
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/economy_d6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:color="@color/tag_economy"
+                        android:text="@string/tag_global_6" />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:layout_width="370dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/economy_d7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:color="@color/tag_economy"
+                        android:text="@string/tag_global_7" />
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/economy_d8"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:color="@color/tag_economy"
+                        android:text="@string/tag_global_8" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/other_list"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/tag_other"
+                    android:layout_width="250dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginBottom="15dp"
+                    android:gravity="center"
+                    android:text="Другое"
+                    android:textAlignment="center"
+                    android:textColor="@color/tag_other"
+                    android:textSize="25sp"
+                    android:textStyle="bold" />
+
+                <LinearLayout
+                    android:layout_width="370dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/other_1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:color="@color/tag_other"
+                        android:text="@string/tag_other_1" />
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/other_2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:color="@color/tag_other"
+                        android:text="@string/tag_other_2" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="370dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/other_3"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:color="@color/tag_other"
+                        android:text="@string/tag_other_3" />
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/other_4"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:color="@color/tag_other"
+                        android:text="@string/tag_other_4" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="370dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/other_5"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:color="@color/tag_other"
+                        android:text="@string/tag_other_5" />
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/other_6"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:color="@color/tag_other"
+                        android:text="@string/tag_other_6" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="370dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:orientation="horizontal">
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/other_7"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:color="@color/tag_other"
+                        android:text="@string/tag_other_7" />
+
+                    <com.github.okdroid.checkablechipview.CheckableChipView
+                        android:id="@+id/other_8"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:layout_weight="1"
+                        android:color="@color/tag_other"
+                        android:text="@string/tag_other_8" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginBottom="10dp"
                 android:gravity="center"
                 android:orientation="horizontal">
 
@@ -507,20 +1830,20 @@
                     android:theme="@style/ShapeAppearanceOverlay.Material3.Button" />
 
                 <Button
-                    android:id="@+id/button_more"
-                    android:layout_margin="10dp"
+                    android:id="@+id/button_extend"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
                     android:backgroundTint="@color/design_default_color_secondary"
-                    android:text="@string/view_more"
+                    android:text="@string/extend_description"
                     android:theme="@style/ShapeAppearanceOverlay.Material3.Button" />
 
 
                 <Button
                     android:id="@+id/button_ok"
-                    android:layout_margin="10dp"
                     android:layout_width="70dp"
                     android:layout_height="wrap_content"
+                    android:layout_margin="10dp"
                     android:backgroundTint="@color/design_default_color_secondary_variant"
                     android:text="@string/ok"
                     android:theme="@style/ShapeAppearanceOverlay.Material3.Button" />

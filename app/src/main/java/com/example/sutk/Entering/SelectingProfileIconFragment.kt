@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.ImageButton
 import androidx.navigation.fragment.findNavController
+import com.example.sutk.DataHolder
 import com.example.sutk.R
 import com.example.sutk.databinding.FragmentSelectingProfileIconBinding
 
@@ -42,6 +43,7 @@ class SelectingProfileIconFragment : Fragment() {
         listIconListOperator.setUnique()
 
         binding.buttonOk.setOnClickListener {
+            DataHolder.iconNumber = IconListOperator.chosen
             findNavController().navigate(R.id.action_SelectingProfileIconFragment_to_TagFragment)
         }
 
