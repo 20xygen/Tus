@@ -11,6 +11,7 @@ class NavigationController {
     companion object {
         var controller: NavController? = null
         var context: Context? = null
+        var countItems = 0
     }
 
 

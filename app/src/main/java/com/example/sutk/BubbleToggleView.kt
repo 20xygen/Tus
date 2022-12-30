@@ -42,6 +42,9 @@ class BubbleToggleView : RelativeLayout {
     private var maxTitleWidth = 0f
     private var measuredTitleWidth = 0f
 
+//    companion object {
+//        var countItems = 0
+//    }
     /**
      * Constructors
      */
@@ -152,6 +155,21 @@ class BubbleToggleView : RelativeLayout {
 
         //set the default icon
         if (icon == null) icon = ContextCompat.getDrawable(context, R.drawable.default_icon)
+        else {
+            when (NavigationController.countItems){
+                0 -> title = "Feed"
+                1 -> title = "Manager"
+                2 -> title = "Post"
+                3 -> title = "Alerts"
+                4 -> title = "Profile"
+            }
+            NavigationController.countItems += 1
+//            if (icon == ContextCompat.getDrawable(context, R.drawable.ic_home)) title = "Feed"
+//            else if (icon == ContextCompat.getDrawable(context, R.drawable.ic_manage)) title = "Manager"
+//            else if (icon == ContextCompat.getDrawable(context, R.drawable.ic_post)) title = "Post"
+//            else if (icon == ContextCompat.getDrawable(context, R.drawable.ic_notification)) title = "Alerts"
+//            else if (icon == ContextCompat.getDrawable(context, R.drawable.ic_profile)) title = "Profile"
+        }
 
         //set the default shape
         if (shape == null) shape =

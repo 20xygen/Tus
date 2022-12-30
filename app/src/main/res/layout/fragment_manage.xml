@@ -12,6 +12,8 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
+        <include layout="@layout/post_skeleton" />
+
         <TextView
             android:id="@+id/page_2_text"
             android:layout_width="match_parent"

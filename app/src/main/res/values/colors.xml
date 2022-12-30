@@ -11,6 +11,7 @@
     <color name="dark_green">#018786</color>
     <color name="light_green">#03DAC6</color>
     <color name="mid_green">#45B0A5</color>
+    <color name="background_post">#D9F5D5</color>
 
     <color name="tag_math">#F44336</color>
     <color name="tag_physics">#3F51B5</color>

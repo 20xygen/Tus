@@ -54,4 +54,6 @@ dependencies {
     //implementation 'com.google.android.material:material:1.7.0'
     implementation 'com.github.okdroid:checkablechipview:2.0.0'
     implementation 'me.saket:inboxrecyclerview:3.0.0'
+//    implementation 'com.github.jd-alexander:LikeButton:0.2.3'
+    implementation 'com.jackandphantom.android:androidlikebutton:1.2.0'
 }
