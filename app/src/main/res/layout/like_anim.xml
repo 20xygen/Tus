@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     android:clipChildren="false">
 
-    <com.example.sutk.LikeAnimButton
+    <com.example.sutk.deprecated.LikeAnimButton
         android:id="@+id/btn"
         android:layout_width="112dp"
         android:layout_height="112dp"

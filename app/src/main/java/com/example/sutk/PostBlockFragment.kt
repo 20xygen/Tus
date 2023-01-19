@@ -11,7 +11,7 @@ import com.example.sutk.databinding.PostSkeletonBinding
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
  */
-class FeedFragment : Fragment() {
+class PostBlockFragment : Fragment() {
 
     private var _binding: PostSkeletonBinding? = null
 

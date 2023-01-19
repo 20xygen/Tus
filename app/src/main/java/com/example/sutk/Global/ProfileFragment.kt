@@ -5,8 +5,10 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.sutk.DataHolder
 import com.example.sutk.Entering.IconListOperator
+import com.example.sutk.ManageAdapter
 import com.example.sutk.R
 import com.example.sutk.databinding.FragmentProfileBinding
 
@@ -65,9 +67,18 @@ class ProfileFragment : Fragment() {
             19 -> binding.imageView2.setImageResource(R.drawable.icon_yellow)
             20 -> binding.imageView2.setImageResource(R.drawable.icon_yoda)
         }
+
+        binding.recyclerView.layoutManager = LinearLayoutManager(activity)
+        binding.recyclerView.adapter = ManageAdapter(fillList())
 //        binding.buttonFirst.setOnClickListener {
 //            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
 //        }
+    }
+
+    private fun fillList(): List<String> {
+        val data = mutableListOf<String>()
+        (0..30).forEach { i -> data.add("Название $i пароекта") }
+        return data
     }
 
     override fun onDestroyView() {

@@ -21,7 +21,7 @@
 
         app:navGraph="@navigation/nav_graph_pages" />
 
-    <com.example.sutk.BubbleNavigationConstraintView
+    <com.example.sutk.navigation.BubbleNavigationConstraintView
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -33,7 +33,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
-        <com.example.sutk.BubbleToggleView
+        <com.example.sutk.navigation.BubbleToggleView
             android:onClick="feedClick"
             android:id="@+id/feed_item"
             android:layout_width="wrap_content"
@@ -47,7 +47,7 @@
             app:bt_title="Home"
             app:bt_titlePadding="10dp"/>
 
-        <com.example.sutk.BubbleToggleView
+        <com.example.sutk.navigation.BubbleToggleView
             android:onClick="manageClick"
             android:id="@+id/manage_item"
             android:layout_width="wrap_content"
@@ -61,7 +61,7 @@
             app:bt_title="Home"
             app:bt_titlePadding="10dp"/>
 
-        <com.example.sutk.BubbleToggleView
+        <com.example.sutk.navigation.BubbleToggleView
             android:onClick="postClick"
             android:id="@+id/post_item"
             android:layout_width="wrap_content"
@@ -75,7 +75,7 @@
             app:bt_title="Home"
             app:bt_titlePadding="10dp"/>
 
-        <com.example.sutk.BubbleToggleView
+        <com.example.sutk.navigation.BubbleToggleView
             android:onClick="notificationClick"
             android:id="@+id/notification_item"
             android:layout_width="wrap_content"
@@ -89,7 +89,7 @@
             app:bt_title="Home"
             app:bt_titlePadding="10dp"/>
 
-        <com.example.sutk.BubbleToggleView
+        <com.example.sutk.navigation.BubbleToggleView
             android:onClick="profileClick"
             android:id="@+id/profile_item"
             android:layout_width="wrap_content"
@@ -105,7 +105,7 @@
 
         <!-- Add more child items here - max upto 5 -->
 
-    </com.example.sutk.BubbleNavigationConstraintView>
+    </com.example.sutk.navigation.BubbleNavigationConstraintView>
 
 <!--    <TextView-->
 <!--        android:id="@+id/textView"-->

@@ -13,7 +13,7 @@ import android.view.MenuItem
 import androidx.annotation.RequiresApi
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
-import com.example.sutk.NavigationController
+import com.example.sutk.navigation.NavigationController
 import com.example.sutk.R
 import com.example.sutk.databinding.ActivityMainBinding
 

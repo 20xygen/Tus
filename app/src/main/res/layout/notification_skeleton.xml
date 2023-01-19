@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_marginTop="20dp"
+    android:layout_marginLeft="0dp"
+    android:layout_marginRight="0dp"
+    android:layout_height="wrap_content">
+
+
+    <ImageView
+        android:id="@+id/bottom"
+        android:layout_width="match_parent"
+        android:layout_height="65dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/bottom_of_notification" />
+
+    <ImageView
+        android:id="@+id/status"
+        android:layout_width="20dp"
+        android:layout_height="65dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/bottom"
+        app:layout_constraintStart_toStartOf="@id/status"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/line_notify" />
+
+
+    <TextView
+        android:textColor="@color/dark_green"
+        android:textSize="18dp"
+        android:textStyle="bold"
+        android:id="@+id/label"
+        android:layout_marginTop="2dp"
+        android:layout_marginBottom="3dp"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Заголовок уведомления"
+        app:layout_constraintBottom_toTopOf="@+id/description"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/status"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:textColor="@color/dark_green"
+        android:textSize="15dp"
+        android:id="@+id/description"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Краткая информация"
+        app:layout_constraintBottom_toBottomOf="@+id/bottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/status"
+        app:layout_constraintTop_toBottomOf="@id/label" />
+
+    <ImageView
+        android:id="@+id/settings"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_margin="12.5dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/icon_cross" />
+
+
+    <!--    <com.example.sutk.deprecated.LikeAnimButton-->
+    <!--        android:layout_margin="10dp"-->
+    <!--        android:id="@+id/btn"-->
+    <!--        android:layout_width="112dp"-->
+    <!--        android:layout_height="112dp"-->
+    <!--        android:layout_gravity="center"-->
+    <!--        app:layout_constraintEnd_toEndOf="@+id/bottom"-->
+    <!--        app:layout_constraintTop_toBottomOf="@+id/line" />-->
+</androidx.constraintlayout.widget.ConstraintLayout>
