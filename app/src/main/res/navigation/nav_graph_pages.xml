@@ -48,6 +48,10 @@
             android:id="@+id/action_Pages_2_to_5"
             app:destination="@id/ProfileFragment" />
 
+        <action
+            android:id="@+id/action_Pages_Manage_to_Admin"
+            app:destination="@id/AdminPanelFragment" />
+
     </fragment>
 
     <fragment
@@ -114,5 +118,15 @@
         <action
             android:id="@+id/action_Pages_5_to_1"
             app:destination="@id/FeedFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/AdminPanelFragment"
+        android:name="com.example.sutk.AdmiPanelFragment"
+        tools:layout="@layout/fragment_admin_panel">
+
+        <action
+            android:id="@+id/action_Pages_Admin_to_Manage"
+            app:destination="@id/ManageFragment" />
     </fragment>
 </navigation>

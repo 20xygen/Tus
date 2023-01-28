@@ -32,9 +32,14 @@ class ManageBlockFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-//        binding.buttonFirst.setOnClickListener {
-//            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
-//        }
+        binding.settings.setOnClickListener {
+            println("admin panel")
+            findNavController().navigate(R.id.action_Pages_Manage_to_Admin)
+        }
+    }
+
+    public fun activeAdminPanel(view: View){
+        findNavController().navigate(R.id.action_Pages_Manage_to_Admin)
     }
 
     override fun onDestroyView() {

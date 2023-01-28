@@ -62,8 +62,8 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <EditText
-                        android:textColor="@color/dark_green"
-                        android:textSize="20dp"
+                        android:textColor="#004241"
+                        android:textSize="30dp"
                         android:textStyle="bold"
                         android:id="@+id/name_label"
                         android:layout_width="match_parent"
@@ -92,7 +92,7 @@
                 android:text="Введите краткое описание:" />
 
             <EditText
-                android:textColor="@color/dark_green"
+                android:textColor="#FF004241"
                 android:textSize="20dp"
                 android:id="@+id/description_short"
                 android:layout_width="match_parent"
@@ -111,7 +111,7 @@
                 android:text="Введите полное описание:" />
 
             <EditText
-                android:textColor="@color/dark_green"
+                android:textColor="#FF004241"
                 android:textSize="20dp"
                 android:id="@+id/description"
                 android:layout_width="match_parent"

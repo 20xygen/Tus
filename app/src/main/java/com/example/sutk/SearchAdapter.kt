@@ -5,10 +5,9 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
-import com.example.sutk.com.example.sutk.Global.ItemSkeleton
 
-class PostAdapter(private val items: MutableList<ItemSkeleton>) : RecyclerView
-.Adapter<PostAdapter.MyViewHolder>() {
+class SearchAdapter(private val names: List<String>) : RecyclerView
+.Adapter<SearchAdapter.MyViewHolder>() {
 
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val label: TextView = itemView.findViewById(R.id.label)
@@ -26,24 +25,13 @@ class PostAdapter(private val items: MutableList<ItemSkeleton>) : RecyclerView
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
         val itemView = LayoutInflater.from(parent.context)
-            .inflate(R.layout.post_skeleton, parent, false)
+            .inflate(R.layout.user_search_skeleton, parent, false)
         return MyViewHolder(itemView)
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        holder.label.text = items[position].label
-        println(items[position].label)
+        holder.label.text = names[position]
     }
 
-    fun addItem(item: ItemSkeleton){
-        items.add(item)
-        notifyItemInserted(items.size - 1)
-    }
-
-    fun addRange(itemRange: MutableList<ItemSkeleton>){
-        items.addAll(itemRange)
-        notifyItemRangeInserted(items.size - itemRange.size, itemRange.size)
-    }
-
-    override fun getItemCount() = items.size
+    override fun getItemCount() = names.size
 }

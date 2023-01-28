@@ -10,9 +10,12 @@ import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
 import android.view.Menu
 import android.view.MenuItem
+import android.view.View
 import androidx.annotation.RequiresApi
 import androidx.core.view.WindowInsetsCompat
 import androidx.core.view.WindowInsetsControllerCompat
+import androidx.navigation.Navigation
+import androidx.navigation.fragment.findNavController
 import com.example.sutk.navigation.NavigationController
 import com.example.sutk.R
 import com.example.sutk.databinding.ActivityMainBinding
@@ -75,6 +78,10 @@ class MainActivity : AppCompatActivity() {
             R.id.action_settings -> true
             else -> super.onOptionsItemSelected(item)
         }
+    }
+
+    public fun activeAdminPanel(view: View){
+        Navigation.findNavController(this, R.id.nav_graph_pages).navigate(R.id.action_Pages_Manage_to_Admin)
     }
 
     override fun onSupportNavigateUp(): Boolean {

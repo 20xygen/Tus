@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.sutk.PostAdapter
+import com.example.sutk.com.example.sutk.Global.ItemSkeleton
 import com.example.sutk.navigation.NavigationController
 import com.example.sutk.databinding.FragmentFeedBinding
 
@@ -37,7 +38,10 @@ class FeedFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.recyclerView.layoutManager = LinearLayoutManager(activity)
-        binding.recyclerView.adapter = PostAdapter(fillList())
+        var adapter = PostAdapter(fillList(0))
+        binding.recyclerView.adapter = adapter
+        adapter.addRange(fillList(5))
+
 
         navController?.setController(findNavController())
 //        binding.buttonFirst.setOnClickListener {
@@ -46,9 +50,14 @@ class FeedFragment : Fragment() {
 //        binding.recycle_inbox
     }
 
-    private fun fillList(): List<String> {
-        val data = mutableListOf<String>()
-        (0..30).forEach { i -> data.add("Название $i пароекта") }
+    private fun fillList(k: Int): MutableList<ItemSkeleton> {
+        var data = mutableListOf<ItemSkeleton>()
+        var cur: ItemSkeleton? = null
+        for (i in 1+k..5+k){
+            cur = ItemSkeleton("Название" +  i.toString() + "проекта", 0, "Полное описание проекта", "Краткое описание проекта", i, "Мистер Никто", "TWNTxygen", 0)
+            println(cur.label)
+            data.add(cur)
+        }
         return data
     }
 
