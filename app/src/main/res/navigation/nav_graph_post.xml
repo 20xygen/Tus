@@ -10,6 +10,20 @@
         android:name="com.example.sutk.Global.PostFragment"
         tools:layout="@layout/fragment_post">
 
+        <action
+            android:id="@+id/action_PostFragment_to_SelectingPostIconFragment"
+            app:destination="@id/SelectingPostIconFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/SelectingPostIconFragment"
+        android:name="com.example.sutk.Entering.SelectingPostIconFragment"
+        tools:layout="@layout/fragment_selecting_post_icon">
+
+        <action
+            android:id="@+id/action_SelectingPostIconFragment_to_PostFragment"
+            app:destination="@id/PostFragment" />
     </fragment>
 
 

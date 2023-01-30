@@ -10,6 +10,20 @@
         android:name="com.example.sutk.Global.FeedFragment"
         tools:layout="@layout/fragment_feed">
 
+        <action
+            android:id="@+id/action_FeedFragment_to_ProjectFragment"
+            app:destination="@id/ProjectFragment" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/ProjectFragment"
+        android:name="com.example.sutk.ProjectFragment"
+        tools:layout="@layout/fragment_project">
+
+        <action
+            android:id="@+id/action_ProjectFragment_to_FeedFragment"
+            app:destination="@id/FeedFragment" />
     </fragment>
 
 

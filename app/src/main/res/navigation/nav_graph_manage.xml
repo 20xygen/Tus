@@ -13,6 +13,10 @@
         <action
             android:id="@+id/action_Manage_to_Admin"
             app:destination="@id/AdmiPanelFragment" />
+
+        <action
+            android:id="@+id/action_Manage_to_ProjectFragment"
+            app:destination="@id/ProjectFragment" />
     </fragment>
 
     <fragment
@@ -37,6 +41,16 @@
         <action
             android:id="@+id/action_Search_to_Admin"
             app:destination="@id/AdmiPanelFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/ProjectFragment"
+        android:name="com.example.sutk.ProjectFragment"
+        tools:layout="@layout/fragment_project">
+
+        <action
+            android:id="@+id/action_ProjectFragment_to_ManageFragment"
+            app:destination="@id/ManageFragment" />
     </fragment>
 
 

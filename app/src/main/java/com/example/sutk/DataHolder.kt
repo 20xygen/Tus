@@ -2,7 +2,9 @@ package com.example.sutk
 
 import android.app.Activity
 import android.content.Context
+import com.example.sutk.Global.FeedFragment
 import com.example.sutk.Global.ManageFragment
+import com.example.sutk.Global.ProfileFragment
 import java.math.BigInteger
 import java.security.MessageDigest
 
@@ -13,6 +15,9 @@ class DataHolder {
         var context: Context? = null
         var activity: Activity? = null
         var manageFragment: ManageFragment? = null
+        var feedFragment: FeedFragment? = null
+        var profileFragment: ProfileFragment? = null
+        var projectPlaceType: Int? = null
 
         var mathTags = BooleanArray(6 + ndt)
         var physicsTags = BooleanArray(8 + ndt)
@@ -34,6 +39,8 @@ class DataHolder {
         var passwordHash: String? = null
 
         var iconNumber: Int? = 0
+
+        var postIconNumber: Int? = 0
 
         var loggedIn = false
 

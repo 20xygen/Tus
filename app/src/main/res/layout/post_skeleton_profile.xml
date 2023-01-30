@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_marginTop="@dimen/half_feed_offset"
+    android:layout_marginBottom="@dimen/half_feed_offset"
+    android:layout_marginLeft="0dp"
+    android:layout_marginRight="0dp"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:id="@+id/line"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@id/bottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <ImageView
+            android:id="@+id/line1"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/line_left_math" />
+
+        <ImageView
+            android:id="@+id/line2"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/line_mid_info" />
+
+        <ImageView
+            android:id="@+id/line3"
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:layout_weight="1"
+            app:srcCompat="@drawable/line_right_physics" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/bottom"
+        android:layout_width="match_parent"
+        android:layout_height="100dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/line"
+        app:srcCompat="@drawable/bottom_of_post" />
+
+    <View
+        android:id="@+id/back_icon"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_marginLeft="10dp"
+        android:alpha="1"
+        android:background="@drawable/icon_post"
+        app:layout_constraintBottom_toBottomOf="@id/bottom"
+        app:layout_constraintStart_toStartOf="@id/bottom"
+        app:layout_constraintTop_toTopOf="@id/bottom" />
+
+    <ImageView
+        android:id="@+id/picture"
+        android:layout_width="50dp"
+        android:layout_height="50dp"
+        app:layout_constraintBottom_toBottomOf="@+id/back_icon"
+        app:layout_constraintEnd_toEndOf="@+id/back_icon"
+        app:layout_constraintStart_toStartOf="@+id/back_icon"
+        app:layout_constraintTop_toTopOf="@+id/back_icon"
+        app:srcCompat="@drawable/ip_file" />
+
+    <TextView
+        android:id="@+id/label"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:textStyle="bold"
+        android:textColor="@color/dark_green"
+        android:textSize="20sp"
+        android:text="Название проекта"
+        app:layout_constraintStart_toEndOf="@+id/back_icon"
+        app:layout_constraintTop_toTopOf="@+id/bottom" />
+
+    <TextView
+        android:id="@+id/description"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="105dp"
+        android:layout_marginRight="52dp"
+        android:layout_marginTop="5dp"
+        android:text="Под названием можноо прочесть краткое описание проекта (в несколько слов)."
+        android:textColor="#00605F"
+        android:textSize="12sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toEndOf="@+id/back_icon"
+        app:layout_constraintTop_toBottomOf="@+id/label" />
+
+    <Button
+        android:id="@+id/show"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:background="#00FFFFFF"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="@+id/bottom"
+        app:layout_constraintEnd_toEndOf="@+id/bottom"
+        app:layout_constraintStart_toStartOf="@+id/bottom"
+        app:layout_constraintTop_toBottomOf="@+id/line" />
+
+    <!--    <com.example.sutk.deprecated.LikeAnimButton-->
+<!--        android:layout_margin="10dp"-->
+<!--        android:id="@+id/btn"-->
+<!--        android:layout_width="112dp"-->
+<!--        android:layout_height="112dp"-->
+<!--        android:layout_gravity="center"-->
+<!--        app:layout_constraintEnd_toEndOf="@+id/bottom"-->
+<!--        app:layout_constraintTop_toBottomOf="@+id/line" />-->
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -22,6 +22,15 @@
     <color name="tag_economy">#2196F3</color>
     <color name="tag_other">#707070</color>
 
+    <color name="tag_math_back">#FFE7E6</color>
+    <color name="tag_physics_back">#E4E8FF</color>
+    <color name="tag_info_back">#DFFFE0</color>
+    <color name="tag_is_back">#E1FFFC</color>
+    <color name="tag_lang_back">#FFF6DA</color>
+    <color name="tag_medicine_back">#FADBFF</color>
+    <color name="tag_economy_back">#DDF0FF</color>
+    <color name="tag_other_back">#EBEBEB</color>
+
     <color name="window_background">#EEF0F2</color>
     <color name="email_thread_background">#FEFEFE</color>
     <color name="color_primary">#344955</color>

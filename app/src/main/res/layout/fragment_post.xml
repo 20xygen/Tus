@@ -41,7 +41,7 @@
 
                     <ImageView
                         android:layout_marginLeft="20dp"
-                        android:id="@+id/imageView2"
+                        android:id="@+id/post_icon"
                         android:layout_width="100dp"
                         android:layout_height="100dp"
                         android:src="@drawable/ip_file"

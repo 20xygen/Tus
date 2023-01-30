@@ -103,12 +103,40 @@
                 <TextView
                     android:layout_marginTop="15dp"
                     android:id="@+id/bio"
+                    android:textColor="@color/mid_green"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Описание профиля пользователя" />
+
+                <TextView
+                    android:layout_marginTop="15dp"
+                    android:id="@+id/tag_label"
                     android:textColor="@color/dark_green"
                     android:textSize="15dp"
                     android:textStyle="bold"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="TextView" />
+                    android:text="Навыки пользователя:" />
+
+
+                <include layout="@layout/fragment_tag_holder"
+                    android:layout_marginTop="15dp"
+                    android:layout_marginBottom="5dp"
+                    android:id="@+id/tag_holder"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+
+                <TextView
+                    android:layout_marginTop="5dp"
+                    android:id="@+id/projects_label"
+                    android:textColor="@color/dark_green"
+                    android:textSize="15dp"
+                    android:textStyle="bold"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Проекты пользователя:" />
 
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -120,8 +148,8 @@
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
                         android:layout_marginBottom="8dp"
-                        android:layout_marginTop="8dp"
-                        tools:listitem="@layout/post_skeleton_manage"
+                        android:layout_marginTop="10dp"
+                        tools:listitem="@layout/post_skeleton_profile"
                         app:layout_constraintBottom_toBottomOf="parent"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"

@@ -76,7 +76,7 @@
     <string name="tags_choosing_description">Для того, чтобы алгоритмы программы могли предлагать Вам наиболее интересные и полезные вам проекты, выберите из списка тегов те навыки, которыми Вы обладаете.</string>
     <string name="tags_choosing_description_more">Для того, чтобы алгоритмы программы могли предлагать Вам наиболее интересные и полезные вам проекты, выберите из списка тегов те навыки, которыми Вы обладаете. \n\nЕсли вы настройте соответствующий параметр в настройках, то другим пользователям также будет доступен к просмотру список ваших навыков (так администраторы проектов смогут определить, на сколько Вы подходите им в качестве участника проектной команды).</string>
 
-    <string name="tag_math_1">Мат. анализ</string>
+    <string name="tag_math_1">Т. вероятности</string>
     <string name="tag_math_2">Тригонометрия</string>
     <string name="tag_math_3">Стереометрия</string>
     <string name="tag_math_4">Планеметрия</string>
@@ -140,7 +140,7 @@
 
     <string name="tag_economy_1">Бухгалтерия</string>
     <string name="tag_economy_2">Маркетинг</string>
-    <string name="tag_economy_3">Биология</string>
+    <string name="tag_economy_3">Юреспруденция</string>
     <string name="tag_economy_4">Бизнес</string>
 
     <string name="tag_other_1">География</string>
@@ -149,7 +149,7 @@
     <string name="tag_other_4">Дизайн</string>
     <string name="tag_other_5">Химия</string>
     <string name="tag_other_6">Литература</string>
-    <string name="tag_other_7">Фильмология</string>
+    <string name="tag_other_7">Ветеринария</string>
     <string name="tag_other_8">Биология</string>
 
     <string name="tag_global_1">Моделирование</string>

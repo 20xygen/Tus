@@ -24,21 +24,21 @@
             android:layout_width="wrap_content"
             android:layout_height="20dp"
             android:layout_weight="1"
-            app:srcCompat="@drawable/line_left" />
+            app:srcCompat="@drawable/line_left_math" />
 
         <ImageView
             android:id="@+id/line2"
             android:layout_width="wrap_content"
             android:layout_height="20dp"
             android:layout_weight="1"
-            app:srcCompat="@drawable/line_mid" />
+            app:srcCompat="@drawable/line_mid_info" />
 
         <ImageView
             android:id="@+id/line3"
             android:layout_width="wrap_content"
             android:layout_height="20dp"
             android:layout_weight="1"
-            app:srcCompat="@drawable/line_right" />
+            app:srcCompat="@drawable/line_right_physics" />
     </LinearLayout>
 
     <ImageView
@@ -115,6 +115,17 @@
         app:layout_constraintEnd_toEndOf="@+id/bottom"
         app:layout_constraintTop_toBottomOf="@+id/like"
         app:srcCompat="@drawable/dislike" />
+
+    <Button
+        android:id="@+id/show"
+        android:layout_width="0dp"
+        android:layout_height="100dp"
+        android:background="#00FFFFFF"
+        android:text=""
+        app:layout_constraintBottom_toBottomOf="@+id/bottom"
+        app:layout_constraintEnd_toStartOf="@+id/like"
+        app:layout_constraintStart_toStartOf="@+id/bottom"
+        app:layout_constraintTop_toBottomOf="@+id/line" />
 
     <!--    <com.example.sutk.deprecated.LikeAnimButton-->
 <!--        android:layout_margin="10dp"-->
