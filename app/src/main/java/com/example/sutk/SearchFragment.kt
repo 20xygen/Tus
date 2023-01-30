@@ -5,18 +5,20 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.sutk.ManageAdapter
 import com.example.sutk.NotificationAdapter
+import com.example.sutk.R
 import com.example.sutk.SearchAdapter
-import com.example.sutk.databinding.FragmentNotificationsBinding
+import com.example.sutk.databinding.FragmentSearchBinding
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
  */
 class SearchFragment : Fragment() {
 
-    private var _binding: FragmentNotificationsBinding? = null
+    private var _binding: FragmentSearchBinding? = null
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -27,7 +29,7 @@ class SearchFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
 
-        _binding = FragmentNotificationsBinding.inflate(inflater, container, false)
+        _binding = FragmentSearchBinding.inflate(inflater, container, false)
         return binding.root
 
     }
@@ -37,6 +39,10 @@ class SearchFragment : Fragment() {
 
         binding.recyclerView.layoutManager = LinearLayoutManager(activity)
         binding.recyclerView.adapter = SearchAdapter(fillList())
+
+        binding.back.setOnClickListener {
+            findNavController().navigate(R.id.action_Search_to_Admin)
+        }
 //        binding.buttonFirst.setOnClickListener {
 //            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
 //        }

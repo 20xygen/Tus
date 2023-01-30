@@ -1,11 +1,18 @@
 package com.example.sutk
 
+import android.app.Activity
+import android.content.Context
+import com.example.sutk.Global.ManageFragment
 import java.math.BigInteger
 import java.security.MessageDigest
 
 class DataHolder {
     companion object {
         val ndt = 8 // numOfDefaultTags
+        var adapter: PostAdapter? = null
+        var context: Context? = null
+        var activity: Activity? = null
+        var manageFragment: ManageFragment? = null
 
         var mathTags = BooleanArray(6 + ndt)
         var physicsTags = BooleanArray(8 + ndt)

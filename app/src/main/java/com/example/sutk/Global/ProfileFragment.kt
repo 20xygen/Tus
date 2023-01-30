@@ -10,6 +10,8 @@ import com.example.sutk.DataHolder
 import com.example.sutk.Entering.IconListOperator
 import com.example.sutk.ManageAdapter
 import com.example.sutk.R
+import com.example.sutk.com.example.sutk.dto.Post.MainInfoPost
+import com.example.sutk.com.example.sutk.dto.Post.Post
 import com.example.sutk.databinding.FragmentProfileBinding
 
 /**
@@ -69,7 +71,7 @@ class ProfileFragment : Fragment() {
         }
 
         binding.recyclerView.layoutManager = LinearLayoutManager(activity)
-        binding.recyclerView.adapter = ManageAdapter(fillList())
+        binding.recyclerView.adapter = ManageAdapter(fillList(0))
 //        binding.buttonFirst.setOnClickListener {
 //            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
 //        }
@@ -84,5 +86,18 @@ class ProfileFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private fun fillList(k: Int): MutableList<Post> {
+        var data = mutableListOf<Post>()
+        var cur: Post? = null
+        for (i in 1+k..10+k){
+            cur = Post(i, "Название " + i.toString() + " проекта", "userTelegram",
+                "Здесь можно прочитать краткое описание  " + i.toString() + " проекта", listOf<Int>(), 0, 0,
+                listOf<String>(), listOf<MainInfoPost>(), listOf<MainInfoPost>())
+            println(cur.title)
+            data.add(cur)
+        }
+        return data
     }
 }

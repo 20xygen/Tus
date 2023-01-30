@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/ManageFragment">
+
+    <fragment
+        android:id="@+id/ManageFragment"
+        android:name="com.example.sutk.Global.ManageFragment"
+        tools:layout="@layout/fragment_manage">
+
+        <action
+            android:id="@+id/action_Manage_to_Admin"
+            app:destination="@id/AdmiPanelFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/AdmiPanelFragment"
+        android:name="com.example.sutk.AdmiPanelFragment"
+        tools:layout="@layout/fragment_admin_panel">
+
+        <action
+            android:id="@+id/action_Admin_to_Manage"
+            app:destination="@id/ManageFragment" />
+
+        <action
+            android:id="@+id/action_Admin_to_Search"
+            app:destination="@id/SearchFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/SearchFragment"
+        android:name="com.example.sutk.Global.SearchFragment"
+        tools:layout="@layout/fragment_search">
+
+        <action
+            android:id="@+id/action_Search_to_Admin"
+            app:destination="@id/AdmiPanelFragment" />
+    </fragment>
+
+
+</navigation>

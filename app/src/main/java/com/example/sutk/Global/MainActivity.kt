@@ -2,25 +2,30 @@ package com.example.sutk.Global
 
 import android.os.Build
 import android.os.Bundle
+import android.view.Menu
+import android.view.MenuItem
+import androidx.annotation.RequiresApi
+import androidx.appcompat.app.ActionBar
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.WindowCompat
+import androidx.core.view.WindowInsetsCompat
+import androidx.core.view.WindowInsetsControllerCompat
 import androidx.navigation.findNavController
 import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import androidx.navigation.ui.setupActionBarWithNavController
-import android.view.Menu
-import android.view.MenuItem
-import android.view.View
-import androidx.annotation.RequiresApi
-import androidx.core.view.WindowInsetsCompat
-import androidx.core.view.WindowInsetsControllerCompat
-import androidx.navigation.Navigation
-import androidx.navigation.fragment.findNavController
-import com.example.sutk.navigation.NavigationController
+import com.example.sutk.DataHolder
 import com.example.sutk.R
+import com.example.sutk.com.example.sutk.dto.User.User
 import com.example.sutk.databinding.ActivityMainBinding
+import com.example.sutk.navigation.NavigationController
+import kotlinx.coroutines.*
 
 class MainActivity : AppCompatActivity() {
+
+    companion object{
+        var res = User()
+    }
 
     private lateinit var appBarConfiguration: AppBarConfiguration
     private lateinit var binding: ActivityMainBinding
@@ -28,6 +33,7 @@ class MainActivity : AppCompatActivity() {
 
     @RequiresApi(Build.VERSION_CODES.R)
     override fun onCreate(savedInstanceState: Bundle?) {
+
         WindowCompat.setDecorFitsSystemWindows(window, false)
         super.onCreate(savedInstanceState)
         navController?.setContext(applicationContext)
@@ -36,18 +42,36 @@ class MainActivity : AppCompatActivity() {
 
         binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        DataHolder.context = applicationContext
+        DataHolder.activity = this
 
-        setSupportActionBar(binding.toolbar)
+//        setSupportActionBar(binding.toolbar)
+
+//        if (supportActionBar != null) {
+//            val actionBar: ActionBar? = supportActionBar
+//            actionBar?.setDisplayHomeAsUpEnabled(false)
+//        }
+
+//        val actionBar: android.app.ActionBar? = getActionBar()
+//        if (actionBar != null) {
+//            actionBar.setHomeButtonEnabled(false) // disable the button
+//            actionBar.setDisplayHomeAsUpEnabled(false) // remove the left caret
+//            actionBar.setDisplayShowHomeEnabled(false) // remove the icon
+//        }
+
+//        getActionBar()?.setDisplayHomeAsUpEnabled(false)
 
         val navController = findNavController(R.id.nav_host_fragment_content_main)
-        appBarConfiguration = AppBarConfiguration(navController.graph)
-        setupActionBarWithNavController(navController, appBarConfiguration)
+//        appBarConfiguration = AppBarConfiguration(navController.graph)
+//        setupActionBarWithNavController(navController, appBarConfiguration)
 
-        /*binding.fab.setOnClickListener { view ->
-            Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                .setAnchorView(R.id.fab)
-                .setAction("Action", null).show()
-        }*/
+//        CoroutineScope(Dispatchers.IO).launch{
+//            val user = Client.getUserById(0)
+//            withContext(Dispatchers.Main){
+//
+//            }
+//        }
+
     }
 
     @RequiresApi(Build.VERSION_CODES.R)
@@ -80,9 +104,9 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-    public fun activeAdminPanel(view: View){
-        Navigation.findNavController(this, R.id.nav_graph_pages).navigate(R.id.action_Pages_Manage_to_Admin)
-    }
+//    public fun activeAdminPanel(view: View){
+//        Navigation.findNavController(this, R.id.nav_graph_pages).navigate(R.id.action_Pages_Manage_to_Admin)
+//    }
 
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.nav_host_fragment_content_main)

@@ -3,16 +3,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph_pages"
-    app:startDestination="@id/FeedFragment">
+    app:startDestination="@id/FeedRootFragment">
 
     <fragment
-        android:id="@+id/FeedFragment"
-        android:name="com.example.sutk.Global.FeedFragment"
-        tools:layout="@layout/fragment_feed">
+        android:id="@+id/FeedRootFragment"
+        android:name="com.example.sutk.Global.FeedRootFragment"
+        tools:layout="@layout/fragment_feed_root">
 
         <action
             android:id="@+id/action_Pages_1_to_2"
-            app:destination="@id/ManageFragment" />
+            app:destination="@id/ManageRootFragment" />
 
         <action
             android:id="@+id/action_Pages_1_to_3"
@@ -20,21 +20,21 @@
 
         <action
             android:id="@+id/action_Pages_1_to_4"
-            app:destination="@id/NotificationsFragment" />
+            app:destination="@id/NotificationsRootFragment" />
 
         <action
             android:id="@+id/action_Pages_1_to_5"
-            app:destination="@id/ProfileFragment" />
+            app:destination="@id/ProfileRootFragment" />
     </fragment>
 
     <fragment
-        android:id="@+id/ManageFragment"
-        android:name="com.example.sutk.Global.ManageFragment"
-        tools:layout="@layout/fragment_manage">
+        android:id="@+id/ManageRootFragment"
+        android:name="com.example.sutk.Global.ManageRootFragment"
+        tools:layout="@layout/fragment_manage_root">
 
         <action
             android:id="@+id/action_Pages_2_to_1"
-            app:destination="@id/FeedFragment" />
+            app:destination="@id/FeedRootFragment" />
 
         <action
             android:id="@+id/action_Pages_2_to_3"
@@ -42,48 +42,44 @@
 
         <action
             android:id="@+id/action_Pages_2_to_4"
-            app:destination="@id/NotificationsFragment" />
+            app:destination="@id/NotificationsRootFragment" />
 
         <action
             android:id="@+id/action_Pages_2_to_5"
-            app:destination="@id/ProfileFragment" />
-
-        <action
-            android:id="@+id/action_Pages_Manage_to_Admin"
-            app:destination="@id/AdminPanelFragment" />
+            app:destination="@id/ProfileRootFragment" />
 
     </fragment>
 
     <fragment
         android:id="@+id/CreateFragment"
-        android:name="com.example.sutk.Global.PostFragment"
-        tools:layout="@layout/fragment_post">
+        android:name="com.example.sutk.Global.PostRootFragment"
+        tools:layout="@layout/fragment_post_root">
 
         <action
             android:id="@+id/action_Pages_3_to_2"
-            app:destination="@id/ManageFragment" />
+            app:destination="@id/ManageRootFragment" />
 
         <action
             android:id="@+id/action_Pages_3_to_1"
-            app:destination="@id/FeedFragment" />
+            app:destination="@id/FeedRootFragment" />
 
         <action
             android:id="@+id/action_Pages_3_to_4"
-            app:destination="@id/NotificationsFragment" />
+            app:destination="@id/NotificationsRootFragment" />
 
         <action
             android:id="@+id/action_Pages_3_to_5"
-            app:destination="@id/ProfileFragment" />
+            app:destination="@id/ProfileRootFragment" />
     </fragment>
 
     <fragment
-        android:id="@+id/NotificationsFragment"
-        android:name="com.example.sutk.Global.NotificationsFragment"
+        android:id="@+id/NotificationsRootFragment"
+        android:name="com.example.sutk.Global.NotificationsRootFragment"
         tools:layout="@layout/fragment_notifications">
 
         <action
             android:id="@+id/action_Pages_4_to_2"
-            app:destination="@id/ManageFragment" />
+            app:destination="@id/ManageRootFragment" />
 
         <action
             android:id="@+id/action_Pages_4_to_3"
@@ -91,21 +87,21 @@
 
         <action
             android:id="@+id/action_Pages_4_to_1"
-            app:destination="@id/FeedFragment" />
+            app:destination="@id/FeedRootFragment" />
 
         <action
             android:id="@+id/action_Pages_4_to_5"
-            app:destination="@id/ProfileFragment" />
+            app:destination="@id/ProfileRootFragment" />
     </fragment>
 
     <fragment
-        android:id="@+id/ProfileFragment"
-        android:name="com.example.sutk.Global.ProfileFragment"
+        android:id="@+id/ProfileRootFragment"
+        android:name="com.example.sutk.Global.ProfileRootFragment"
         tools:layout="@layout/fragment_profile">
 
         <action
             android:id="@+id/action_Pages_5_to_2"
-            app:destination="@id/ManageFragment" />
+            app:destination="@id/ManageRootFragment" />
 
         <action
             android:id="@+id/action_Pages_5_to_3"
@@ -113,20 +109,11 @@
 
         <action
             android:id="@+id/action_Pages_5_to_4"
-            app:destination="@id/NotificationsFragment" />
+            app:destination="@id/NotificationsRootFragment" />
 
         <action
             android:id="@+id/action_Pages_5_to_1"
-            app:destination="@id/FeedFragment" />
+            app:destination="@id/FeedRootFragment" />
     </fragment>
 
-    <fragment
-        android:id="@+id/AdminPanelFragment"
-        android:name="com.example.sutk.AdmiPanelFragment"
-        tools:layout="@layout/fragment_admin_panel">
-
-        <action
-            android:id="@+id/action_Pages_Admin_to_Manage"
-            app:destination="@id/ManageFragment" />
-    </fragment>
 </navigation>

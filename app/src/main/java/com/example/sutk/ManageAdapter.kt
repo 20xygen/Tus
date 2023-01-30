@@ -1,16 +1,23 @@
 package com.example.sutk
 
+import android.app.Activity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
+import com.example.sutk.com.example.sutk.dto.Post.Post
 
-class ManageAdapter(private val names: List<String>) : RecyclerView
+class ManageAdapter(private val items: MutableList<Post>) : RecyclerView
 .Adapter<ManageAdapter.MyViewHolder>() {
 
     class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val label: TextView = itemView.findViewById(R.id.label)
+        val settings: ImageView = itemView.findViewById(R.id.settings)
+        val description: TextView = itemView.findViewById(R.id.description)
 
     }
 
@@ -21,10 +28,30 @@ class ManageAdapter(private val names: List<String>) : RecyclerView
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        holder.label.text = names[position]
+        holder.label.text = items[position].title
+        println(items[position].title)
+        holder.description.text = items[position].body
+        holder.settings.setOnClickListener(object : View.OnClickListener {
+            override fun onClick(v: View?) {
+                // Toast.makeText(DataHolder.context, "Открытие настроек", Toast.LENGTH_SHORT).show()
+                DataHolder.manageFragment?.switchToAdminPanel()
+            }
+        })
+
     }
 
-    override fun getItemCount() = names.size
+
+    fun addItem(item: Post){
+        items.add(item)
+        notifyItemInserted(items.size - 1)
+    }
+
+    fun addRange(itemRange: MutableList<Post>){
+        items.addAll(itemRange)
+        notifyItemRangeInserted(items.size - itemRange.size, itemRange.size)
+    }
+
+    override fun getItemCount() = items.size
 }
 
 //        val description: TextView = itemView.findViewById(R.id.description)

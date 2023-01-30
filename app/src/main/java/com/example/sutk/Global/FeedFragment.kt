@@ -7,10 +7,18 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.sutk.Client.Client
+import com.example.sutk.DataHolder
 import com.example.sutk.PostAdapter
-import com.example.sutk.com.example.sutk.Global.ItemSkeleton
+import com.example.sutk.com.example.sutk.dto.Post.MainInfoPost
+import com.example.sutk.com.example.sutk.dto.Post.Post
+import com.example.sutk.com.example.sutk.dto.User.User
 import com.example.sutk.navigation.NavigationController
 import com.example.sutk.databinding.FragmentFeedBinding
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
@@ -36,26 +44,33 @@ class FeedFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        // DataHolder.context =
         binding.recyclerView.layoutManager = LinearLayoutManager(activity)
         var adapter = PostAdapter(fillList(0))
+        DataHolder.adapter = adapter
         binding.recyclerView.adapter = adapter
-        adapter.addRange(fillList(5))
 
 
-        navController?.setController(findNavController())
-//        binding.buttonFirst.setOnClickListener {
-//            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+
+//        CoroutineScope(Dispatchers.IO).launch {
+//            val user = Client.getUserById(0)
+//            withContext(Dispatchers.Main){
+//                adapter.addItem(user)
+//            }
 //        }
-//        binding.recycle_inbox
+
+//        navController?.setController(findNavController())
+
     }
 
-    private fun fillList(k: Int): MutableList<ItemSkeleton> {
-        var data = mutableListOf<ItemSkeleton>()
-        var cur: ItemSkeleton? = null
-        for (i in 1+k..5+k){
-            cur = ItemSkeleton("Название" +  i.toString() + "проекта", 0, "Полное описание проекта", "Краткое описание проекта", i, "Мистер Никто", "TWNTxygen", 0)
-            println(cur.label)
+    private fun fillList(k: Int): MutableList<Post> {
+        var data = mutableListOf<Post>()
+        var cur: Post? = null
+        for (i in 1+k..10+k){
+            cur = Post(i, "Название " + i.toString() + " проекта", "userTelegram",
+                "Здесь можно прочитать краткое описание  " + i.toString() + " проекта", listOf<Int>(), 0, 0,
+                listOf<String>(), listOf<MainInfoPost>(), listOf<MainInfoPost>())
+            println(cur.title)
             data.add(cur)
         }
         return data

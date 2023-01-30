@@ -29,15 +29,16 @@
         android:elevation="4dp"
         android:padding="12dp"
         app:bnc_mode="spread"
+        app:layout_constraintTop_toBottomOf="@id/nav_host_fragment_content_pages"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent">
 
         <com.example.sutk.navigation.BubbleToggleView
-            android:onClick="feedClick"
             android:id="@+id/feed_item"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="feedClick"
             app:bt_active="true"
             app:bt_colorActive="@color/design_default_color_secondary"
             app:bt_colorInactive="@color/design_default_color_secondary_variant"
@@ -45,13 +46,13 @@
             app:bt_padding="15dp"
             app:bt_shape="@drawable/transition_background_drawable_home"
             app:bt_title="Home"
-            app:bt_titlePadding="10dp"/>
+            app:bt_titlePadding="10dp" />
 
         <com.example.sutk.navigation.BubbleToggleView
-            android:onClick="manageClick"
             android:id="@+id/manage_item"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="manageClick"
             app:bt_active="true"
             app:bt_colorActive="@color/design_default_color_secondary"
             app:bt_colorInactive="@color/design_default_color_secondary_variant"
@@ -59,13 +60,13 @@
             app:bt_padding="15dp"
             app:bt_shape="@drawable/transition_background_drawable_home"
             app:bt_title="Home"
-            app:bt_titlePadding="10dp"/>
+            app:bt_titlePadding="10dp" />
 
         <com.example.sutk.navigation.BubbleToggleView
-            android:onClick="postClick"
             android:id="@+id/post_item"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="postClick"
             app:bt_active="true"
             app:bt_colorActive="@color/design_default_color_secondary"
             app:bt_colorInactive="@color/design_default_color_secondary_variant"
@@ -73,13 +74,13 @@
             app:bt_padding="15dp"
             app:bt_shape="@drawable/transition_background_drawable_home"
             app:bt_title="Home"
-            app:bt_titlePadding="10dp"/>
+            app:bt_titlePadding="10dp" />
 
         <com.example.sutk.navigation.BubbleToggleView
-            android:onClick="notificationClick"
             android:id="@+id/notification_item"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="notificationClick"
             app:bt_active="true"
             app:bt_colorActive="@color/design_default_color_secondary"
             app:bt_colorInactive="@color/design_default_color_secondary_variant"
@@ -87,13 +88,13 @@
             app:bt_padding="15dp"
             app:bt_shape="@drawable/transition_background_drawable_home"
             app:bt_title="Home"
-            app:bt_titlePadding="10dp"/>
+            app:bt_titlePadding="10dp" />
 
         <com.example.sutk.navigation.BubbleToggleView
-            android:onClick="profileClick"
             android:id="@+id/profile_item"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:onClick="profileClick"
             app:bt_active="true"
             app:bt_colorActive="@color/design_default_color_secondary"
             app:bt_colorInactive="@color/design_default_color_secondary_variant"
@@ -101,13 +102,13 @@
             app:bt_padding="15dp"
             app:bt_shape="@drawable/transition_background_drawable_home"
             app:bt_title="Home"
-            app:bt_titlePadding="10dp"/>
+            app:bt_titlePadding="10dp" />
 
         <!-- Add more child items here - max upto 5 -->
 
     </com.example.sutk.navigation.BubbleNavigationConstraintView>
 
-<!--    <TextView-->
+    <!--    <TextView-->
 <!--        android:id="@+id/textView"-->
 <!--        android:layout_width="wrap_content"-->
 <!--        android:layout_height="wrap_content"-->

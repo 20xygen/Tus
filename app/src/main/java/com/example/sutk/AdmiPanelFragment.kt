@@ -34,16 +34,20 @@ class AdmiPanelFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        binding.search.setOnClickListener {
+            findNavController().navigate(R.id.action_Admin_to_Search)
+        }
+
         binding.buttonOk.setOnClickListener {
-            findNavController().navigate(R.id.action_Pages_Admin_to_Manage)
+            findNavController().navigate(R.id.action_Admin_to_Manage)
         }
 
         binding.buttonCancel.setOnClickListener {
-            findNavController().navigate(R.id.action_Pages_Admin_to_Manage)
+            findNavController().navigate(R.id.action_Admin_to_Manage)
         }
 
         binding.buttonDelete.setOnClickListener {
-            findNavController().navigate(R.id.action_Pages_Admin_to_Manage)
+            findNavController().navigate(R.id.action_Admin_to_Manage)
         }
     }
 
