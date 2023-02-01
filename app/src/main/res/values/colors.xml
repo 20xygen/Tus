@@ -21,6 +21,8 @@
     <color name="tag_medicine">#9C27B0</color>
     <color name="tag_economy">#2196F3</color>
     <color name="tag_other">#707070</color>
+    <color name="user">#00AFBF</color>
+    <color name="user_major">#4900BF</color>
 
     <color name="tag_math_back">#FFE7E6</color>
     <color name="tag_physics_back">#E4E8FF</color>
@@ -30,6 +32,8 @@
     <color name="tag_medicine_back">#FADBFF</color>
     <color name="tag_economy_back">#DDF0FF</color>
     <color name="tag_other_back">#EBEBEB</color>
+    <color name="user_back">#D2F0EC</color>
+    <color name="user_major_back">#DEC9FF</color>
 
     <color name="window_background">#EEF0F2</color>
     <color name="email_thread_background">#FEFEFE</color>

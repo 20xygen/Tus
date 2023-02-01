@@ -1,26 +1,28 @@
 package com.example.sutk.Client
 
-
-import com.example.sutk.com.example.sutk.dto.Mark.Mark
-import com.example.sutk.com.example.sutk.dto.Post.*
-import com.example.sutk.com.example.sutk.dto.Response.Response
-import com.example.sutk.com.example.sutk.dto.User.*
-import com.example.sutk.dto.User.UserLoginParams
-import com.example.sutk.dto.User.UserMark
-import  io.ktor.client.HttpClient
+import com.example.sutk.dto.Mark.Mark
+import com.example.sutk.dto.Post.*
+import com.example.sutk.dto.Response.Response
+import com.example.sutk.dto.User.*
+import com.google.gson.GsonBuilder
+import io.ktor.client.*
+import io.ktor.client.call.*
 import io.ktor.client.engine.android.*
 import io.ktor.client.features.json.*
 import io.ktor.client.request.*
+import io.ktor.client.response.*
 import io.ktor.http.*
+import io.ktor.util.*
 import kotlinx.coroutines.*
+
 
 class Client {
     companion object {
         private val baseURL = "http://192.168.43.231:8080"
-        private val user = "$baseURL/user/"
-        private val post = "$baseURL/post/"
-        private val team = "$baseURL/team/"
-        private val recommendation = "$baseURL/recommend/"
+        private val user = "$baseURL/user"
+        private val post = "$baseURL/post"
+        private val team = "$baseURL/team"
+        private val recommendation = "$baseURL/recommend"
 
         val client = HttpClient(Android) {
             install(JsonFeature){
@@ -99,8 +101,14 @@ class Client {
                 body = userLoginParams
             }
 
-        suspend fun getPostById(id: Int): MainInfoPost =
-            client.get("$post/$id")
+        suspend fun getPostById(id: Int): Post {
+            val response = client.call("$post/$id").response.readText(charset("UTF-8"))
+            val builder = GsonBuilder()
+            val gson = builder.create()
+            val res: Post = gson.fromJson(response, Post::class.java)
+            return res
+        }
+
 
         suspend fun getPostTeamById(id: Int): PostTeam =
             client.get("$post/team/$id")
@@ -120,7 +128,7 @@ class Client {
                 body = mark
             }
 
-        suspend fun updatePost(newPost:MainInfoPost) : Any? =
+        suspend fun updatePost(newPost: Post) : Any? =
             client.put("$post/update") {
                 contentType(ContentType.Application.Json)
                 body = newPost

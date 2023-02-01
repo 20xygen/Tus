@@ -18,8 +18,8 @@ import androidx.navigation.ui.AppBarConfiguration
 import androidx.navigation.ui.navigateUp
 import com.example.sutk.DataHolder
 import com.example.sutk.R
-import com.example.sutk.com.example.sutk.dto.User.User
 import com.example.sutk.databinding.ActivityMainBinding
+import com.example.sutk.dto.User.User
 import com.example.sutk.navigation.NavigationController
 import kotlinx.coroutines.*
 

@@ -5,6 +5,8 @@ import android.content.Context
 import com.example.sutk.Global.FeedFragment
 import com.example.sutk.Global.ManageFragment
 import com.example.sutk.Global.ProfileFragment
+import com.example.sutk.dto.Post.Post
+import com.example.sutk.dto.Tag.Tag
 import java.math.BigInteger
 import java.security.MessageDigest
 
@@ -27,6 +29,14 @@ class DataHolder {
         var medicineTags = BooleanArray(8 + ndt)
         var economyTags = BooleanArray(4 + ndt)
         var otherTags = BooleanArray(8 + ndt)
+
+//        val stack = ArrayDeque(listOf(1, 2, 3)) // stack: [1, 2, 3]
+//        stack.addLast(0)                        // stack: [1, 2, 3, 0]         (push)
+//        val value = stack.removeLast()
+
+        var postToScreen: Map<String, ArrayDeque<Post>> = mapOf("feed" to ArrayDeque<Post>(listOf()), "manage" to ArrayDeque<Post>(listOf()), "notifications" to ArrayDeque<Post>(listOf()), "profile" to ArrayDeque<Post>(listOf()))
+        var postToScreenLast = "feed"
+        var listOfAllTags: List<Tag>? = listOf(Tag("Тригонометрия", "Математика"), Tag("Тригонометрия", "Математика"), Tag("Тригонометрия", "Математика"))
 
         var registered = false
 
@@ -67,6 +77,19 @@ class DataHolder {
 
         fun getTags(): List<BooleanArray> {
             return listOf(mathTags, physicsTags, infoTags, isTags, langTags, medicineTags, economyTags, otherTags)
+        }
+
+        fun tagRefactor(s: String): String{
+            var n: String = ""
+            for (i in 1..s.length){
+                if (s[i-1] != '(') {
+                    n += s[i-1]
+                }
+                else{
+                    break
+                }
+            }
+            return n
         }
 
         fun getStringTags(): String {

@@ -9,7 +9,8 @@ import android.widget.ImageView
 import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
-import com.example.sutk.com.example.sutk.dto.Post.Post
+import com.example.sutk.Entering.IconListOperator
+import com.example.sutk.dto.Post.Post
 
 class PostAdapter(private val items: MutableList<Post>) : RecyclerView
 .Adapter<PostAdapter.MyViewHolder>() {
@@ -23,6 +24,7 @@ class PostAdapter(private val items: MutableList<Post>) : RecyclerView
         var line1: ImageView = itemView.findViewById(R.id.line1)
         var line2: ImageView = itemView.findViewById(R.id.line2)
         var line3: ImageView = itemView.findViewById(R.id.line3)
+        var icon: ImageView = itemView.findViewById(R.id.picture)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MyViewHolder {
@@ -47,39 +49,44 @@ class PostAdapter(private val items: MutableList<Post>) : RecyclerView
         })
         holder.show.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {
+                DataHolder.postToScreenLast = "feed"
+                DataHolder.postToScreen["feed"]?.addLast(items[holder.adapterPosition])
                 DataHolder.feedFragment?.switchToProject()
             }
         })
 
-        when (items[position].tagList[0]){
-            "0" -> holder.line1.setImageResource(R.drawable.line_left_math)
-            "1" -> holder.line1.setImageResource(R.drawable.line_left_physics)
-            "2" -> holder.line1.setImageResource(R.drawable.line_left_info)
-            "3" -> holder.line1.setImageResource(R.drawable.line_left_is)
-            "4" -> holder.line1.setImageResource(R.drawable.line_left_lang)
-            "5" -> holder.line1.setImageResource(R.drawable.line_left_medicine)
-            "6" -> holder.line1.setImageResource(R.drawable.line_left_economy)
-            "7" -> holder.line1.setImageResource(R.drawable.line_left_other)
+        IconListOperator().setPostIcon(holder.icon, items[position].icon)
+        println(items[position].icon)
+
+        when (items[position].tagList[0].subject){
+            "Математика" -> holder.line1.setImageResource(R.drawable.line_left_math)
+            "Физика" -> holder.line1.setImageResource(R.drawable.line_left_physics)
+            "Информатика" -> holder.line1.setImageResource(R.drawable.line_left_info)
+            "ИБ" -> holder.line1.setImageResource(R.drawable.line_left_is)
+            "Лингвистика" -> holder.line1.setImageResource(R.drawable.line_left_lang)
+            "Медицина" -> holder.line1.setImageResource(R.drawable.line_left_medicine)
+            "Экономика" -> holder.line1.setImageResource(R.drawable.line_left_economy)
+            "Другое" -> holder.line1.setImageResource(R.drawable.line_left_other)
         }
-        when (items[position].tagList[1]){
-            "0" -> holder.line2.setImageResource(R.drawable.line_mid_math)
-            "1" -> holder.line2.setImageResource(R.drawable.line_mid_physics)
-            "2" -> holder.line2.setImageResource(R.drawable.line_mid_info)
-            "3" -> holder.line2.setImageResource(R.drawable.line_mid_is)
-            "4" -> holder.line2.setImageResource(R.drawable.line_mid_lang)
-            "5" -> holder.line2.setImageResource(R.drawable.line_mid_medicine)
-            "6" -> holder.line2.setImageResource(R.drawable.line_mid_economy)
-            "7" -> holder.line2.setImageResource(R.drawable.line_mid_other)
+        when (items[position].tagList[1].subject){
+            "Математика" -> holder.line2.setImageResource(R.drawable.line_mid_math)
+            "Физика" -> holder.line2.setImageResource(R.drawable.line_mid_physics)
+            "Информатика" -> holder.line2.setImageResource(R.drawable.line_mid_info)
+            "ИБ" -> holder.line2.setImageResource(R.drawable.line_mid_is)
+            "Лингвистика" -> holder.line2.setImageResource(R.drawable.line_mid_lang)
+            "Медицина" -> holder.line2.setImageResource(R.drawable.line_mid_medicine)
+            "Экономика" -> holder.line2.setImageResource(R.drawable.line_mid_economy)
+            "Другое" -> holder.line2.setImageResource(R.drawable.line_mid_other)
         }
-        when (items[position].tagList[2]){
-            "0" -> holder.line3.setImageResource(R.drawable.line_right_math)
-            "1" -> holder.line3.setImageResource(R.drawable.line_right_physics)
-            "2" -> holder.line3.setImageResource(R.drawable.line_right_info)
-            "3" -> holder.line3.setImageResource(R.drawable.line_right_is)
-            "4" -> holder.line3.setImageResource(R.drawable.line_right_lang)
-            "5" -> holder.line3.setImageResource(R.drawable.line_right_medicine)
-            "6" -> holder.line3.setImageResource(R.drawable.line_right_economy)
-            "7" -> holder.line3.setImageResource(R.drawable.line_right_other)
+        when (items[position].tagList[2].subject){
+            "Математика" -> holder.line3.setImageResource(R.drawable.line_right_math)
+            "Физика" -> holder.line3.setImageResource(R.drawable.line_right_physics)
+            "Информатика" -> holder.line3.setImageResource(R.drawable.line_right_info)
+            "ИБ" -> holder.line3.setImageResource(R.drawable.line_right_is)
+            "Лингвистика" -> holder.line3.setImageResource(R.drawable.line_right_lang)
+            "Медицина" -> holder.line3.setImageResource(R.drawable.line_right_medicine)
+            "Экономика" -> holder.line3.setImageResource(R.drawable.line_right_economy)
+            "Другое" -> holder.line3.setImageResource(R.drawable.line_right_other)
         }
     }
 

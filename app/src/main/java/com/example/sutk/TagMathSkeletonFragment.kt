@@ -11,6 +11,7 @@ class TagMathSkeletonFragment : Fragment() {
 
     private var _binding: TagMathSkeletonBinding? = null
     private val binding get() = _binding!!
+    private var title: String? = null
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -28,6 +29,12 @@ class TagMathSkeletonFragment : Fragment() {
 
     override fun onDestroyView() {
         super.onDestroyView()
+        binding.textView.text = title
         _binding = null
     }
+
+    fun setTitle(s: String) {
+        this.title = s
+    }
+
 }

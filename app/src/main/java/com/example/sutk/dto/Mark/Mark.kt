@@ -1,4 +1,4 @@
-package com.example.sutk.com.example.sutk.dto.Mark
+package com.example.sutk.dto.Mark
 
 data class Mark(
     val postId: Int = 0,
