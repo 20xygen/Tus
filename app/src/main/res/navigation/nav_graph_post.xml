@@ -14,6 +14,10 @@
             android:id="@+id/action_PostFragment_to_SelectingPostIconFragment"
             app:destination="@id/SelectingPostIconFragment" />
 
+        <action
+            android:id="@+id/action_PostFragment_to_PostCreatedFragment"
+            app:destination="@id/PostCreatedFragment" />
+
     </fragment>
 
     <fragment
@@ -23,6 +27,16 @@
 
         <action
             android:id="@+id/action_SelectingPostIconFragment_to_PostFragment"
+            app:destination="@id/PostFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/PostCreatedFragment"
+        android:name="com.example.sutk.Entering.PostCreatedFragment"
+        tools:layout="@layout/post_created">
+
+        <action
+            android:id="@+id/action_PostCreatedFragment_to_PostFragment"
             app:destination="@id/PostFragment" />
     </fragment>
 

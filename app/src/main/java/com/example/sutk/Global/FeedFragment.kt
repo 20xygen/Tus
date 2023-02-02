@@ -59,13 +59,10 @@ class FeedFragment : Fragment() {
             binding.recyclerView.adapter = adapter
 
 
-            for (i in 0 until 2) {
-                CoroutineScope(Dispatchers.IO).launch {
-                    val post = Client.getPostById(i)
-                    println(post.toString())
-                    withContext(Dispatchers.Main) {
-                        adapter.addItem(post)
-                    }
+            CoroutineScope(Dispatchers.IO).launch {
+                val post = Client.getAllPosts()
+                withContext(Dispatchers.Main) {
+                    adapter.addRange(post?.toMutableList() ?: mutableListOf())
                 }
             }
 

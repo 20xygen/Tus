@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.sutk.Client.Client
 import com.example.sutk.DataHolder
 import com.example.sutk.Entering.IconListOperator
 import com.example.sutk.ManageAdapter
@@ -17,6 +18,10 @@ import com.example.sutk.dto.Post.MainInfoPost
 import com.example.sutk.dto.Post.Post
 import com.example.sutk.dto.Tag.Tag
 import com.example.sutk.dto.User.User
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
@@ -45,14 +50,19 @@ class ProfileFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        if ((DataHolder.name == null) or (DataHolder.name == "")) binding.name.setText("Безымянный Искатель")
-        else binding.name.setText(DataHolder.name)
-        if ((DataHolder.nickname == null) or (DataHolder.nickname == "")) binding.nick.setText("")
-        else binding.nick.setText("@" + DataHolder.nickname)
-        if ((DataHolder.telegram == null) or (DataHolder.telegram == "")) binding.telegram.setText("")
-        else binding.telegram.setText("@" + DataHolder.telegram)
-        if ((DataHolder.bio == null) or (DataHolder.bio == "")) binding.bio.setText("Чтобы найти кого-то, не нужно называться кем-то...")
-        else binding.bio.setText(DataHolder.bio)
+//        if ((DataHolder.name == null) or (DataHolder.name == "")) binding.titleLabel.setText("Безымянный Искатель")
+//        else binding.titleLabel.setText(DataHolder.name)
+//        if ((DataHolder.nickname == null) or (DataHolder.nickname == "")) binding.nick.setText("")
+//        else binding.nick.setText("@" + DataHolder.nickname)
+//        if ((DataHolder.telegram == null) or (DataHolder.telegram == "")) binding.telegram.setText("")
+//        else binding.telegram.setText("@" + DataHolder.telegram)
+//        if ((DataHolder.bio == null) or (DataHolder.bio == "")) binding.bio.setText("Чтобы найти кого-то, не нужно называться кем-то...")
+//        else binding.bio.setText(DataHolder.bio)
+
+        binding.titleLabel.setText(DataHolder.ultimateUser?.name)
+        binding.nick.setText(DataHolder.ultimateUser?.login)
+        binding.telegram.setText(DataHolder.ultimateUser?.tg)
+        binding.bio.setText(DataHolder.ultimateUser?.description)
 
         DataHolder.profileFragment = this
 
@@ -80,11 +90,28 @@ class ProfileFragment : Fragment() {
             20 -> binding.imageView2.setImageResource(R.drawable.icon_yoda)
         }
 
+        var adapter = ProfileAdapter(mutableListOf())
         binding.recyclerView.layoutManager = LinearLayoutManager(activity)
-        binding.recyclerView.adapter = ProfileAdapter(customFillList())
+        binding.recyclerView.adapter = adapter
+        CoroutineScope(Dispatchers.IO).launch {
+            val user = Client.getUserById(2)
+            withContext(Dispatchers.Main){
+                DataHolder.user = user
+            }
+        }
 //        binding.buttonFirst.setOnClickListener {
 //            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
 //        }
+        CoroutineScope(Dispatchers.IO).launch {
+            val userPost = Client.getUserPostById(2)
+            val post = mutableListOf<Post>()
+            for (i in userPost.postList) {
+                post.add(Client.getPostById(i))
+            }
+            withContext(Dispatchers.Main) {
+                adapter.addRange(post)
+            }
+        }
     }
 
     private fun customFillList(): MutableList<Post>{

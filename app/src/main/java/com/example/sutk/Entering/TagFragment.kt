@@ -10,10 +10,16 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.RecyclerView
+import com.example.sutk.Client.Client
 import com.example.sutk.DataHolder
 import com.example.sutk.R
 import com.example.sutk.databinding.FragmentTagBinding
+import com.example.sutk.dto.Tag.Tag
 import com.github.okdroid.checkablechipview.CheckableChipView
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 import me.saket.inboxrecyclerview.animation.ItemExpandAnimator
 import me.saket.inboxrecyclerview.dimming.DimPainter
 import me.saket.inboxrecyclerview.page.PageCollapseEligibilityHapticFeedback
@@ -31,6 +37,20 @@ class TagFragment  : Fragment() {
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
+//        CoroutineScope(Dispatchers.IO).launch {
+//            val allTag = Client.getAllTag()
+//            println(allTag)
+//        }
+
+        CoroutineScope(Dispatchers.IO).launch {
+            val allTag = Client.getAllTag()
+            println(allTag)
+            println("+")
+            withContext(Dispatchers.Main){
+                for (i in allTag) DataHolder.listOfAllTags?.add(i)
+            }
+        }
 
         _binding = FragmentTagBinding.inflate(inflater, container, false)
         return binding.root
@@ -63,15 +83,26 @@ class TagFragment  : Fragment() {
 //            }
 //            Log.w("Math1", binding.math1.isChecked.toString())
 //            print(binding.math1.id)
+            var countOfSubject: List<Int> = listOf(6 + DataHolder.ndt, 8 + DataHolder.ndt,
+                14 + DataHolder.ndt, 10 + DataHolder.ndt, 10 + DataHolder.ndt,
+                8 + DataHolder.ndt, 4 + DataHolder.ndt, 8 + DataHolder.ndt)
+            var prefCountOfSubject: MutableList<Int> = mutableListOf(0, 0, 0, 0, 0, 0, 0, 0)
+            for (i in 1 until prefCountOfSubject.size) prefCountOfSubject[i] = prefCountOfSubject[i-1] + countOfSubject[i-1]
 
-            var mathTags = BooleanArray(6 + DataHolder.ndt)
-            var physicsTags = BooleanArray(8 + DataHolder.ndt)
-            var infoTags = BooleanArray(14 + DataHolder.ndt)
-            var isTags = BooleanArray(10 + DataHolder.ndt)
-            var langTags = BooleanArray(10 + DataHolder.ndt)
-            var medicineTags = BooleanArray(8 + DataHolder.ndt)
-            var economyTags = BooleanArray(4 + DataHolder.ndt)
-            var otherTags = BooleanArray(8 + DataHolder.ndt)
+            var mathTags = mutableListOf<Boolean>(); for (i in 0 until countOfSubject[0]) mathTags.add(false)
+            var physicsTags = mutableListOf<Boolean>(); for (i in 0 until countOfSubject[1]) physicsTags.add(false)
+            var infoTags = mutableListOf<Boolean>(); for (i in 0 until countOfSubject[2]) infoTags.add(false)
+            var isTags = mutableListOf<Boolean>(); for (i in 0 until countOfSubject[3]) isTags.add(false)
+            var langTags = mutableListOf<Boolean>(); for (i in 0 until countOfSubject[4]) langTags.add(false)
+            var medicineTags = mutableListOf<Boolean>(); for (i in 0 until countOfSubject[5]) medicineTags.add(false)
+            var economyTags = mutableListOf<Boolean>(); for (i in 0 until countOfSubject[6]) economyTags.add(false)
+            var otherTags = mutableListOf<Boolean>(); for (i in 0 until countOfSubject[7]) otherTags.add(false)
+
+
+            println(DataHolder.listOfAllTags)
+            var tagList: MutableList<Tag> = DataHolder.listOfAllTags as MutableList<Tag>
+
+            // DataHolder.listOfAllTags = tagList
 
             mathTags[0] = binding.math1.isChecked
             mathTags[1] = binding.math2.isChecked
@@ -213,6 +244,21 @@ class TagFragment  : Fragment() {
             DataHolder.medicineTags = medicineTags
             DataHolder.economyTags = economyTags
             DataHolder.otherTags = otherTags
+
+            println(tagList)
+            println(tagList.size)
+
+            var userTags = mutableListOf<Tag>()
+            for (i in 0 until mathTags.size) if (mathTags[i]) userTags.add(tagList[prefCountOfSubject[0] + i])
+            for (i in 0 until physicsTags.size) if (physicsTags[i]) userTags.add(tagList[prefCountOfSubject[1] + i])
+            for (i in 0 until infoTags.size) if (infoTags[i]) userTags.add(tagList[prefCountOfSubject[2] + i])
+            for (i in 0 until isTags.size) if (isTags[i]) userTags.add(tagList[prefCountOfSubject[3] + i])
+            for (i in 0 until langTags.size) if (langTags[i]) userTags.add(tagList[prefCountOfSubject[4] + i])
+            for (i in 0 until medicineTags.size) if (medicineTags[i]) userTags.add(tagList[prefCountOfSubject[5] + i])
+            for (i in 0 until economyTags.size) if (economyTags[i]) userTags.add(tagList[prefCountOfSubject[6] + i])
+            for (i in 0 until otherTags.size) if (otherTags[i]) userTags.add(tagList[prefCountOfSubject[7] + i])
+            DataHolder.userTags = userTags
+            println(DataHolder.userTags)
 
             findNavController().navigate(R.id.action_TagFragment_to_MainFragment)
         }

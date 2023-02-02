@@ -50,7 +50,7 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
-                        android:id="@+id/name"
+                        android:id="@+id/title_label"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="160dp"
@@ -65,7 +65,7 @@
                         android:textColor="#004241"
                         android:textSize="30dp"
                         android:textStyle="bold"
-                        android:id="@+id/name_label"
+                        android:id="@+id/title"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:minLines="1"
@@ -75,8 +75,8 @@
                         android:layout_marginLeft="160dp"
                         app:layout_constraintEnd_toEndOf="parent"
                         app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toBottomOf="@id/name"
-                        android:text="" />  />
+                        app:layout_constraintTop_toBottomOf="@id/title_label"
+                        android:text="" />
                 </androidx.constraintlayout.widget.ConstraintLayout>
 
 

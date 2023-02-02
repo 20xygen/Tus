@@ -2,11 +2,15 @@ package com.example.sutk
 
 import android.app.Activity
 import android.content.Context
+import com.example.sutk.Entering.RegistrationFragment
 import com.example.sutk.Global.FeedFragment
 import com.example.sutk.Global.ManageFragment
 import com.example.sutk.Global.ProfileFragment
 import com.example.sutk.dto.Post.Post
+import com.example.sutk.dto.Response.Response
 import com.example.sutk.dto.Tag.Tag
+import com.example.sutk.dto.User.UltimateUser
+import com.example.sutk.dto.User.User
 import java.math.BigInteger
 import java.security.MessageDigest
 
@@ -21,24 +25,42 @@ class DataHolder {
         var profileFragment: ProfileFragment? = null
         var projectPlaceType: Int? = null
 
-        var mathTags = BooleanArray(6 + ndt)
-        var physicsTags = BooleanArray(8 + ndt)
-        var infoTags = BooleanArray(14 + ndt)
-        var isTags = BooleanArray(10 + ndt)
-        var langTags = BooleanArray(10 + ndt)
-        var medicineTags = BooleanArray(8 + ndt)
-        var economyTags = BooleanArray(4 + ndt)
-        var otherTags = BooleanArray(8 + ndt)
+        var mathTags = mutableListOf<Boolean>()
+        var physicsTags = mutableListOf<Boolean>()
+        var infoTags = mutableListOf<Boolean>()
+        var isTags = mutableListOf<Boolean>()
+        var langTags = mutableListOf<Boolean>()
+        var medicineTags = mutableListOf<Boolean>()
+        var economyTags = mutableListOf<Boolean>()
+        var otherTags = mutableListOf<Boolean>()
+
+        var ultimateUser: UltimateUser? = null
 
 //        val stack = ArrayDeque(listOf(1, 2, 3)) // stack: [1, 2, 3]
 //        stack.addLast(0)                        // stack: [1, 2, 3, 0]         (push)
 //        val value = stack.removeLast()
 
+        fun saveBuffInt(buffInt: Int, fragment: RegistrationFragment){
+            this.buffInt = buffInt
+            if (this.buffInt == 200){
+                fragment.nuuChangeScreen()
+            }
+            println(this.buffInt)
+        }
+
         var postToScreen: Map<String, ArrayDeque<Post>> = mapOf("feed" to ArrayDeque<Post>(listOf()), "manage" to ArrayDeque<Post>(listOf()), "notifications" to ArrayDeque<Post>(listOf()), "profile" to ArrayDeque<Post>(listOf()))
         var postToScreenLast = "feed"
-        var listOfAllTags: List<Tag>? = listOf(Tag("Тригонометрия", "Математика"), Tag("Тригонометрия", "Математика"), Tag("Тригонометрия", "Математика"))
-
+        var listOfAllTags: MutableList<Tag>? = mutableListOf()
+        var user: User? = null
+        var userTags = mutableListOf<Tag>()
         var registered = false
+        var buffRes = Response(777)
+        var buffInt = 777
+        var buffUser = User()
+
+        val teamId: MutableList<Int> = mutableListOf()
+
+        var loginedUser: User = User("Безымянный пользователь", "", "В поисках интересного...", 0, "")
 
         var name: String? = null
 
@@ -75,7 +97,7 @@ class DataHolder {
             return passwordHash == value
         }
 
-        fun getTags(): List<BooleanArray> {
+        fun getTags(): List<MutableList<Boolean>> {
             return listOf(mathTags, physicsTags, infoTags, isTags, langTags, medicineTags, economyTags, otherTags)
         }
 

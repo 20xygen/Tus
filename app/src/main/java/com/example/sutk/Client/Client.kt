@@ -3,6 +3,8 @@ package com.example.sutk.Client
 import com.example.sutk.dto.Mark.Mark
 import com.example.sutk.dto.Post.*
 import com.example.sutk.dto.Response.Response
+import com.example.sutk.dto.Tag.AllTag
+import com.example.sutk.dto.Tag.Tag
 import com.example.sutk.dto.User.*
 import com.google.gson.GsonBuilder
 import io.ktor.client.*
@@ -31,14 +33,29 @@ class Client {
         }
         var res: User = User()
 
-        suspend fun getUserById(id: Int): User =
-            client.get<User>("http://192.168.43.231:8080/user/profile/0")
+        suspend fun getUserById(id: Int): User {
+            val response = client.call("$user/profile/$id").response.readText(charset("UTF-8"))
+            val builder = GsonBuilder()
+            val gson = builder.create()
+            val res: User = gson.fromJson(response, User::class.java)
+            return res
+        }
 
-        suspend fun getUserAchievementById(id: Int): UserAchievement =
-            client.get<UserAchievement>("$user/achievement/$id")
+        suspend fun getUserAchievementById(id: Int): UserAchievement {
+            val response = client.call("$user/achievement/$id").response.readText(charset("UTF-8"))
+            val builder = GsonBuilder()
+            val gson = builder.create()
+            val res: UserAchievement = gson.fromJson(response, UserAchievement::class.java)
+            return res
+        }
 
-        suspend fun getUserTagById(id: Int): UserTag =
-            client.get<UserTag>("$user/tag/$id")
+        suspend fun getUserTagById(id: Int): UserTag {
+            val response = client.call("$user/tag/$id").response.readText(charset("UTF-8"))
+            val builder = GsonBuilder()
+            val gson = builder.create()
+            val res: UserTag = gson.fromJson(response, UserTag::class.java)
+            return res
+        }
 
         suspend fun getUserTeamById(id: Int): UserTeam {
             val response = client.call("$user/team/$id").response.readText(charset("UTF-8"))
@@ -48,11 +65,30 @@ class Client {
             return res
         }
 
-        suspend fun getUserMarkById(id: Int): UserMark =
-            client.get<UserMark>("$user/mark/$id")
+        suspend fun getUserMarkById(id: Int): UserMark {
+            val response = client.call("$user/mark/$id").response.readText(charset("UTF-8"))
+            val builder = GsonBuilder()
+            val gson = builder.create()
+            val res: UserMark = gson.fromJson(response, UserMark::class.java)
+            return res
+        }
 
-        suspend fun getUserPostById(id: Int): UserPost =
-            client.get<UserPost>("$user/post/$id")
+        suspend fun getUserPostById(id: Int): UserPost {
+            val response = client.call("$user/post/$id").response.readText(charset("UTF-8"))
+            val builder = GsonBuilder()
+            val gson = builder.create()
+            val res: UserPost = gson.fromJson(response, UserPost::class.java)
+            return res
+        }
+
+        suspend fun getUserLastId(): UserId{
+            val response = client.call("$user/last").response.readText(charset("UTF-8"))
+            println(response)
+            val builder = GsonBuilder()
+            val gson = builder.create()
+            val res: UserId = gson.fromJson(response, UserId::class.java)
+            return res
+        }
 
         suspend fun getAchievementTypes():List<String> =
             client.get<List<String>>("$baseURL/achievement/types")
@@ -76,11 +112,15 @@ class Client {
                 body = city
             }
 
-        suspend fun updateUser(id: Int, user:User):Any? =
-            client.put("${Companion.user}/update/$id") {
+        suspend fun updateUser(id: Int, user:User) {
+            client.call("${Companion.user}/update/$id") {
+                println("${Companion.user}/update/$id")
+                method = HttpMethod.Put
                 contentType(ContentType.Application.Json)
                 body = user
+                println(user)
             }
+        }
 
         suspend fun updateUserAchievements(userAchievement: UserAchievement): Any? =
             client.put("${Companion.user}/update/achievement"){
@@ -94,17 +134,40 @@ class Client {
                 body = userTag
             }
 
-        suspend fun authorisation(userLoginParams: UserLoginParams): Response =
-            client.post("${Companion.user}/auth/log") {
+        suspend fun authorisation(userLoginParams: UserLoginParams): Response {
+            val response = client.call("$baseURL/auth/log") {
+                method = HttpMethod.Post
                 contentType(ContentType.Application.Json)
                 body = userLoginParams
-            }
+            }.response.readText(charset("UTF-8"))
+            val builder = GsonBuilder()
+            val gson = builder.create()
+            val res: Response = gson.fromJson(response, Response::class.java)
+            return res
+        }
 
-        suspend fun registration(userLoginParams: UserLoginParams): Response =
-            client.post("${Companion.user}/auth/reg"){
+        suspend fun getIdByUserLogin(userLoginParams: UserLoginParams):Int{
+            val response = client.call("$user/id") {
+                method = HttpMethod.Post
                 contentType(ContentType.Application.Json)
                 body = userLoginParams
-            }
+            }.response.readText(charset("UTF-8"))
+            val builder = GsonBuilder()
+            val gson = builder.create()
+            val res: UserId = gson.fromJson(response, UserId::class.java)
+            return res.id
+        }
+
+        suspend fun registration(userLoginParams: UserLoginParams): Response{
+            val response = client.call("$baseURL/auth/reg") {
+                contentType(ContentType.Application.Json)
+                body = userLoginParams
+            }.response.readText(charset("UTF-8"))
+            val builder = GsonBuilder()
+            val gson = builder.create()
+            val res: Response = gson.fromJson(response, Response::class.java)
+            return res
+        }
 
         suspend fun getPostById(id: Int): Post {
             val response = client.call("$post/$id").response.readText(charset("UTF-8"))
@@ -139,11 +202,20 @@ class Client {
                 body = newPost
             }
 
-        suspend fun createPost(newPost: Post): Any? =
-            client.post("$post/new") {
+        suspend fun createPost(newPost: Post){
+            client.call("$post/new") {
                 contentType(ContentType.Application.Json)
                 body = newPost
             }
+        }
+
+        suspend fun getAllPosts(): List<Post>{
+            val response = client.call("$post/all").response.readText(charset("UTF-8"))
+            val builder = GsonBuilder()
+            val gson = builder.create()
+            val res: AllPost = gson.fromJson(response, AllPost::class.java)
+            return res.allPost
+        }
 
         suspend fun updatePostTag(newPost:PostTag): Any? =
             client.put("$post/update/mark") {
@@ -171,5 +243,13 @@ class Client {
 
         suspend fun recommendByUserId(userId: Int): List<Int> =
             client.get("$recommendation/user/$userId")
+
+        suspend fun getAllTag():List<Tag>{
+            val response = client.call("$baseURL/tag").response.readText(charset("UTF-8"))
+            val gsonBuilder = GsonBuilder()
+            val gson = gsonBuilder.create()
+            val res: AllTag = gson.fromJson(response, AllTag::class.java)
+            return res.allTag
+        }
     }
 }

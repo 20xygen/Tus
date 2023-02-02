@@ -6,10 +6,19 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.navigation.fragment.findNavController
+import com.example.sutk.Client.Client
 import com.example.sutk.DataHolder
 import com.example.sutk.Entering.IconListOperator
 import com.example.sutk.R
 import com.example.sutk.databinding.FragmentPostBinding
+import com.example.sutk.dto.Post.MainInfoPost
+import com.example.sutk.dto.Post.Post
+import com.example.sutk.dto.Tag.Tag
+import com.example.sutk.dto.User.User
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
+import kotlinx.coroutines.withContext
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
@@ -36,6 +45,20 @@ class PostFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         binding.postIcon.setOnClickListener {
             findNavController().navigate(R.id.action_PostFragment_to_SelectingPostIconFragment)
+        }
+
+        binding.buttonOk.setOnClickListener {
+            findNavController().navigate(R.id.action_PostFragment_to_PostCreatedFragment)
+
+            val post = Post(0, binding.title.text.toString(), 0,
+                binding.descriptionShort.text.toString(),
+                DataHolder.loginedUser.login, binding.description.text.toString(),
+                listOf<User>(DataHolder.loginedUser), 0, 0,
+                listOf<Tag>(Tag("Android", "Информатика"), Tag("UI", "Информатика"), Tag("UX", "Информатика")), listOf<MainInfoPost>(), listOf<MainInfoPost>())
+            CoroutineScope(Dispatchers.IO).launch {
+                println(post)
+                Client.createPost(post)
+            }
         }
 
         when (DataHolder.postIconNumber) {

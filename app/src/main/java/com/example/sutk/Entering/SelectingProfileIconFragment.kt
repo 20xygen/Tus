@@ -44,6 +44,10 @@ class SelectingProfileIconFragment : Fragment() {
 
         binding.buttonOk.setOnClickListener {
             DataHolder.iconNumber = IconListOperator.chosen
+
+            // Схохранить:
+            DataHolder.iconNumber
+
             findNavController().navigate(R.id.action_SelectingProfileIconFragment_to_TagFragment)
         }
 

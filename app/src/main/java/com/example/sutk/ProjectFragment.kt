@@ -14,9 +14,14 @@ import android.widget.TextView
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentTransaction
 import androidx.navigation.fragment.findNavController
+import com.example.sutk.Client.Client
 import com.example.sutk.dto.Tag.Tag
 import com.example.sutk.databinding.FragmentProjectBinding
 import com.example.sutk.dto.Post.Post
+import com.example.sutk.dto.User.UserLoginParams
+import kotlinx.coroutines.CoroutineScope
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.launch
 
 /**
  * A simple [Fragment] subclass as the default destination in the navigation.
@@ -106,10 +111,16 @@ class ProjectFragment : Fragment() {
             layoutTags!!.addView(textView)
         }
 
-        binding.name.text = post?.title
+        binding.titleLabel.text = post?.title
         binding.descriptionShort.text = post?.description
         binding.description.text = post?.body
+        CoroutineScope(Dispatchers.IO).launch{
+            for (i in post?.team ?: listOf()){
+                DataHolder.teamId.add(Client.getIdByUserLogin(UserLoginParams(0, i.login, "")))
+            }
+        }
 
+        DataHolder.teamId
         if (post?.team?.size!! > 0){
             textView = TextView(DataHolder.context)
             textView.setText("    " + post!!.team[0].login)

@@ -65,17 +65,13 @@ class ManageFragment : Fragment() {
         CoroutineScope(Dispatchers.IO).launch {
             val userPost = Client.getUserTeamById(0)
             val post = mutableListOf<Post>()
-            for (i in userPost.userTeam){
+            for (i in userPost.userTeam) {
                 post.add(Client.getPostById(i))
             }
             withContext(Dispatchers.Main) {
-                for (i in post) {
-                    adapter.addItem(i)
-                }
+                adapter.addRange(post)
             }
         }
-        val startPostList: MutableList<Post> = mutableListOf()
-        adapter.addRange(startPostList)
     }
 
 //    private fun fillList(): List<String> {
@@ -93,11 +89,11 @@ class ManageFragment : Fragment() {
         var i: Int = 0
 
         data.add(
-            Post(i++, "Онлайн-расписания", 0,
+            Post(0, "Онлайн-расписания", 0,
                 "Приложение для автоматического составления школьного расписания средствами ML",
-                "AnyLogin", "Приложение для автоматического составления школьного расписания средствами ML",
+                "Денис Г.", "Приложение для автоматического составления школьного расписания средствами ML",
                 listOf<User>(), 0, 0,
-                defTags, listOf<MainInfoPost>(), listOf<MainInfoPost>())
+                listOf<Tag>(Tag("Тригонометрия", "Математика"), Tag("Т. Относительности", "Физика"), Tag("Аллергология", "Медицина")), listOf<MainInfoPost>(), listOf<MainInfoPost>())
         )
 
         data.add(
