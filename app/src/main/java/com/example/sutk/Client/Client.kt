@@ -40,8 +40,13 @@ class Client {
         suspend fun getUserTagById(id: Int): UserTag =
             client.get<UserTag>("$user/tag/$id")
 
-        suspend fun getUserTeamById(id: Int): UserTeam =
-            client.get<UserTeam>("$user/team/$id")
+        suspend fun getUserTeamById(id: Int): UserTeam {
+            val response = client.call("$user/team/$id").response.readText(charset("UTF-8"))
+            val builder = GsonBuilder()
+            val gson = builder.create()
+            val res: UserTeam = gson.fromJson(response, UserTeam::class.java)
+            return res
+        }
 
         suspend fun getUserMarkById(id: Int): UserMark =
             client.get<UserMark>("$user/mark/$id")

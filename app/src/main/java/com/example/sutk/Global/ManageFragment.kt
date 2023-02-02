@@ -60,16 +60,21 @@ class ManageFragment : Fragment() {
 //        binding.buttonFirst.setOnClickListener {
 //            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
 //        }
-        for (i in 0 until 2) {
-            CoroutineScope(Dispatchers.IO).launch {
-                val post = Client.getPostById(i)
-                println(post.toString())
-                withContext(Dispatchers.Main) {
-                    adapter.addItem(post)
+
+
+        CoroutineScope(Dispatchers.IO).launch {
+            val userPost = Client.getUserTeamById(0)
+            val post = mutableListOf<Post>()
+            for (i in userPost.userTeam){
+                post.add(Client.getPostById(i))
+            }
+            withContext(Dispatchers.Main) {
+                for (i in post) {
+                    adapter.addItem(i)
                 }
             }
         }
-        var startPostList: MutableList<Post> = mutableListOf()
+        val startPostList: MutableList<Post> = mutableListOf()
         adapter.addRange(startPostList)
     }
 
