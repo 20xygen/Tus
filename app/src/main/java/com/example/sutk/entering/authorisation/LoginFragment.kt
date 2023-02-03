@@ -53,45 +53,7 @@ class LoginFragment : Fragment() {
             val password = binding.editTextTextPassword.text.toString()
             val userLoginParams = UserLoginParams(0, login, password)
 
-//            try{
-//
-//            } catch (e: Exception){
-//
-//            }
-
-            try{
-                if (DataHolder.demiIsOn) throw Exception("Demo is on")
-                CoroutineScope(Dispatchers.IO).launch {
-                    val res = Client.authorisation(userLoginParams)
-                    withContext(Dispatchers.Main) {
-                        if (res.response == 200) {
-                            val id: Int = Client.getIdByUserLogin(userLoginParams)
-                            val u = Client.getUserById(id)
-                            val user = UltimateUser(
-                                id = id,
-                                login = userLoginParams.login,
-                                tg = Client.getUserById(id).tg,
-                                description = u.description,
-                                imageId = u.imageId,
-                                email = u.email,
-                                name = u.name,
-                                achievement = Client.getUserAchievementById(id).achievement,
-                                cityName = Client.getUserCityById(id).cityName,
-                                userJob = Client.getUserJobById(id).userJob,
-                                userMark = Client.getUserMarkById(id).userMark,
-                                tag = Client.getUserTagById(id).tag,
-                            )
-                            println(user)
-                            DataHolder.ultimateUser = user
-                            findNavController().navigate(R.id.action_LoginFragment_to_MainFragment)
-
-                        } else {
-                            println("============================")
-                        }
-                    }
-                    println(res)
-                }
-            } catch (e: Exception){
+            if (DataHolder.demoIsOn){
                 var nick = DataHolder.validNick
                 var validPasswd = DataHolder.validPasswd
                 var validId = DataHolder.validId
@@ -102,7 +64,7 @@ class LoginFragment : Fragment() {
                 var validTag = DataHolder.validTag
                 if (login in nick){
                     if (validPasswd[nick.indexOf(login)] == password){
-                        Toast.makeText(DataHolder.activity?.getApplicationContext(), "Успешный фиктивный вход", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(DataHolder.activity?.getApplicationContext(), "Успешный вход", Toast.LENGTH_SHORT).show()
                         var user = UltimateUser(
                             id = validId[nick.indexOf(login)],
                             login = login,
@@ -130,6 +92,114 @@ class LoginFragment : Fragment() {
                     Toast.makeText(DataHolder.activity?.getApplicationContext(), "Пользователь не найден", Toast.LENGTH_SHORT).show()
                 }
             }
+            else{
+                if (DataHolder.safeIsOn){
+                    try{
+                        CoroutineScope(Dispatchers.IO).launch {
+                            val res = Client.authorisation(userLoginParams)
+                            withContext(Dispatchers.Main) {
+                                if (res.response == 200) {
+                                    val id: Int = Client.getIdByUserLogin(userLoginParams)
+                                    val u = Client.getUserById(id)
+                                    val user = UltimateUser(
+                                        id = id,
+                                        login = userLoginParams.login,
+                                        tg = Client.getUserById(id).tg,
+                                        description = u.description,
+                                        imageId = u.imageId,
+                                        email = u.email,
+                                        name = u.name,
+                                        achievement = Client.getUserAchievementById(id).achievement,
+                                        cityName = Client.getUserCityById(id).cityName,
+                                        userJob = Client.getUserJobById(id).userJob,
+                                        userMark = Client.getUserMarkById(id).userMark,
+                                        tag = Client.getUserTagById(id).tag,
+                                    )
+                                    println(user)
+                                    DataHolder.ultimateUser = user
+                                    findNavController().navigate(R.id.action_LoginFragment_to_MainFragment)
+
+                                } else {
+                                    println("============================")
+                                }
+                            }
+                            println(res)
+                        }
+                    } catch (e: Exception){
+                        var nick = DataHolder.validNick
+                        var validPasswd = DataHolder.validPasswd
+                        var validId = DataHolder.validId
+                        var validTg = DataHolder.validTg
+                        var validDescription = DataHolder.validNick
+                        var validImageId = DataHolder.validImageId
+                        var validName = DataHolder.validName
+                        var validTag = DataHolder.validTag
+                        if (login in nick){
+                            if (validPasswd[nick.indexOf(login)] == password){
+                                Toast.makeText(DataHolder.activity?.getApplicationContext(), "Успешный фиктивный вход", Toast.LENGTH_SHORT).show()
+                                var user = UltimateUser(
+                                    id = validId[nick.indexOf(login)],
+                                    login = login,
+                                    tg = validTg[nick.indexOf(login)],
+                                    description = validDescription[nick.indexOf(login)],
+                                    imageId = validImageId[nick.indexOf(login)],
+                                    email = "",
+                                    name = validName[nick.indexOf(login)],
+                                    achievement = listOf<Achievement>(),
+                                    cityName = "",
+                                    userJob = listOf<String>(),
+                                    userMark = listOf<MarkWithPost>(),
+                                    tag = validTag[nick.indexOf(login)],
+                                )
+                                var liteUser = User(login, user.tg, user.description, user.imageId, user.email, user.name)
+                                DataHolder.ultimateUser = user
+                                DataHolder.loginedUser = liteUser
+                                findNavController().navigate(R.id.action_LoginFragment_to_MainFragment)
+                            }
+                            else{
+                                Toast.makeText(DataHolder.activity?.getApplicationContext(), "Неверный пароль", Toast.LENGTH_SHORT).show()
+                            }
+                        }
+                        else{
+                            Toast.makeText(DataHolder.activity?.getApplicationContext(), "Пользователь не найден", Toast.LENGTH_SHORT).show()
+                        }
+                    }
+                }
+                else {
+                    CoroutineScope(Dispatchers.IO).launch {
+                        val res = Client.authorisation(userLoginParams)
+                        withContext(Dispatchers.Main) {
+                            if (res.response == 200) {
+                                val id: Int = Client.getIdByUserLogin(userLoginParams)
+                                val u = Client.getUserById(id)
+                                val user = UltimateUser(
+                                    id = id,
+                                    login = userLoginParams.login,
+                                    tg = Client.getUserById(id).tg,
+                                    description = u.description,
+                                    imageId = u.imageId,
+                                    email = u.email,
+                                    name = u.name,
+                                    achievement = Client.getUserAchievementById(id).achievement,
+                                    cityName = Client.getUserCityById(id).cityName,
+                                    userJob = Client.getUserJobById(id).userJob,
+                                    userMark = Client.getUserMarkById(id).userMark,
+                                    tag = Client.getUserTagById(id).tag,
+                                )
+                                println(user)
+                                DataHolder.ultimateUser = user
+                                findNavController().navigate(R.id.action_LoginFragment_to_MainFragment)
+
+                            } else {
+                                println("============================")
+                            }
+                        }
+                        println(res)
+                    }
+                }
+            }
+
+
 
 
 

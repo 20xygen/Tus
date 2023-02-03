@@ -13,15 +13,28 @@
         android:padding="16dp">
 
         <com.google.android.material.switchmaterial.SwitchMaterial
+            android:layout_marginRight="60dp"
             android:id="@+id/switch1"
             android:layout_width="100dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="40dp"
-            android:textColor="#6EBDBD"
+            android:textColor="@color/tag_medicine_back"
             android:text="Demo"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@id/switch2"
             app:layout_constraintEnd_toEndOf="parent"/>
+
+        <com.google.android.material.switchmaterial.SwitchMaterial
+            android:layout_marginLeft="60dp"
+            android:id="@+id/switch2"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:textColor="@color/user_major_back"
+            android:text="Safe"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/switch1"/>
 
         <LinearLayout
             android:id="@+id/linearLayout"

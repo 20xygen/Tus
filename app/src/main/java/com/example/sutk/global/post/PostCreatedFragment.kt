@@ -1,4 +1,4 @@
-package com.example.sutk.entering
+package com.example.sutk.global.post
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

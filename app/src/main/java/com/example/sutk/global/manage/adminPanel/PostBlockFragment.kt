@@ -1,4 +1,4 @@
-package com.example.sutk.global.post
+package com.example.sutk.global.manage.adminPanel
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment

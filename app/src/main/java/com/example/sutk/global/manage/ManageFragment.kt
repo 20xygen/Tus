@@ -58,20 +58,7 @@ class ManageFragment : Fragment() {
 //            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
 //        }
 
-
-        try {
-            if (DataHolder.demiIsOn) throw Exception("Demo is on")
-            CoroutineScope(Dispatchers.IO).launch {
-                val userPost = Client.getUserTeamById(0)
-                val post = mutableListOf<Post>()
-                for (i in userPost.userTeam) {
-                    post.add(Client.getPostById(i))
-                }
-                withContext(Dispatchers.Main) {
-                    adapter.addRange(post)
-                }
-            }
-        } catch (e: Exception) {
+        if (DataHolder.demoIsOn){
             var flag = false
             for (i in 0 until DataHolder.fakePosts.size){
                 flag = false
@@ -79,6 +66,43 @@ class ManageFragment : Fragment() {
                 if (flag) adapter.addItem(DataHolder.fakePosts[i])
             }
         }
+        else{
+            if (DataHolder.safeIsOn){
+                try {
+                    CoroutineScope(Dispatchers.IO).launch {
+                        val userPost = Client.getUserTeamById(0)
+                        val post = mutableListOf<Post>()
+                        for (i in userPost.userTeam) {
+                            post.add(Client.getPostById(i))
+                        }
+                        withContext(Dispatchers.Main) {
+                            adapter.addRange(post)
+                        }
+                    }
+                } catch (e: Exception) {
+                    var flag = false
+                    for (i in 0 until DataHolder.fakePosts.size){
+                        flag = false
+                        for (j in DataHolder.fakePosts[i].team) if (DataHolder.loginedUser.login == j.login) flag = true
+                        if (flag) adapter.addItem(DataHolder.fakePosts[i])
+                    }
+                }
+            }
+            else {
+                CoroutineScope(Dispatchers.IO).launch {
+                    val userPost = Client.getUserTeamById(0)
+                    val post = mutableListOf<Post>()
+                    for (i in userPost.userTeam) {
+                        post.add(Client.getPostById(i))
+                    }
+                    withContext(Dispatchers.Main) {
+                        adapter.addRange(post)
+                    }
+                }
+            }
+        }
+
+
 
 
     }

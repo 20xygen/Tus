@@ -32,7 +32,7 @@
 
     <fragment
         android:id="@+id/PostCreatedFragment"
-        android:name="com.example.sutk.entering.PostCreatedFragment"
+        android:name="com.example.sutk.global.post.PostCreatedFragment"
         tools:layout="@layout/post_created">
 
         <action

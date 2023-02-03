@@ -35,19 +35,37 @@ class TagFragment  : Fragment() {
 //            println(allTag)
 //        }
 
-        try{
-            if (DataHolder.demiIsOn) throw Exception("Demo is on")
-            CoroutineScope(Dispatchers.IO).launch {
-                val allTag = Client.getAllTag()
-                println(allTag)
-                println("+")
-                withContext(Dispatchers.Main){
-                    for (i in allTag) DataHolder.listOfAllTags?.add(i)
-                }
-            }
-        } catch (e: Exception){
+        if (DataHolder.demoIsOn){
             DataHolder.listOfAllTags = DataHolder.allFixedTags
         }
+        else{
+            if (DataHolder.safeIsOn){
+                try{
+                    CoroutineScope(Dispatchers.IO).launch {
+                        val allTag = Client.getAllTag()
+                        println(allTag)
+                        println("+")
+                        withContext(Dispatchers.Main){
+                            for (i in allTag) DataHolder.listOfAllTags?.add(i)
+                        }
+                    }
+                } catch (e: Exception){
+                    DataHolder.listOfAllTags = DataHolder.allFixedTags
+                }
+            }
+            else {
+                CoroutineScope(Dispatchers.IO).launch {
+                    val allTag = Client.getAllTag()
+                    println(allTag)
+                    println("+")
+                    withContext(Dispatchers.Main){
+                        for (i in allTag) DataHolder.listOfAllTags?.add(i)
+                    }
+                }
+            }
+        }
+
+
 
 
         _binding = FragmentTagBinding.inflate(inflater, container, false)

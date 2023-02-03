@@ -53,16 +53,29 @@ class PostFragment : Fragment() {
                 listOf<User>(DataHolder.loginedUser), 0, 0,
                 listOf<Tag>(Tag("Android", "Информатика"), Tag("UI", "Информатика"), Tag("UX", "Информатика"), Tag("Общее (математика)", "Математика"), Tag("Общее (физика)", "Физика")), listOf<MainInfoPost>(), listOf<MainInfoPost>())
 
-            try {
-                if (DataHolder.demiIsOn) throw Exception("Demo is on")
-                CoroutineScope(Dispatchers.IO).launch {
-                    println(post)
-                    Client.createPost(post)
-                }
-            } catch (e: Exception){
+
+
+            if (DataHolder.demoIsOn){
                 DataHolder.fakePosts.add(post)
             }
-
+            else{
+                if (DataHolder.safeIsOn){
+                    try {
+                        CoroutineScope(Dispatchers.IO).launch {
+                            println(post)
+                            Client.createPost(post)
+                        }
+                    } catch (e: Exception){
+                        DataHolder.fakePosts.add(post)
+                    }
+                }
+                else {
+                    CoroutineScope(Dispatchers.IO).launch {
+                        println(post)
+                        Client.createPost(post)
+                    }
+                }
+            }
 
 
             findNavController().navigate(R.id.action_PostFragment_to_PostCreatedFragment)

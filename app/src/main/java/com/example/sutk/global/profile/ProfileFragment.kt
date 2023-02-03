@@ -146,31 +146,62 @@ class ProfileFragment : Fragment() {
         var adapter = ProfileAdapter(mutableListOf())
         binding.recyclerView.layoutManager = LinearLayoutManager(activity)
         binding.recyclerView.adapter = adapter
-        try {
-            if (DataHolder.demiIsOn) throw Exception("Demo is on")
-            CoroutineScope(Dispatchers.IO).launch {
-                val user = Client.getUserById(2)
-                withContext(Dispatchers.Main){
-                    DataHolder.user = user
-                }
-            }
-//        binding.buttonFirst.setOnClickListener {
-//            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
-//        }
-            CoroutineScope(Dispatchers.IO).launch {
-                val userPost = Client.getUserPostById(2)
-                val post = mutableListOf<Post>()
-                for (i in userPost.postList) {
-                    post.add(Client.getPostById(i))
-                }
-                withContext(Dispatchers.Main) {
-                    adapter.addRange(post)
-                }
-            }
-        } catch (e: Exception){
+
+        if (DataHolder.demoIsOn){
             for (i in 0 until  DataHolder.fakePosts.size) if (DataHolder.loginedUser.login == DataHolder.fakePosts[i].creatorLogin) adapter.addItem(
                 DataHolder.fakePosts[i])
         }
+        else{
+            if (DataHolder.safeIsOn){
+                try {
+                    CoroutineScope(Dispatchers.IO).launch {
+                        val user = Client.getUserById(2)
+                        withContext(Dispatchers.Main){
+                            DataHolder.user = user
+                        }
+                    }
+//        binding.buttonFirst.setOnClickListener {
+//            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+//        }
+                    CoroutineScope(Dispatchers.IO).launch {
+                        val userPost = Client.getUserPostById(2)
+                        val post = mutableListOf<Post>()
+                        for (i in userPost.postList) {
+                            post.add(Client.getPostById(i))
+                        }
+                        withContext(Dispatchers.Main) {
+                            adapter.addRange(post)
+                        }
+                    }
+                } catch (e: Exception){
+                    for (i in 0 until  DataHolder.fakePosts.size) if (DataHolder.loginedUser.login == DataHolder.fakePosts[i].creatorLogin) adapter.addItem(
+                        DataHolder.fakePosts[i])
+                }
+            }
+            else {
+                CoroutineScope(Dispatchers.IO).launch {
+                    val user = Client.getUserById(2)
+                    withContext(Dispatchers.Main){
+                        DataHolder.user = user
+                    }
+                }
+//        binding.buttonFirst.setOnClickListener {
+//            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+//        }
+                CoroutineScope(Dispatchers.IO).launch {
+                    val userPost = Client.getUserPostById(2)
+                    val post = mutableListOf<Post>()
+                    for (i in userPost.postList) {
+                        post.add(Client.getPostById(i))
+                    }
+                    withContext(Dispatchers.Main) {
+                        adapter.addRange(post)
+                    }
+                }
+            }
+        }
+
+
 
     }
     fun View.dpToPx(dp: Float): Int = context.dpToPx(dp)

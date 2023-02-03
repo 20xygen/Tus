@@ -32,6 +32,7 @@ class Client {
         var res: User = User()
 
         suspend fun getUserById(id: Int): User {
+            println("Request sent: getUserById { " + id.toString() + " }")
             val response = client.call("$user/profile/$id").response.readText(charset("UTF-8"))
             val builder = GsonBuilder()
             val gson = builder.create()
@@ -40,6 +41,7 @@ class Client {
         }
 
         suspend fun getUserAchievementById(id: Int): UserAchievement {
+            println("Request sent: getUserAchievementById { " + id.toString() + " }")
             val response = client.call("$user/achievement/$id").response.readText(charset("UTF-8"))
             val builder = GsonBuilder()
             val gson = builder.create()
@@ -48,6 +50,7 @@ class Client {
         }
 
         suspend fun getUserTagById(id: Int): UserTag {
+            println("Request sent: getUserTagById { " + id.toString() + " }")
             val response = client.call("$user/tag/$id").response.readText(charset("UTF-8"))
             val builder = GsonBuilder()
             val gson = builder.create()
@@ -56,6 +59,7 @@ class Client {
         }
 
         suspend fun getUserTeamById(id: Int): UserTeam {
+            println("Request sent: getUserTeamById { " + id.toString()+ " }")
             val response = client.call("$user/team/$id").response.readText(charset("UTF-8"))
             val builder = GsonBuilder()
             val gson = builder.create()
@@ -64,6 +68,7 @@ class Client {
         }
 
         suspend fun getUserMarkById(id: Int): UserMark {
+            println("Request sent: getUserMarkById { " + id.toString() + " }")
             val response = client.call("$user/mark/$id").response.readText(charset("UTF-8"))
             val builder = GsonBuilder()
             val gson = builder.create()
@@ -72,6 +77,7 @@ class Client {
         }
 
         suspend fun getUserPostById(id: Int): UserPost {
+            println("Request sent: getUserPostById { " + id.toString() + " }")
             val response = client.call("$user/post/$id").response.readText(charset("UTF-8"))
             val builder = GsonBuilder()
             val gson = builder.create()
@@ -80,6 +86,7 @@ class Client {
         }
 
         suspend fun getUserLastId(): UserId{
+            println("Request sent: getUserLastId { }")
             val response = client.call("$user/last").response.readText(charset("UTF-8"))
             println(response)
             val builder = GsonBuilder()
@@ -92,11 +99,17 @@ class Client {
             client.get<List<String>>("$baseURL/achievement/types")
 
 
-        suspend fun getUserJobById(id: Int): UserJob =
-            client.get<UserJob>("$user/job/$id")
+        suspend fun getUserJobById(id: Int): UserJob {
+            println("Request sent: getUserJobById { " + id.toString() + " }")
+            return client.get<UserJob>("$user/job/$id")
+        }
 
-        suspend fun getUserCityById(id: Int): UserCity =
-            client.get<UserCity>("$user/city/$id")
+
+        suspend fun getUserCityById(id: Int): UserCity {
+            println("Request sent: getUserCityById { " + id.toString() + " }")
+            return client.get<UserCity>("$user/city/$id")
+        }
+
 
         suspend fun setJobToUser(job: UserJob): Any? =
             client.put("$user/update/job") {
@@ -111,6 +124,7 @@ class Client {
             }
 
         suspend fun updateUser(id: Int, user:User) {
+            println("Request sent: updateUser { " + id.toString() + " " + user.toString() + " }")
             client.call("${Companion.user}/update/$id") {
                 println("${Companion.user}/update/$id")
                 method = HttpMethod.Put
@@ -133,6 +147,7 @@ class Client {
             }
 
         suspend fun authorisation(userLoginParams: UserLoginParams): Response {
+            println("Request sent: authorisation { " + userLoginParams.toString() + " }")
             val response = client.call("$baseURL/auth/log") {
                 method = HttpMethod.Post
                 contentType(ContentType.Application.Json)
@@ -145,6 +160,7 @@ class Client {
         }
 
         suspend fun getIdByUserLogin(userLoginParams: UserLoginParams):Int{
+            println("Request sent: getIdByUserLogin { " + userLoginParams.toString() + " }")
             val response = client.call("$user/id") {
                 method = HttpMethod.Post
                 contentType(ContentType.Application.Json)
@@ -157,6 +173,7 @@ class Client {
         }
 
         suspend fun registration(userLoginParams: UserLoginParams): Response{
+            println("Request sent: registration { " + userLoginParams.toString() + " }")
             val response = client.call("$baseURL/auth/reg") {
                 contentType(ContentType.Application.Json)
                 body = userLoginParams
@@ -168,6 +185,7 @@ class Client {
         }
 
         suspend fun getPostById(id: Int): Post {
+            println("Request sent: getPostById { " + id.toString() + " }")
             val response = client.call("$post/$id").response.readText(charset("UTF-8"))
             val builder = GsonBuilder()
             val gson = builder.create()
@@ -201,6 +219,7 @@ class Client {
             }
 
         suspend fun createPost(newPost: Post){
+            println("Request sent: createPost { " + newPost.toString() + " }")
             client.call("$post/new") {
                 contentType(ContentType.Application.Json)
                 body = newPost
@@ -208,6 +227,7 @@ class Client {
         }
 
         suspend fun getAllPosts(): List<Post>{
+            println("Request sent: getAllPosts {  }")
             val response = client.call("$post/all").response.readText(charset("UTF-8"))
             val builder = GsonBuilder()
             val gson = builder.create()
@@ -243,6 +263,7 @@ class Client {
             client.get("$recommendation/user/$userId")
 
         suspend fun getAllTag():List<Tag>{
+            println("Request sent: getAllTag {  }")
             val response = client.call("$baseURL/tag").response.readText(charset("UTF-8"))
             val gsonBuilder = GsonBuilder()
             val gson = gsonBuilder.create()

@@ -1,4 +1,4 @@
-package com.example.sutk.global.post
+package com.example.sutk.global.feed
 
 import android.view.LayoutInflater
 import android.view.View

@@ -9,7 +9,6 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.sutk.client.Client
 import com.example.sutk.dataHolder.DataHolder
-import com.example.sutk.global.post.PostAdapter
 import com.example.sutk.R
 import com.example.sutk.navigation.NavigationController
 import com.example.sutk.databinding.FragmentFeedBinding
@@ -52,25 +51,39 @@ class FeedFragment : Fragment() {
             super.onViewCreated(view, savedInstanceState)
             // DataHolder.context =
             binding.recyclerView.layoutManager = LinearLayoutManager(activity)
-            var adapter = PostAdapter(customFillList())
-//            var adapter = PostAdapter(mutableListOf())
+//            var adapter = PostAdapter(customFillList())
+            var adapter = PostAdapter(mutableListOf())
             DataHolder.adapter = adapter
             DataHolder.feedFragment = this
             binding.recyclerView.adapter = adapter
 
-
-            try {
-                if (DataHolder.demiIsOn) throw Exception("Demo is on")
-
-                CoroutineScope(Dispatchers.IO).launch {
-                    val post = Client.getAllPosts()
-                    withContext(Dispatchers.Main) {
-                        adapter.addRange(post?.toMutableList() ?: mutableListOf())
-                    }
-                }
-            } catch (e: Exception){
+            if (DataHolder.demoIsOn){
                 adapter.addRange(DataHolder.fakePosts)
             }
+            else{
+                if (DataHolder.safeIsOn){
+                    try {
+                        CoroutineScope(Dispatchers.IO).launch {
+                            val post = Client.getAllPosts()
+                            withContext(Dispatchers.Main) {
+                                adapter.addRange(post?.toMutableList() ?: mutableListOf())
+                            }
+                        }
+                    } catch (e: Exception){
+                        adapter.addRange(DataHolder.fakePosts)
+                    }
+                }
+                else {
+                    CoroutineScope(Dispatchers.IO).launch {
+                        val post = Client.getAllPosts()
+                        withContext(Dispatchers.Main) {
+                            adapter.addRange(post?.toMutableList() ?: mutableListOf())
+                        }
+                    }
+                }
+            }
+
+
 
 
 

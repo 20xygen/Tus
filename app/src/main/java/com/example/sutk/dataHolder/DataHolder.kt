@@ -6,7 +6,7 @@ import com.example.sutk.entering.authorisation.RegistrationFragment
 import com.example.sutk.global.feed.FeedFragment
 import com.example.sutk.global.manage.ManageFragment
 import com.example.sutk.global.profile.ProfileFragment
-import com.example.sutk.global.post.PostAdapter
+import com.example.sutk.global.feed.PostAdapter
 import com.example.sutk.dto.Post.MainInfoPost
 import com.example.sutk.dto.Post.Post
 import com.example.sutk.dto.Response.Response
@@ -18,7 +18,8 @@ import java.security.MessageDigest
 
 class DataHolder {
     companion object {
-        var demiIsOn = false
+        var demoIsOn = false
+        var safeIsOn = false
         var demoConfirm = false
 
         val ndt = 8 // numOfDefaultTags
