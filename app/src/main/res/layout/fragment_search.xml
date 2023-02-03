@@ -6,7 +6,7 @@
     android:orientation="vertical"
     android:gravity="center_horizontal"
     android:layout_height="match_parent"
-    tools:context=".Global.MainActivity">
+    tools:context=".global.root.MainActivity">
 
     <TextView
         android:layout_marginTop="10dp"
@@ -17,7 +17,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="15dp"
         android:gravity="center"
-        android:text="Найти специалиста"
+        android:text="@string/find_pro"
         android:textAlignment="center"
         app:layout_constraintBottom_toTopOf="@id/recyclerView"
         app:layout_constraintEnd_toEndOf="parent"
@@ -38,7 +38,7 @@
             android:layout_height="wrap_content"
             android:layout_marginRight="15dp"
             android:backgroundTint="@color/light_green"
-            android:text="Назад"
+            android:text="@string/back"
             android:textSize="15sp"
             android:theme="@style/ShapeAppearanceOverlay.Material3.Button"/>
 
@@ -47,7 +47,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/dark_green"
-            android:text="Настроить теги"
+            android:text="@string/adjust_tags"
             android:textSize="15sp"
             android:theme="@style/ShapeAppearanceOverlay.Material3.Button" />
 
@@ -57,7 +57,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="@color/light_green"
-            android:text="Искать"
+            android:text="@string/find"
             android:textSize="15sp"
             android:theme="@style/ShapeAppearanceOverlay.Material3.Button"/>
 

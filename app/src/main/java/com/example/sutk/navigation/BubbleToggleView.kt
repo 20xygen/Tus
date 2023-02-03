@@ -18,7 +18,7 @@ import androidx.appcompat.content.res.AppCompatResources
 import androidx.core.content.ContextCompat
 import androidx.core.view.ViewCompat
 import com.example.sutk.R
-import com.example.sutk.ViewUtils
+import com.example.sutk.dataHolder.ViewUtils
 
 
 /**

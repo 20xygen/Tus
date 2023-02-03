@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="end"
-    tools:context=".Entering.TermsFragment">
+    tools:context=".entering.terms.TermsFragment">
 
 <!--    <androidx.constraintlayout.widget.ConstraintLayout-->
 <!--        android:layout_width="match_parent"-->

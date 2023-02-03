@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Global.ManageFragment">
+    tools:context=".global.manage.ManageFragment">
 
     <TextView
         android:layout_marginTop="15dp"
@@ -13,7 +13,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="Менеджмент"
+        android:text="@string/management"
         android:textAlignment="center"
         android:textColor="@color/design_default_color_secondary_variant"
         android:textSize="35sp"

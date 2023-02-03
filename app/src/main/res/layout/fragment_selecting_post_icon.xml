@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_gravity="end"
-    tools:context=".Entering.TermsFragment">
+    tools:context=".entering.terms.TermsFragment">
 
 <!--    <androidx.constraintlayout.widget.ConstraintLayout-->
 <!--        android:layout_width="match_parent"-->
@@ -26,7 +26,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="25dp"
                 android:gravity="center"
-                android:text="Выберете логотип"
+                android:text="@string/choose_logo"
                 android:textAlignment="center"
                 android:textColor="@color/design_default_color_secondary_variant"
                 android:textSize="35sp"

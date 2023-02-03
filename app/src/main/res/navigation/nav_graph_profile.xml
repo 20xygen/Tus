@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/ProfileFragment"
-        android:name="com.example.sutk.Global.ProfileFragment"
+        android:name="com.example.sutk.global.profile.ProfileFragment"
         tools:layout="@layout/fragment_profile">
 
         <action
@@ -18,7 +18,7 @@
 
     <fragment
         android:id="@+id/ProjectFragment"
-        android:name="com.example.sutk.ProjectFragment"
+        android:name="com.example.sutk.global.project.ProjectFragment"
         tools:layout="@layout/fragment_project">
 
         <action

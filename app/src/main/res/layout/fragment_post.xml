@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Global.PostFragment">
+    tools:context=".global.post.PostFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_margin="20dp"
@@ -54,7 +54,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="160dp"
-                        android:text="Введите название:"
+                        android:text="@string/input_title"
                         android:textColor="@color/dark_green"
                         android:textSize="15dp"
                         app:layout_constraintEnd_toEndOf="parent"
@@ -89,7 +89,7 @@
                 android:textSize="15dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Введите краткое описание:" />
+                android:text="@string/input_title_short" />
 
             <EditText
                 android:textColor="#FF004241"
@@ -108,7 +108,7 @@
                 android:textSize="15dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="Введите полное описание:" />
+                android:text="@string/input_full_description" />
 
             <EditText
                 android:textColor="#FF004241"
@@ -133,7 +133,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
                     android:backgroundTint="@color/design_default_color_secondary_variant"
-                    android:text="Выбрать теги"
+                    android:text="@string/choose_tags"
                     android:theme="@style/ShapeAppearanceOverlay.Material3.Button" />
 
 
@@ -143,7 +143,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/light_green"
-                    android:text="Отправить"
+                    android:text="@string/send"
                     android:theme="@style/ShapeAppearanceOverlay.Material3.Button" />
 
             </LinearLayout>

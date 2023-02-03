@@ -35,7 +35,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginLeft="10dp"
-        android:text="Имя пользователя"
+        android:text="@string/name_of_user"
         android:textColor="@color/dark_green"
         android:textSize="18dp"
         android:textStyle="bold"
@@ -51,7 +51,7 @@
         android:layout_margin="7dp"
         android:layout_weight="1"
         android:color="@color/tag_math"
-        android:text="Удалить"
+        android:text="@string/delete"
         app:layout_constraintBottom_toBottomOf="@+id/bottom"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />

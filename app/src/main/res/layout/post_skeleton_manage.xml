@@ -7,7 +7,7 @@
     android:layout_marginBottom="@dimen/half_feed_offset"
     android:layout_marginLeft="0dp"
     android:layout_marginRight="0dp"
-    tools:context=".Global.MainActivity"
+    tools:context=".global.root.MainActivity"
     android:layout_height="wrap_content">
 
     <LinearLayout
@@ -81,7 +81,7 @@
         android:textStyle="bold"
         android:textColor="@color/dark_green"
         android:textSize="20sp"
-        android:text="Название проекта"
+        android:text="@string/project_name_2"
         app:layout_constraintStart_toEndOf="@+id/back_icon"
         app:layout_constraintTop_toTopOf="@+id/bottom" />
 
@@ -92,7 +92,7 @@
         android:layout_marginLeft="105dp"
         android:layout_marginRight="52dp"
         android:layout_marginTop="5dp"
-        android:text="Под названием можноо прочесть краткое описание проекта (в несколько слов)."
+        android:text="@string/default_project_description"
         android:textColor="#00605F"
         android:textSize="12sp"
         android:textStyle="bold"

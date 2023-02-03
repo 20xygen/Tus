@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/TermsFragment"
-        android:name="com.example.sutk.Entering.TermsFragment"
+        android:name="com.example.sutk.entering.terms.TermsFragment"
         tools:layout="@layout/fragment_terms">
 
         <action
@@ -17,7 +17,7 @@
 
     <fragment
         android:id="@+id/RegistrationFragment"
-        android:name="com.example.sutk.Entering.RegistrationFragment"
+        android:name="com.example.sutk.entering.authorisation.RegistrationFragment"
         tools:layout="@layout/fragment_registration">
 
         <action
@@ -31,7 +31,7 @@
 
     <fragment
         android:id="@+id/LoginFragment"
-        android:name="com.example.sutk.Entering.LoginFragment"
+        android:name="com.example.sutk.entering.authorisation.LoginFragment"
         tools:layout="@layout/fragment_login">
 
         <action
@@ -49,12 +49,12 @@
 
     <fragment
         android:id="@+id/MainFragment"
-        android:name="com.example.sutk.Global.MainFragment"
+        android:name="com.example.sutk.global.root.MainFragment"
         tools:layout="@layout/fragment_main"/>
 
     <fragment
         android:id="@+id/SelectingProfileIconFragment"
-        android:name="com.example.sutk.Entering.SelectingProfileIconFragment"
+        android:name="com.example.sutk.entering.selectIcon.SelectingProfileIconFragment"
         tools:layout="@layout/fragment_selecting_profile_icon" >
 
         <action
@@ -64,7 +64,7 @@
 
     <fragment
         android:id="@+id/TagFragment"
-        android:name="com.example.sutk.Entering.TagFragment"
+        android:name="com.example.sutk.entering.tag.TagFragment"
         tools:layout="@layout/fragment_tag" >
 
         <action

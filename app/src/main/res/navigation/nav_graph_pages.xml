@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/FeedRootFragment"
-        android:name="com.example.sutk.Global.FeedRootFragment"
+        android:name="com.example.sutk.global.feed.FeedRootFragment"
         tools:layout="@layout/fragment_feed_root">
 
         <action
@@ -29,7 +29,7 @@
 
     <fragment
         android:id="@+id/ManageRootFragment"
-        android:name="com.example.sutk.Global.ManageRootFragment"
+        android:name="com.example.sutk.global.manage.ManageRootFragment"
         tools:layout="@layout/fragment_manage_root">
 
         <action
@@ -52,7 +52,7 @@
 
     <fragment
         android:id="@+id/CreateFragment"
-        android:name="com.example.sutk.Global.PostRootFragment"
+        android:name="com.example.sutk.global.post.PostRootFragment"
         tools:layout="@layout/fragment_post_root">
 
         <action
@@ -74,7 +74,7 @@
 
     <fragment
         android:id="@+id/NotificationsRootFragment"
-        android:name="com.example.sutk.Global.NotificationsRootFragment"
+        android:name="com.example.sutk.global.notifications.NotificationsRootFragment"
         tools:layout="@layout/fragment_notifications">
 
         <action
@@ -96,7 +96,7 @@
 
     <fragment
         android:id="@+id/ProfileRootFragment"
-        android:name="com.example.sutk.Global.ProfileRootFragment"
+        android:name="com.example.sutk.global.profile.ProfileRootFragment"
         tools:layout="@layout/fragment_profile">
 
         <action

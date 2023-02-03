@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Global.ProfileFragment">
+    tools:context=".global.profile.ProfileFragment">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_margin="20dp"
@@ -40,21 +40,21 @@
                         app:layout_constraintTop_toTopOf="parent"  />
 
                     <ImageView
-                        android:layout_marginLeft="10dp"
                         android:id="@+id/imageView2"
                         android:layout_width="120dp"
                         android:layout_height="120dp"
                         android:src="@drawable/icon_dog"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        app:layout_constraintBottom_toBottomOf="@+id/back_icon"
+                        app:layout_constraintEnd_toEndOf="@+id/back_icon"
+                        app:layout_constraintStart_toStartOf="@+id/back_icon"
+                        app:layout_constraintTop_toTopOf="@+id/back_icon" />
 
                     <TextView
                         android:id="@+id/title_label"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginLeft="160dp"
-                        android:text="Безымянный искатель"
+                        android:text="@string/unnamed_finder"
                         android:textColor="@color/dark_green"
                         android:textSize="25dp"
                         android:textStyle="bold"
@@ -68,7 +68,7 @@
                         android:id="@+id/nick"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Безымянный искатель"
+                        android:text="@string/unnamed_finder"
                         android:textColor="@color/dark_green"
                         android:textSize="15dp"
                         android:textStyle="bold"
@@ -82,7 +82,7 @@
                         android:id="@+id/telegram"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:text="Безымянный искатель"
+                        android:text="@string/unnamed_finder"
                         android:textColor="@color/mid_green"
                         android:textSize="15dp"
                         android:textStyle="bold"
@@ -108,7 +108,7 @@
                     android:textStyle="bold"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Описание профиля пользователя" />
+                    android:text="@string/bio_label" />
 
                 <TextView
                     android:layout_marginTop="15dp"
@@ -118,15 +118,18 @@
                     android:textStyle="bold"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Навыки пользователя:" />
+                    android:text="@string/user_skills" />
 
-
-                <include layout="@layout/fragment_tag_holder"
+                <LinearLayout
                     android:layout_marginTop="15dp"
-                    android:layout_marginBottom="5dp"
-                    android:id="@+id/tag_holder"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
+                    android:layout_marginBottom="10dp"
+                    android:id="@+id/tags_layout"
+                    android:layout_width="370dp"
+                    android:layout_height="match_parent"
+                    android:orientation="vertical">
+
+
+                </LinearLayout>
 
                 <TextView
                     android:layout_marginTop="5dp"
@@ -136,7 +139,7 @@
                     android:textStyle="bold"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:text="Проекты пользователя:" />
+                    android:text="@string/user_projects" />
 
 
                 <androidx.constraintlayout.widget.ConstraintLayout

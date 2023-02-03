@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Global.MainActivity">
+    tools:context=".global.root.MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -30,7 +30,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="25dp"
                 android:gravity="center"
-                android:text="Администрирование"
+                android:text="@string/administrating"
                 android:textAlignment="center"
                 android:textSize="25sp" />
 
@@ -41,12 +41,12 @@
                 android:textColor="#003C3B"
                 android:layout_height="wrap_content"
                 android:gravity="left"
-                android:text="Название проекта:"
+                android:text="@string/project_name"
                 android:textSize="16sp" />
 
             <EditText
-                android:hint="Введите название"
-                android:text="Текущее название"
+                android:hint="@string/input_title"
+                android:text="@string/cur_title"
                 android:textColorHint="#004E4E"
                 android:textColor="#003C3B"
                 android:layout_marginBottom="10dp"
@@ -65,8 +65,8 @@
                 android:textSize="16sp" />
 
             <EditText
-                android:hint="Введите краткое описание"
-                android:text="Текущее краткое описание"
+                android:hint="@string/input_title_short"
+                android:text="@string/cur_title_short"
                 android:textColorHint="#004E4E"
                 android:textColor="#003C3B"
                 android:layout_marginBottom="10dp"
@@ -81,12 +81,12 @@
                 android:textColor="#003C3B"
                 android:layout_height="wrap_content"
                 android:gravity="left"
-                android:text="Полное описание:"
+                android:text="@string/full_description"
                 android:textSize="16sp" />
 
             <EditText
-                android:hint="Введите полное описание"
-                android:text="Текущее полное описание"
+                android:hint="@string/input_full_description"
+                android:text="@string/cur_full_description"
                 android:textColorHint="#004E4E"
                 android:textColor="#003C3B"
                 android:id="@+id/description_edit"
@@ -124,7 +124,7 @@
                     android:layout_marginBottom="0dp"
                     android:layout_weight="1"
                     android:color="@color/tag_math"
-                    android:text="Удалить всех"
+                    android:text="@string/delete_all"
                     app:layout_constraintBottom_toBottomOf="@+id/bottom"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
@@ -138,7 +138,7 @@
                     android:layout_marginRight="0dp"
                     android:layout_marginBottom="0dp"
                     android:backgroundTint="@color/design_default_color_secondary"
-                    android:text="Найти участников"
+                    android:text="@string/find_members"
                     android:textSize="15sp"
                     android:theme="@style/ShapeAppearanceOverlay.Material3.Button" />
 
@@ -160,7 +160,7 @@
                     android:layout_marginRight="7dp"
                     android:layout_marginBottom="0dp"
                     android:backgroundTint="@color/dark_green"
-                    android:text="Сменить иконку"
+                    android:text="@string/change_icon"
                     android:textSize="15sp"
                     android:theme="@style/ShapeAppearanceOverlay.Material3.Button" />
 
@@ -173,7 +173,7 @@
                     android:layout_marginRight="0dp"
                     android:layout_marginBottom="0dp"
                     android:backgroundTint="@color/dark_green"
-                    android:text="Настроить теги"
+                    android:text="@string/adjust_tags"
                     android:textSize="15sp"
                     android:theme="@style/ShapeAppearanceOverlay.Material3.Button" />
 
@@ -192,7 +192,7 @@
                     android:layout_height="wrap_content"
                     android:layout_margin="10dp"
                     android:backgroundTint="@color/design_default_color_secondary_variant"
-                    android:text="Отмена"
+                    android:text="@string/cancel"
                     android:theme="@style/ShapeAppearanceOverlay.Material3.Button" />
 
                 <Button
@@ -201,7 +201,7 @@
                     android:layout_width="110dp"
                     android:layout_height="wrap_content"
                     android:backgroundTint="@color/design_default_color_secondary"
-                    android:text="Удалить"
+                    android:text="@string/delete"
                     android:theme="@style/ShapeAppearanceOverlay.Material3.Button" />
 
 

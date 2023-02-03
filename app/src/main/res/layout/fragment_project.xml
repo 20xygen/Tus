@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Global.MainActivity">
+    tools:context=".global.root.MainActivity">
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
@@ -31,7 +31,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginBottom="25dp"
                 android:gravity="center"
-                android:text="Просмотр проекта"
+                android:text="@string/view_project"
                 android:textAlignment="center"
                 android:textSize="25sp" />
 
@@ -42,7 +42,7 @@
                 android:textColor="#003C3B"
                 android:layout_height="wrap_content"
                 android:gravity="left"
-                android:text="Название проекта:"
+                android:text="@string/project_name"
                 android:textSize="16sp" />
 
             <TextView
@@ -53,7 +53,7 @@
                 android:textColor="@color/dark_green"
                 android:layout_height="wrap_content"
                 android:gravity="left"
-                android:text="Название этого проекта"
+                android:text="@string/default_project_name"
                 android:textSize="20dp" />
 
             <TextView
@@ -63,7 +63,7 @@
                 android:textColor="#003C3B"
                 android:layout_height="wrap_content"
                 android:gravity="left"
-                android:text="Краткое описание:"
+                android:text="@string/short_description"
                 android:textSize="16sp" />
 
             <TextView
@@ -73,7 +73,7 @@
                 android:textColor="@color/dark_green"
                 android:layout_height="wrap_content"
                 android:gravity="left"
-                android:text="Краткое описание этого этого проекта"
+                android:text="@string/default_short_description"
                 android:textSize="20dp" />
 
             <TextView
@@ -83,7 +83,7 @@
                 android:textColor="#003C3B"
                 android:layout_height="wrap_content"
                 android:gravity="left"
-                android:text="Полное описание:"
+                android:text="@string/full_description"
                 android:textSize="16sp" />
 
             <TextView
@@ -93,7 +93,7 @@
                 android:textColor="@color/dark_green"
                 android:layout_height="wrap_content"
                 android:gravity="left"
-                android:text="Полное (подробное) описание текущего проекта"
+                android:text="@string/default_full_description"
                 android:textSize="20dp" />
 
             <LinearLayout
@@ -165,7 +165,7 @@
                 android:textColor="#003C3B"
                 android:layout_height="wrap_content"
                 android:gravity="left"
-                android:text="Теги:"
+                android:text="@string/tags"
                 android:textSize="16sp" />
 
             <LinearLayout
@@ -204,7 +204,7 @@
                 android:textColor="#003C3B"
                 android:layout_height="wrap_content"
                 android:gravity="left"
-                android:text="Команда:"
+                android:text="@string/team"
                 android:textSize="16sp" />
 
 <!--            <include layout="@layout/fragment_tag_holder"-->
@@ -395,7 +395,7 @@
                     android:layout_height="41dp"
                     android:layout_weight="1"
                     android:color="@color/light_green"
-                    android:text="Подать заявку"
+                    android:text="@string/send_request"
                     app:layout_constraintBottom_toBottomOf="@+id/bottom"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />

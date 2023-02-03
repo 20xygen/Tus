@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/ManageFragment"
-        android:name="com.example.sutk.Global.ManageFragment"
+        android:name="com.example.sutk.global.manage.ManageFragment"
         tools:layout="@layout/fragment_manage">
 
         <action
@@ -21,7 +21,7 @@
 
     <fragment
         android:id="@+id/AdmiPanelFragment"
-        android:name="com.example.sutk.AdmiPanelFragment"
+        android:name="com.example.sutk.global.manage.adminPanel.AdmiPanelFragment"
         tools:layout="@layout/fragment_admin_panel">
 
         <action
@@ -35,7 +35,7 @@
 
     <fragment
         android:id="@+id/SearchFragment"
-        android:name="com.example.sutk.Global.SearchFragment"
+        android:name="com.example.sutk.global.manage.adminPanel.SearchFragment"
         tools:layout="@layout/fragment_search">
 
         <action
@@ -45,7 +45,7 @@
 
     <fragment
         android:id="@+id/ProjectFragment"
-        android:name="com.example.sutk.ProjectFragment"
+        android:name="com.example.sutk.global.project.ProjectFragment"
         tools:layout="@layout/fragment_project">
 
         <action

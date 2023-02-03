@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/PostFragment"
-        android:name="com.example.sutk.Global.PostFragment"
+        android:name="com.example.sutk.global.post.PostFragment"
         tools:layout="@layout/fragment_post">
 
         <action
@@ -22,7 +22,7 @@
 
     <fragment
         android:id="@+id/SelectingPostIconFragment"
-        android:name="com.example.sutk.Entering.SelectingPostIconFragment"
+        android:name="com.example.sutk.entering.SelectingPostIconFragment"
         tools:layout="@layout/fragment_selecting_post_icon">
 
         <action
@@ -32,7 +32,7 @@
 
     <fragment
         android:id="@+id/PostCreatedFragment"
-        android:name="com.example.sutk.Entering.PostCreatedFragment"
+        android:name="com.example.sutk.entering.PostCreatedFragment"
         tools:layout="@layout/post_created">
 
         <action
