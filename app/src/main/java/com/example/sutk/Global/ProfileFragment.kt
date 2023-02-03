@@ -9,8 +9,6 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.sutk.Client.Client
 import com.example.sutk.DataHolder
-import com.example.sutk.Entering.IconListOperator
-import com.example.sutk.ManageAdapter
 import com.example.sutk.ProfileAdapter
 import com.example.sutk.R
 import com.example.sutk.databinding.FragmentProfileBinding
@@ -93,25 +91,31 @@ class ProfileFragment : Fragment() {
         var adapter = ProfileAdapter(mutableListOf())
         binding.recyclerView.layoutManager = LinearLayoutManager(activity)
         binding.recyclerView.adapter = adapter
-        CoroutineScope(Dispatchers.IO).launch {
-            val user = Client.getUserById(2)
-            withContext(Dispatchers.Main){
-                DataHolder.user = user
+        try {
+            if (DataHolder.demiIsOn) throw Exception("Demo is on")
+            CoroutineScope(Dispatchers.IO).launch {
+                val user = Client.getUserById(2)
+                withContext(Dispatchers.Main){
+                    DataHolder.user = user
+                }
             }
-        }
 //        binding.buttonFirst.setOnClickListener {
 //            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
 //        }
-        CoroutineScope(Dispatchers.IO).launch {
-            val userPost = Client.getUserPostById(2)
-            val post = mutableListOf<Post>()
-            for (i in userPost.postList) {
-                post.add(Client.getPostById(i))
+            CoroutineScope(Dispatchers.IO).launch {
+                val userPost = Client.getUserPostById(2)
+                val post = mutableListOf<Post>()
+                for (i in userPost.postList) {
+                    post.add(Client.getPostById(i))
+                }
+                withContext(Dispatchers.Main) {
+                    adapter.addRange(post)
+                }
             }
-            withContext(Dispatchers.Main) {
-                adapter.addRange(post)
-            }
+        } catch (e: Exception){
+            for (i in 0 until  DataHolder.fakePosts.size) if (DataHolder.loginedUser.login == DataHolder.fakePosts[i].creatorLogin) adapter.addItem(DataHolder.fakePosts[i])
         }
+
     }
 
     private fun customFillList(): MutableList<Post>{

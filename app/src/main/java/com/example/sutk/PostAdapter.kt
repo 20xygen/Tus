@@ -37,7 +37,7 @@ class PostAdapter(private val items: MutableList<Post>) : RecyclerView
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         holder.label.text = items[position].title
         println(items[position].title)
-        holder.description.text = items[position].body
+        holder.description.text = items[position].description
         holder.like.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {
                 Toast.makeText(DataHolder.context, "Нравится", Toast.LENGTH_SHORT).show()

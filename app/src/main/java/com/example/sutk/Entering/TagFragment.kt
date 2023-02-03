@@ -43,14 +43,20 @@ class TagFragment  : Fragment() {
 //            println(allTag)
 //        }
 
-        CoroutineScope(Dispatchers.IO).launch {
-            val allTag = Client.getAllTag()
-            println(allTag)
-            println("+")
-            withContext(Dispatchers.Main){
-                for (i in allTag) DataHolder.listOfAllTags?.add(i)
+        try{
+            if (DataHolder.demiIsOn) throw Exception("Demo is on")
+            CoroutineScope(Dispatchers.IO).launch {
+                val allTag = Client.getAllTag()
+                println(allTag)
+                println("+")
+                withContext(Dispatchers.Main){
+                    for (i in allTag) DataHolder.listOfAllTags?.add(i)
+                }
             }
+        } catch (e: Exception){
+            DataHolder.listOfAllTags = DataHolder.allFixedTags
         }
+
 
         _binding = FragmentTagBinding.inflate(inflater, container, false)
         return binding.root

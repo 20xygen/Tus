@@ -59,12 +59,20 @@ class FeedFragment : Fragment() {
             binding.recyclerView.adapter = adapter
 
 
-            CoroutineScope(Dispatchers.IO).launch {
-                val post = Client.getAllPosts()
-                withContext(Dispatchers.Main) {
-                    adapter.addRange(post?.toMutableList() ?: mutableListOf())
+            try {
+                if (DataHolder.demiIsOn) throw Exception("Demo is on")
+
+                CoroutineScope(Dispatchers.IO).launch {
+                    val post = Client.getAllPosts()
+                    withContext(Dispatchers.Main) {
+                        adapter.addRange(post?.toMutableList() ?: mutableListOf())
+                    }
                 }
+            } catch (e: Exception){
+                adapter.addRange(DataHolder.fakePosts)
             }
+
+
 
 //        navController?.setController(findNavController())
 

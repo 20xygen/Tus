@@ -62,16 +62,28 @@ class ManageFragment : Fragment() {
 //        }
 
 
-        CoroutineScope(Dispatchers.IO).launch {
-            val userPost = Client.getUserTeamById(0)
-            val post = mutableListOf<Post>()
-            for (i in userPost.userTeam) {
-                post.add(Client.getPostById(i))
+        try {
+            if (DataHolder.demiIsOn) throw Exception("Demo is on")
+            CoroutineScope(Dispatchers.IO).launch {
+                val userPost = Client.getUserTeamById(0)
+                val post = mutableListOf<Post>()
+                for (i in userPost.userTeam) {
+                    post.add(Client.getPostById(i))
+                }
+                withContext(Dispatchers.Main) {
+                    adapter.addRange(post)
+                }
             }
-            withContext(Dispatchers.Main) {
-                adapter.addRange(post)
+        } catch (e: Exception) {
+            var flag = false
+            for (i in 0 until DataHolder.fakePosts.size){
+                flag = false
+                for (j in DataHolder.fakePosts[i].team) if (DataHolder.loginedUser.login == j.login) flag = true
+                if (flag) adapter.addItem(DataHolder.fakePosts[i])
             }
         }
+
+
     }
 
 //    private fun fillList(): List<String> {

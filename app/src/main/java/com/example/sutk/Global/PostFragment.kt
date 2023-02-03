@@ -48,17 +48,26 @@ class PostFragment : Fragment() {
         }
 
         binding.buttonOk.setOnClickListener {
-            findNavController().navigate(R.id.action_PostFragment_to_PostCreatedFragment)
 
-            val post = Post(0, binding.title.text.toString(), 0,
+            val post = Post((100..10000).random(), binding.title.text.toString(), 0,
                 binding.descriptionShort.text.toString(),
                 DataHolder.loginedUser.login, binding.description.text.toString(),
                 listOf<User>(DataHolder.loginedUser), 0, 0,
-                listOf<Tag>(Tag("Android", "Информатика"), Tag("UI", "Информатика"), Tag("UX", "Информатика")), listOf<MainInfoPost>(), listOf<MainInfoPost>())
-            CoroutineScope(Dispatchers.IO).launch {
-                println(post)
-                Client.createPost(post)
+                listOf<Tag>(Tag("Android", "Информатика"), Tag("UI", "Информатика"), Tag("UX", "Информатика"), Tag("Общее (математика)", "Математика"), Tag("Общее (физика)", "Физика")), listOf<MainInfoPost>(), listOf<MainInfoPost>())
+
+            try {
+                if (DataHolder.demiIsOn) throw Exception("Demo is on")
+                CoroutineScope(Dispatchers.IO).launch {
+                    println(post)
+                    Client.createPost(post)
+                }
+            } catch (e: Exception){
+                DataHolder.fakePosts.add(post)
             }
+
+
+
+            findNavController().navigate(R.id.action_PostFragment_to_PostCreatedFragment)
         }
 
         when (DataHolder.postIconNumber) {

@@ -41,6 +41,10 @@
         <action
             android:id="@+id/action_LoginFragment_to_SelectingProfileIconFragment"
             app:destination="@id/SelectingProfileIconFragment" />
+
+        <action
+            android:id="@+id/action_LoginFragment_to_MainFragment"
+            app:destination="@id/MainFragment" />
     </fragment>
 
     <fragment

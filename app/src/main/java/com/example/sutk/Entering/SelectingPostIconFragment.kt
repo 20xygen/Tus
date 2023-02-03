@@ -44,6 +44,8 @@ class SelectingPostIconFragment : Fragment() {
 
         binding.buttonOk.setOnClickListener {
             DataHolder.postIconNumber = IconListOperator.post_chosen
+            DataHolder.ultimateUser?.imageId = IconListOperator.post_chosen
+            DataHolder.loginedUser?.imageId = IconListOperator.post_chosen
             findNavController().navigate(R.id.action_SelectingPostIconFragment_to_PostFragment)
         }
 

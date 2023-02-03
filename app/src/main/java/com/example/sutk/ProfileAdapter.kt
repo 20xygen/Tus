@@ -34,7 +34,7 @@ class ProfileAdapter(private val items: MutableList<Post>) : RecyclerView
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         holder.label.text = items[position].title
         println(items[position].title)
-        holder.description.text = items[position].body
+        holder.description.text = items[position].description
         holder.show.setOnClickListener(object : View.OnClickListener {
             override fun onClick(v: View?) {
                 DataHolder.profileFragment?.switchToProject()
@@ -43,7 +43,74 @@ class ProfileAdapter(private val items: MutableList<Post>) : RecyclerView
             }
         })
 
-        when (items[position].tagList[0].subject){
+        var imaginaryTags: MutableMap<String, Int> = mutableMapOf("Математика" to 0,
+            "Физика" to 0, "Информатика" to 0,
+            "ИБ" to 0, "Лингвистика" to 0,
+            "Медицина" to 0, "Экономика" to 0,
+            "Другое" to 0)
+
+        for (i in items[position].tagList){
+            imaginaryTags.set(i.subject, imaginaryTags.get(i.subject)?.inc() ?: 0)
+        }
+        var subjects: List<String> = listOf("Математика", "Физика", "Информатика", "ИБ", "Лингвистика", "Медицина", "Экономика", "Другое")
+        var topSubjects: MutableList<String> = mutableListOf("", "", "")
+        for (i in subjects){
+            if (imaginaryTags[i] == 0) continue
+            if (topSubjects[0] == "" && imaginaryTags[i]!! > 0) topSubjects[0] = i
+            else if (topSubjects[1] == "" && imaginaryTags[i]!! > 0){
+                if (imaginaryTags[topSubjects[0]]!! < imaginaryTags[i]!!){
+                    topSubjects[1] = topSubjects[0]
+                    topSubjects[0] = i
+                }
+                else topSubjects[1] = i
+            }
+            else if (topSubjects[2] == "" && imaginaryTags[i]!! > 0){
+                if (imaginaryTags[topSubjects[0]]!! < imaginaryTags[i]!!){
+                    topSubjects[2] = topSubjects[1]
+                    topSubjects[1] = topSubjects[0]
+                    topSubjects[0] = i
+                }
+                else if (imaginaryTags[topSubjects[1]]!! < imaginaryTags[i]!!){
+                    topSubjects[2] = topSubjects[1]
+                    topSubjects[1] = i
+                }
+                else topSubjects[2] = i
+            }
+            else{
+                if (imaginaryTags[topSubjects[0]]!! < imaginaryTags[i]!!){
+                    topSubjects[2] = topSubjects[1]
+                    topSubjects[1] = topSubjects[0]
+                    topSubjects[0] = i
+                }
+                else if (imaginaryTags[topSubjects[1]]!! < imaginaryTags[i]!!){
+                    topSubjects[2] = topSubjects[1]
+                    topSubjects[1] = i
+                }
+                else if (imaginaryTags[topSubjects[2]]!! < imaginaryTags[i]!!){
+                    topSubjects[2] = i
+                }
+            }
+        }
+        var subject1 = ""
+        var subject2 = ""
+        var subject3 = ""
+        if (topSubjects[2] != ""){
+            subject3 = topSubjects[2]
+            subject2 = topSubjects[1]
+            subject1 = topSubjects[0]
+        }
+        else if (topSubjects[1] != ""){
+            subject3 = topSubjects[0]
+            subject2 = topSubjects[1]
+            subject1 = topSubjects[0]
+        }
+        else {
+            subject3 = topSubjects[0]
+            subject2 = topSubjects[0]
+            subject1 = topSubjects[0]
+        }
+
+        when (subject1){
             "Математика" -> holder.line1.setImageResource(R.drawable.line_left_math)
             "Физика" -> holder.line1.setImageResource(R.drawable.line_left_physics)
             "Информатика" -> holder.line1.setImageResource(R.drawable.line_left_info)
@@ -53,7 +120,7 @@ class ProfileAdapter(private val items: MutableList<Post>) : RecyclerView
             "Экономика" -> holder.line1.setImageResource(R.drawable.line_left_economy)
             "Другое" -> holder.line1.setImageResource(R.drawable.line_left_other)
         }
-        when (items[position].tagList[1].subject){
+        when (subject2){
             "Математика" -> holder.line2.setImageResource(R.drawable.line_mid_math)
             "Физика" -> holder.line2.setImageResource(R.drawable.line_mid_physics)
             "Информатика" -> holder.line2.setImageResource(R.drawable.line_mid_info)
@@ -63,7 +130,7 @@ class ProfileAdapter(private val items: MutableList<Post>) : RecyclerView
             "Экономика" -> holder.line2.setImageResource(R.drawable.line_mid_economy)
             "Другое" -> holder.line2.setImageResource(R.drawable.line_mid_other)
         }
-        when (items[position].tagList[2].subject){
+        when (subject3){
             "Математика" -> holder.line3.setImageResource(R.drawable.line_right_math)
             "Физика" -> holder.line3.setImageResource(R.drawable.line_right_physics)
             "Информатика" -> holder.line3.setImageResource(R.drawable.line_right_info)
