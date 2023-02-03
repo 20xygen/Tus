@@ -382,7 +382,7 @@ class IconListOperator {
     }
 
     public fun postSetListener(){
-        for(i in 0..20){
+        for(i in 0..62){
             post_button_array[i]?.setOnClickListener {
                 if (post_chosen != i || post_chosen == -1){
                     post_view_array[i]?.setImageResource(R.drawable.plate_selected)

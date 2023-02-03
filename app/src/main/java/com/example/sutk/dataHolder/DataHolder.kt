@@ -70,7 +70,7 @@ class DataHolder {
 
         var validNick = listOf<String>("abcd", "Денис", "Виктор К", "12345", "user")
         var validPasswd = listOf<String>("1111", "Денис", "1234", "54321", "password")
-        var validId = listOf<Int>(1, 4, 2, 20, 5)
+        var validId = listOf<Int>(1, 2, 3, 4, 5)
         var validTg = listOf<String>("pavel_durov", "TWNTxygen", "shlepa05", "numbersTG", "userInTelegram")
         var validDescription = listOf<String>("Не стоит принимать доброту за слабость, грубость за силу, а подлость за умение жить.", "Не придумал описания", "У самурая нет цели, только путь", "54321", "Никто не ценит того, чего слишком много.")
         var validImageId = listOf<Int>(0, 1, 2, 3, 4)
@@ -97,7 +97,7 @@ class DataHolder {
                     Tag("Наставничество (физика)", "Физика"), Tag("Дизайн", "Другое")),
                 listOf<MainInfoPost>(), listOf<MainInfoPost>()),
 
-            Post(0, "Автобаттлер с ИИ", 0,
+            Post(1, "Автобаттлер с ИИ", 1,
                 "Исскусственный интеллект, способный предугадывать исход баталии",
                 fakeUsers[1].login, "Исскусственный интеллект, способный предугадывать исход баталии, встроен в игру-автобттлер. Нейронная сеть натренирована на милионах конфигураций и способна выдать точный результат при любом размере поля.",
                 listOf(fakeUsers[1], fakeUsers[2]), 0, 0,
@@ -106,25 +106,25 @@ class DataHolder {
                     Tag("Кинематика", "Физика")),
                 listOf<MainInfoPost>(), listOf<MainInfoPost>()),
 
-            Post(0, "Fert", 0,
+            Post(2, "Fert", 0,
                 "Калькулятор с характером",
                 fakeUsers[1].login, "Fert - калькулятор с характером. Одновременно тамагочи и настоящий инструмент. Обучайся играючи, либо просто проведи время нескучно.",
-                listOf(fakeUsers[1]), 0, 0,
+                listOf(fakeUsers[1]), 0, 2,
                 listOf(Tag("Android", "Информатика"), Tag("UI", "Информатика"),
                     Tag("UX", "Информатика"), Tag("Маркетинг", "Экономика"),
                     Tag("Наставничество (физика)", "Физика"), Tag("Дизайн", "Другое")),
                 listOf<MainInfoPost>(), listOf<MainInfoPost>()),
 
-            Post(0, "TowerDefense", 0,
+            Post(3, "TowerDefense", 0,
                 "Игра в соответствующем жанре на Android и Desktop.",
                 fakeUsers[2].login, "Написана на собственном, написаном почти с нуля, движке.",
-                listOf(fakeUsers[2]), 0, 0,
+                listOf(fakeUsers[2]), 0, 3,
                 listOf(Tag("Android", "Информатика"), Tag("Кинематика", "Физика"),
                     Tag("UX", "Информатика"), Tag("Game dev.", "Информатика"),
                     Tag("Т. вероятности", "Математика"), Tag("Планеметрия", "Математика")),
                 listOf<MainInfoPost>(), listOf<MainInfoPost>()),
 
-            Post(0, "Обычный проект", 0,
+            Post(4, "Обычный проект", 4,
                 "Описание этого проекта",
                 fakeUsers[0].login, "Здесь более подробное описание выбранного пользователем проекта.",
                 listOf(fakeUsers[0], fakeUsers[3], fakeUsers[4]), 0, 0,
@@ -134,7 +134,7 @@ class DataHolder {
                 Tag("Бухгалтерия", "Экономика"), Tag("География", "Другое")),
                 listOf<MainInfoPost>(), listOf<MainInfoPost>()),
 
-            Post(0, "ML-Schedule", 0,
+            Post(5, "ML-Schedule", 5,
                 "Приложение для автоматического составления школьного расписания средствами ML",
                 fakeUsers[3].login, "Приложение для автоматического составления школьного расписания средствами ML. Помощь в составлении расписания для школ.",
                 listOf(fakeUsers[3], fakeUsers[0]), 0, 0,
@@ -142,17 +142,17 @@ class DataHolder {
                     Tag("AI", "Информатика")),
                 listOf<MainInfoPost>(), listOf<MainInfoPost>()),
 
-            Post(0, "Happy Meeting", 0,
+            Post(6, "Happy Meeting", 6,
                 "Приложение для создание веселых сборов",
                 fakeUsers[4].login, "Приложение для создание веселых сборов. Встречайтесь и веселитесь",
                 listOf(fakeUsers[4], fakeUsers[3]), 0, 0,
                 listOf(Tag("Общее (физика)", "Физика"), Tag("Android", "Информатика")),
                 listOf<MainInfoPost>(), listOf<MainInfoPost>()),
 
-            Post(0, "Lumet", 0,
+            Post(7, "Lumet", 7,
                 "Простое мобильное приложение",
                 fakeUsers[0].login, "Lumet - главная загадка проекта. Что бы это могло значить?",
-                listOf(fakeUsers[0], fakeUsers[1]), 0, 0,
+                listOf(fakeUsers[0], fakeUsers[4]), 0, 0,
                 listOf(Tag("Android", "Информатика")),
                 listOf<MainInfoPost>(), listOf<MainInfoPost>())
         )

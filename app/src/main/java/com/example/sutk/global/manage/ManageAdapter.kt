@@ -49,6 +49,8 @@ class ManageAdapter(private val items: MutableList<Post>) : RecyclerView
             }
         })
 
+        if (items[position].creatorLogin != DataHolder.ultimateUser?.login) holder.settings.visibility = View.INVISIBLE
+
         var imaginaryTags: MutableMap<String, Int> = mutableMapOf("Математика" to 0,
             "Физика" to 0, "Информатика" to 0,
             "ИБ" to 0, "Лингвистика" to 0,

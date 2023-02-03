@@ -126,7 +126,7 @@ class ProjectFragment : Fragment() {
         DataHolder.teamId
         if (post?.team?.size!! > 0){
             textView = TextView(DataHolder.context)
-            textView.setText("    " + post!!.team[0].login)
+            textView.setText("    " + post!!.team[0].name)
             textView.layoutParams = params
             textView.setBackgroundResource(R.drawable.user_major_background)
             textView.setTextColor(getResources().getColor(R.color.user_major))
@@ -136,7 +136,7 @@ class ProjectFragment : Fragment() {
         }
         for (i in 1 until post?.team?.size!!){
             textView = TextView(DataHolder.context)
-            textView.setText("    " + post!!.team[i].login)
+            textView.setText("    " + post!!.team[i].name)
             textView.layoutParams = params
             textView.setBackgroundResource(R.drawable.user_background)
             textView.setTextColor(getResources().getColor(R.color.user))
